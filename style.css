@@ -102,6 +102,8 @@ body {
     height: auto;
     max-width: 350px;
     margin: 30px;
+    margin-right: 75px;
+    border-radius: 20px;
 }
 
 .introText {
