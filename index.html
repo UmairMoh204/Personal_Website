@@ -17,9 +17,9 @@
             <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="./navPages/about.html">About</a></li>
                 <li><a href="./navPages/projects.html">Projects</a></li>
-                <li><a href="./navPages/contact.html">Contact</a></li>
+                <li><a href="./navPages/about.html">About</a></li>
+                <li><a href="./navPages/login.html">Login</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
                 <span class="bar"></span>
@@ -37,12 +37,40 @@
         </div>
 
         <div id="subjectContainer">
-            <div class="subjectBlock"> </div>
-            <div class="subjectBlock"> </div>
-            <div class="subjectBlock"> </div>
+            <div class="subjectBlock">
+                <h3>UX Design</h3>
+                <img src="./subjects/uxdesign.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                <button onclick="location.href='./subjects/uxdesign.html'">Learn More</button>
+            </div>
+            <div class="subjectBlock">
+                <h3>Software Engineering</h3>
+                <img src="./subjects/swe.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                <button onclick="location.href='./subjects/softwareengineering.html'">Learn More</button>
+            </div>
+            <div class="subjectBlock">
+                <h3>Data Science</h3>
+                <img src="./subjects/datasci.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                <button onclick="location.href='./subjects/mlengineering.html'">Learn More</button>
+            </div>
         </div>
 
-        <div class="timeline">
+        <div id="contactContainer">
+            <div class="contactBlock">
+                <h2>Contact</h2>
+                <p>Feel Free To Contact Me If You Have Any Questions Or Discuss On My Projects!</p>
+                <div id="textFields">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+                <button onclick="location.href='.html'">Contact Me</button>
+            </div>
+        </div>
+
+        <!-- <div class="timeline">
             <div class="container left-container">
                 <img src="./images/toyota.png">
                 <div class="text-box">
@@ -79,18 +107,7 @@
                     <span class="right-container-arrow"></span>
                 </div>
             </div>
-        </div>
-
-        <footer>
-            <div class="footerIcons">
-                <a href="https://www.linkedin.com/in/hamza-mohammed23/">
-                    <img style="width: 50px; height: 50px;"; src="./socialMedia/linkedin.png" alt="">
-                </a>
-                <a href="mailto:umohamme@macalester.edu">
-                    <img style="width: 50px; height: 50px;"; src="./socialMedia/gmail.png" alt="">
-                </a>
-            </div>
-        </footer>
+        </div> -->
 
         <script src="web.js" async defer></script>
     </body>
