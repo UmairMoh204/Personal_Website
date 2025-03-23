@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -10,31 +10,31 @@
         <title>Log In</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="navPages.css">
+        <link rel="stylesheet" href="login.css">
     </head>
     <body>
-        <nav class="nav-container">
-            <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./login.html">Login</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
 
-        <div class="login-container">
-            <h2 style="text-align: center;">Log In</h2>
+        <div class="loginContainer">
             <div id="loginBlock">
-
+                <h2 style="text-align: center;">Log In</h2>
+                <div id="textFields">
+                    <input id="email" type="text" placeholder="Your Email">
+                    <input id="password" type="password" placeholder="Your Password">
+                </div>
+                <button id="submit">Log In</button>
             </div>
         </div>
         
-        <script src="" async defer></script>
+        <script type="module" src="register.js"></script>
+        <script>
+          if (sessionStorage.getItem("isLoggedIn") === "true") {
+            window.location.replace("login.html");
+          }
+
+          window.history.pushState(null, "", window.location.href);
+          window.addEventListener("popstate", () => {
+            window.history.pushState(null, "", window.location.href);
+          });
+        </script>
     </body>
 </html>

@@ -1,10 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
-        });
-    }
-});
+const auth = getAuth();
+
+
+
