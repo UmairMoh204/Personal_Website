@@ -19,7 +19,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./projects.html">Projects</a></li>
                 <li><a href="./about.html">About</a></li>
-                <li><a href="./login.html">Sign Out</a></li>
+                <li><a href="./login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">Sign Out</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
                 <span class="bar"></span>
@@ -27,7 +27,11 @@
                 <span class="bar"></span>
             </div>
         </nav>
-        
         <script src="" async defer></script>
+        <script>
+            if (sessionStorage.getItem("isLoggedIn") !== "true") {
+              window.location.replace("./login.html");
+            }
+          </script>
     </body>
 </html>
