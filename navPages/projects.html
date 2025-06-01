@@ -16,22 +16,140 @@
         <nav class="nav-container">
             <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
             <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">Sign Out</a></li>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="./projects.html">projects</a></li>
+                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
+                <li><a href="./about.html">about</a></li>
+                <li><a href="./login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
         </nav>
-        <script src="" async defer></script>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ux">UX Design</button>
+            <button class="filter-btn" data-filter="swe">Software Engineering</button>
+            <button class="filter-btn" data-filter="ds">Data Science</button>
+        </div>
+
+        <div class="projects-container">
+            <div class="project-block" data-category="ux">
+                <h3>Amazon UX Design Internship</h3>
+                <img src="../projects/amazon.jpg" alt="Amazon Project">
+                <p>Worked on improving the user experience for Amazon's internal tools, focusing on accessibility and efficiency.</p>
+                <div class="project-tags">
+                    <span>UX Design</span>
+                    <span>Figma</span>
+                    <span>User Research</span>
+                </div>
+                <button onclick="location.href='../projects/amazon.html'">View Project</button>
+            </div>
+
+            <div class="project-block" data-category="ux">
+                <h3>City of Saint Paul HR Portal</h3>
+                <img src="../projects/saintpaul.jpg" alt="Saint Paul Project">
+                <p>Redesigned the Human Resources portal for the City of Saint Paul, improving navigation and user engagement.</p>
+                <div class="project-tags">
+                    <span>UX Design</span>
+                    <span>Web Development</span>
+                    <span>User Testing</span>
+                </div>
+                <button onclick="location.href='../projects/saintpaul.html'">View Project</button>
+            </div>
+
+            <div class="project-block" data-category="ux">
+                <h3>TutorD</h3>
+                <img src="../projects/tutord.jpg" alt="TutorD Project">
+                <p>Developed a platform connecting students with tutors, featuring real-time scheduling and video chat capabilities.</p>
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                </div>
+                <button onclick="location.href='../projects/tutord.html'">View Project</button>
+            </div>
+
+            <div class="project-block" data-category="ux">
+                <h3>3DogE</h3>
+                <img src="../projects/3doge.jpg" alt="3DogE Project">
+                <p>Created an innovative e-commerce platform for pet products with 3D product visualization and AR features.</p>
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>AR/VR</span>
+                    <span>E-commerce</span>
+                </div>
+                <button onclick="location.href='../projects/3doge.html'">View Project</button>
+            </div>
+
+            <div class="project-block" data-category="swe" data-category="ux">
+                <h3>Personal Portfolio Website</h3>
+                <img src="../projects/portfolio.jpg" alt="Portfolio Project">
+                <p>Designed and developed a responsive portfolio website showcasing my work and skills.</p>
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>UX Design</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <button onclick="location.href='../projects/portfolio.html'">View Project</button>
+            </div>
+
+            <div class="project-block" data-category="swe">
+                <h3>MyMarketPlace</h3>
+                <img src="../projects/portfolio.jpg" alt="Portfolio Project">
+                <p>Designed and developed a responsive portfolio website showcasing my work and skills.</p>
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>UX Design</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <button onclick="location.href='../projects/portfolio.html'">View Project</button>
+            </div>
+
+            <div class="project-block" data-category="ds">
+                <h3>NBA Salary Analysis</h3>
+                <img src="../projects/portfolio.jpg" alt="Portfolio Project">
+                <p>Designed and developed a responsive portfolio website showcasing my work and skills.</p>
+                <div class="project-tags">
+                    <span>R/RStudio</span>
+                    <span>GGPlot</span>
+                    <span>Dyplyr</span>
+                </div>
+                <button onclick="location.href='../projects/portfolio.html'">View Project</button>
+            </div>
+        </div>
+        </div>
+
+        <script>
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectBlocks = document.querySelectorAll('.project-block');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    projectBlocks.forEach(block => {
+                        if (filterValue === 'all' || block.getAttribute('data-category') === filterValue) {
+                            block.style.display = 'flex';
+                        } else {
+                            block.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+
         <script>
             if (sessionStorage.getItem("isLoggedIn") !== "true") {
-              window.location.replace("./login.html");
+                window.location.replace("./login.html");
             }
-          </script>
+        </script>
+        <script src="../web.js" type="module"></script>
     </body>
 </html>

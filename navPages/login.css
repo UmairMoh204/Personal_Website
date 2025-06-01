@@ -6,7 +6,7 @@ body {
     height: 100%;
     margin-bottom: 50px;
     padding: 0;
-    background: linear-gradient(rgb(219, 219, 219),rgba(64, 5, 0, 0.659));
+    background-color: black;
     /* rgba(18, 18, 18, 0.185) */
     background-size: cover; 
     background-attachment: fixed; 

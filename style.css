@@ -51,6 +51,8 @@ body {
 .hamburger {
     display: none;
     cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
 }
 .bar {
     display: block;
@@ -58,6 +60,7 @@ body {
     height: 3px;
     margin: 5px auto;
     background-color: white;
+    transition: all 0.3s ease;
 }
 
 /* ---------------------------------------------------------------Introdution and Subject CSS-------------------------------------------------------------- */
@@ -72,15 +75,15 @@ body {
 #introBlock {
     height: 450px;
     /* margin: 25px; */
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(0, 0, 0);
     border-radius: 20px;
     border: 2px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px; 
+    padding: 60px; 
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5px;
     color: white;
 }
 
@@ -88,7 +91,7 @@ body {
     height: 500px;
     width: calc(33.33% - 50px);
     margin: 25px;
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(22, 22, 22);
     border-radius: 20px;
     border: 2px solid black;
     display: flex;
@@ -169,7 +172,8 @@ body {
     letter-spacing: .02em;
     animation: 
         typing 3.5s steps(40, end),
-        blink-caret .75s step-end 1;
+        blink-caret .75s step-end 4,
+        remove-caret 0s forwards 3.5s;
 }
 
 @keyframes typing {
@@ -180,6 +184,10 @@ body {
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: white }
+}
+
+@keyframes remove-caret {
+    to { border-right: none }
 }
 
 .introText p {
@@ -276,6 +284,450 @@ body {
     border-color: rgba(64, 5, 0, 0.659);
     box-shadow: 0 0 5px rgba(64, 5, 0, 0.659);
     outline: none;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.filter-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.filter-btn.active {
+    background-color: white;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .filter-container {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-block {
+    background-color: rgb(22, 22, 22);
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-block h3 {
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.project-block img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-block p {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.project-tags span {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.project-block button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-block button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 1200px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ellipse-placeholder {
+    width: 350px;
+    height: 350px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.ellipse-placeholder::after {
+    content: "Image Coming Soon";
+    opacity: 0.7;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-placeholder {
+    width: 80%;
+    height: 300px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 20px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.about-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-content h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.about-content p {
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.experience-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.experience-container h2 {
+    color: white;
+    margin-bottom: 90px;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.experience-item {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 40px;
+}
+
+.experience-title {
+    flex: 1;
+    text-align: right;
+}
+
+.experience-title h3 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.experience-title span {
+    color: #888;
+    font-size: 14px;
+}
+
+.experience-details {
+    flex: 2;
+    border-left: 2px solid white;
+    padding-left: 40px;
+}
+
+.experience-details p {
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.experience-details .date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .experience-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .experience-title {
+        text-align: left;
+    }
+
+    .experience-details {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid white;
+        padding-top: 20px;
+    }
+}
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgb(22, 22, 22);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        padding: 80px 0;
+        z-index: 999;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.2em;
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    /* Add delay for each menu item */
+    .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links li:nth-child(4) { transition-delay: 0.4s; }
+    .nav-links li:nth-child(5) { transition-delay: 0.5s; }
+
+    /* Subject Blocks Mobile Layout */
+    #subjectContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .subjectBlock {
+        width: 90%;
+        margin: 20px 0;
+        height: auto;
+        min-height: 500px;
+    }
+
+    /* About Page Mobile Layout */
+    .about-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-images {
+        width: 100%;
+        align-items: center;
+    }
+
+    .image-placeholder {
+        width: 90%;
+    }
+
+    .about-content {
+        padding: 20px 0;
+    }
+
+    /* Experience Section Mobile Layout */
+    .experience-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .experience-title {
+        text-align: left;
+    }
+
+    .experience-details {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid white;
+        padding-top: 20px;
+    }
+
+    /* Projects Page Mobile Layout */
+    .projects-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .project-block {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    /* Filter Buttons Mobile Layout */
+    .filter-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media screen and (max-width: 480px) {
+    .nav-container h1 {
+        font-size: 1.5em;
+        margin-left: 15px;
+    }
+
+    .introText h2 {
+        font-size: 1.5em;
+    }
+
+    .introText p {
+        font-size: 1em;
+    }
+
+    .subjectBlock h3 {
+        font-size: 1.3em;
+    }
+
+    .subjectBlock p {
+        font-size: 0.9em;
+    }
 }
 
 

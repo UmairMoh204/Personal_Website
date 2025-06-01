@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>About Page</title>
+        <title>About Me</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
@@ -16,22 +16,76 @@
         <nav class="nav-container">
             <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
             <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">Sign Out</a></li>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="./projects.html">projects</a></li>
+                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
+                <li><a href="./about.html">about</a></li>
+                <li><a href="./login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
         </nav>
-        <script src="" async defer></script>
+
+        <div class="about-container">
+            <div class="about-images">
+                <div class="image-placeholder">
+                    <span>Image 1</span>
+                </div>
+                <div class="image-placeholder">
+                    <span>Image 2</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Welcome to my portfolio! I am a passionate developer and designer with a keen interest in creating meaningful user experiences. My journey in technology has been driven by a desire to solve real-world problems through innovative solutions.</p>
+                <p>With a background in both software engineering and UX design, I bring a unique perspective to every project I work on. I believe in the power of user-centered design and clean, efficient code.</p>
+            </div>
+        </div>
+
+        <div class="experience-container">
+            <h2 style="text-align: center; margin-top: 50px;">Experience</h2>
+            <div class="experience-item">
+                <div class="experience-title">
+                    <h3>Research Assistant</h3>
+                    <span>University of Minnesota</span>
+                </div>
+                <div class="experience-details">
+                    <p>Worked on improving internal tools and processes through user-centered design principles.</p>
+                    <span class="date">June 2023 - August 2023</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">
+                    <h3>UX Designer</h3>
+                    <span>Amazon</span>
+                </div>
+                <div class="experience-details">
+                    <p>Developed and maintained web applications using modern technologies.</p>
+                    <span class="date">January 2023 - May 2023</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">
+                    <h3>UX Designer & Researcher</h3>
+                    <span>City of Saint Paul</span>
+                </div>
+                <div class="experience-details">
+                    <p>Conducted research in human-computer interaction and user experience design.</p>
+                    <span class="date">September 2022 - December 2022</span>
+                </div>
+            </div>
+        </div>
+
         <script>
             if (sessionStorage.getItem("isLoggedIn") !== "true") {
-              window.location.replace("./login.html");
+                window.location.replace("./login.html");
             }
-          </script>
+        </script>
+        <script src="../web.js" type="module"></script>
     </body>
 </html>

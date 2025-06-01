@@ -19,12 +19,13 @@
         <nav class="nav-container">
             <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./navPages/projects.html">Projects</a></li>
-                <li><a href="./navPages/about.html">About</a></li>
-                <li><a href="./navPages/login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">Sign Out</a></li>
+                <li><a href="index.html">home</a></li>
+                <li><a href="./navPages/projects.html">projects</a></li>
+                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
+                <li><a href="./navPages/about.html">about</a></li>
+                <li><a href="./navPages/login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -34,9 +35,9 @@
         <div id="introBlock">
             <div class="introText">
                 <h2>Welcome To My Portfolio! My Name is Hamza 👋🏽</h2>
-                <p>I am a Software Engineer & UX Designer Obsessed With Revolutionizing Experience!</p>
+                <p>UX Design Intern @ Amazon - Previously @ City of Saint Paul </p>
             </div>
-            <img src="./animation.jpg">
+            <div class="ellipse-placeholder"></div>
         </div>
 
         <div id="subjectContainer">
@@ -59,58 +60,6 @@
                 <button onclick="location.href='./subjects/datascience.html'">Learn More</button>
             </div>
         </div>
-
-        <div id="contactContainer">
-            <div class="contactBlock">
-                <h2>Contact</h2>
-                <p>Feel Free To Contact Me If You Have Any Questions Or Discuss On My Projects!</p>
-                <div id="textFields">
-                    <input type="text" placeholder="Your Name">
-                    <input type="email" placeholder="Your Email">
-                    <textarea placeholder="Your Message"></textarea>
-                </div>
-                <button onclick="location.href='.html'">Contact Me</button>
-            </div>
-        </div>
-
-        <!-- <div class="timeline">
-            <div class="container left-container">
-                <img src="./images/toyota.png">
-                <div class="text-box">
-                    <h2>Saint Paul Area Chambers</h2>
-                    <small>Feb 2022 - May 2022</small>
-                    <p>Worked on the City of Saint Paul Human Resources Pages to create a beautiful website!</p>
-                    <span class="left-container-arrow"></span>
-                </div>
-            </div>
-            <div class="container right-container">
-                <img src="./images/google.png">
-                <div class="text-box">
-                    <h2>Prime Digital Academy</h2>
-                    <small>Jun 2023 - Sept 2023</small>
-                    <p>Worked on the City of Saint Paul Human Resources Pages to create a beautiful website!</p>
-                    <span class="right-container-arrow"></span>
-                </div>
-            </div>
-            <div class="container left-container">
-                <img src="./images/youtube.png">
-                <div class="text-box">
-                    <h2>City of Saint Paul</h2>
-                    <small>Sept 2023 - Dec 2019</small>
-                    <p>Worked on the City of Saint Paul Human Resources Pages to create a beautiful website!</p>
-                    <span class="left-container-arrow"></span>
-                </div>
-            </div>
-            <div class="container right-container">
-                <img src="./images/amazon.png">
-                <div class="text-box">
-                    <h2>Amazon Inc.</h2>
-                    <small>May 2025- Aug 2025</small>
-                    <p>Worked on the City of Saint Paul Human Resources Pages to create a beautiful website!</p>
-                    <span class="right-container-arrow"></span>
-                </div>
-            </div>
-        </div> -->
 
         <script src="web.js" async defer></script>
         <script>
