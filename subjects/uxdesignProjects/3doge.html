@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>3DogE Project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            .project-section {
+                margin: 40px 0;
+                padding: 30px;
+                border: 1px solid #fff;
+                border-radius: 8px;
+            }
+            .project-section h2 {
+                color: #fff;
+                margin-bottom: 20px;
+                font-size: 24px;
+                text-align: center;
+            }
+            .project-section h3 {
+                color: #fff;
+                margin: 20px 0 15px;
+                font-size: 20px;
+                text-align: center;
+            }
+            .project-image {
+                max-width: 100%;
+                height: auto;
+                margin: 20px 0;
+                border-radius: 8px;
+                border: 1px solid #fff;
+            }
+            /* Specific styling for the mentioned images */
+            img[src*="infoArchitecture.png"] {
+                max-width: 75% !important;
+                max-height: 400px !important;
+                height: auto;
+                margin: 20px auto;
+                display: block;
+            }
+            img[src*="wireframes.png"],
+            img[src*="designsystems.png"],
+            img[src*="finalDesign1.png"] {
+                max-width: 75% !important;
+                height: auto;
+                margin: 20px auto;
+                display: block;
+            }
+            /* Special styling for mid-fidelity and usability testing sections */
+            img[src*="midfidelity.png"] {
+                max-width: 200px !important;
+                height: auto;
+                margin: 20px;
+                display: inline-block;
+            }
+            img[src*="usabilityTests.png"] {
+                max-width: 350px !important;
+                height: auto;
+                margin: 20px;
+                display: inline-block;
+            }
+            .side-by-side-content {
+                display: flex;
+                gap: 50px;
+                align-items: center;
+                padding: 10px 0;
+            }
+            .side-by-side-content img {
+                flex-shrink: 0;
+                align-self: center;
+            }
+            .side-by-side-content .text-content {
+                flex: 1;
+                padding-left: 20px;
+            }
+            .method-list, .tool-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin: 20px 0;
+            }
+            .method-item, .tool-item {
+                background: #000;
+                color: #fff;
+                padding: 15px;
+                border-radius: 6px;
+                text-align: center;
+                border: 1px solid #fff;
+            }
+            .process-flow {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+            .process-step {
+                display: flex;
+                gap: 30px;
+                align-items: flex-start;
+            }
+            .process-step img {
+                max-width: 150px;
+                border-radius: 8px;
+                border: 1px solid #fff;
+            }
+            .process-content {
+                flex: 1;
+            }
+            .tag-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin: 20px 0;
+            }
+            .tag {
+                background: #000;
+                color: #fff;
+                padding: 8px 20px;
+                border-radius: 20px;
+                font-size: 0.9em;
+                border: 1px solid #fff;
+            }
+            .quote {
+                font-style: italic;
+                color: #666;
+                padding: 15px;
+                border-left: 3px solid #D4AF37;
+                margin: 20px 0;
+            }
+            .project-detail-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .project-detail-container h1 {
+                color: #fff;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .project-section p {
+                line-height: 1.8;
+                margin-bottom: 1.5em;
+            }
+            .project-section ul {
+                line-height: 1.8;
+                margin-bottom: 1.5em;
+            }
+            .project-section li {
+                margin-bottom: 0.8em;
+            }
+            .side-by-side-content .text-content p {
+                line-height: 1.8;
+                margin-bottom: 1.5em;
+            }
+            .side-by-side-content .text-content ul {
+                line-height: 1.8;
+                margin-bottom: 1.5em;
+            }
+            .side-by-side-content .text-content li {
+                margin-bottom: 0.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="nav-container">
+            <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
+            <ul class="nav-links">
+                <li><a href="../../index.html">home</a></li>
+                <li><a href="../../navPages/projects.html">projects</a></li>
+                <li><a href="../../navPages/about.html">about</a></li>
+                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
+                <li><a href="../../navPages/login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <div class="project-detail-container">
+            <h1>3DogE App</h1>
+            
+            <div class="project-section">
+                <h2>Roles & Responsibilities</h2>
+                <div class="tag-container">
+                    <span class="tag">UX/UI Designer</span>
+                    <span class="tag">UX Researcher</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Methods & Tools</h2>
+                <div class="method-list">
+                    <div class="method-item">Stakeholder/Client Interviews</div>
+                    <div class="method-item">Information Architecture</div>
+                    <div class="method-item">Remote Usability Testing</div>
+                    <div class="method-item">Affinity Diagramming</div>
+                    <div class="method-item">Bullseye Diagramming</div>
+                    <div class="method-item">Design Systems</div>
+                    <div class="method-item">Low/Mid Wireframes</div>
+                    <div class="method-item">Interactive Prototyping</div>
+                </div>
+                <div class="tool-list">
+                    <div class="tool-item">Figma</div>
+                    <div class="tool-item">FigJam</div>
+                    <div class="tool-item">YouTube</div>
+                    <div class="tool-item">Google</div>
+                    <div class="tool-item">Zoom</div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Organization</h2>
+                <p>3DogE is a startup intended to be a holistic dog app that serves as a powerful tool to fulfill the Client organization's mission and bring their vision to life. The 3DogE stands for:</p>
+                <ul>
+                    <li>Eat</li>
+                    <li>Exercise</li>
+                    <li>Environment</li>
+                </ul>
+                <p>By seamlessly integrating cutting-edge technology with a deep understanding of canine well-being, the 3DogE's app will empower dog owners to provide their furry friends with a truly enriching and balanced life. Through the power of the holistic 3DogE's dog app, dog owners will be empowered to become proactive and informed guardians, enabling them to provide their dogs with the highest standard of care.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Domain Research</h2>
+                <p>To begin this project, I did research about dog's as a whole. I'm a Muslim and so in my faith we aren't allowed to have dog's within our home. This project challenged me due to my lack of knowledge regarding dog's. To combat this problem, I began researching about dog's before I begin moving forward on doing research like competitve audit and directed storytelling. Some resources I used were YouTube and Google and so watching dog owner's and their day in the life really helped me grasp the experience of pet parent's and give me the information I need in order to move forward and create an official mockup.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Competitive Audit</h2>
+                <img src="../uxImages/3DogE/competitiveAudit.png" alt="Competitive Audit" class="project-image">
+                <p>During my competitive audit, I analyzed different companies on a set of functionalities within each company. One challenge that I faced during this process was the lack of competitors. There weren't many app's like 3DogE app that were centered around AI Poop Detection scanner and so I did an competitive audit on companies with some resemblance to 3DogE. Through the competitive audit, I fixated myself on the similarities of each company and how each company implemented different functionalities. I also did an analyses of what functionalities from the competitors can be implemented into the 3DogE app and which one's shouldn't.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Stakeholder/Client Interviews</h2>
+                <p>For the stakeholder interviews, I began to write the script in order to prepare for the stakeholder/client interviews. For these interviews, I created a script so that I can extract as much information as I can. These participants have more experience with dog's and so preparation and execution was necessary for the success of this interview. Many of the questions I asked surrounded:</p>
+                <ul>
+                    <li>When did you get your dog?</li>
+                    <li>What were some initial challenges with owning your dog when you first got it?</li>
+                    <li>Did you feel ready to bring your dog into your life?</li>
+                    <li>What was your expectations with owning a dog? What did you discover throughout your journey of owning a dog?</li>
+                    <li>Tell me about a time where you were confused on your dog's health? How did you try and solve that problem?</li>
+                    <li>Tell me about your worst experience with your dog? How did you try and try and solve that problem?</li>
+                    <li>Do you use any kind of technology to improve the well being of your dog? If so, what technologies do you use?</li>
+                    <li>What are some pro's and con's to the technology that you use for your dog? If so, what were they?</li>
+                    <li>If you were to use an app to maintain your dog's health, what kinds of features would you want in that app?</li>
+                    <li>How much interaction would you want in the app? Would you be fine with adding a lot of information to the app for the purposes of analyzing your dog's health</li>
+                </ul>
+                <p>Throughout the stakeholder/client interview process, there were questions that I formed based on their experiences to better receive the necessary information that can be used for creating the 3DogE app. Once I completed the stakeholder/client interviews, I began synthesizing my raw data.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Affinity Diagramming & Bullseye Diagramming</h2>
+                <img src="../uxImages/3DogE/affinityDiagram.png" alt="Affinity Diagram" class="project-image">
+                <p>I took both the raw data of the directed storytelling and stakeholder/client interviews and began creating the affinity diagram and bullseye diagram. I saved all of the synthesizing for the end so that I can synthesize all of the raw data all at once and establish a stronger mental model of how I can execute the information architecture and low-fidelity wireframes. While I was synthesizing, I kept in mind the 3 E's in 3DogE and how I can best ensure that all 3 E's are implemented within the 3DogE app. Once my mental model was secured, I began forming my information architecture.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Information Architecture</h2>
+                <img src="../uxImages/3DogE/infoArchitecture.png" alt="Information Architecture" class="project-image">
+                <p>Before I began creating my information architecture, I created my key. This allowed me to think about what kinds of interactions the user would be having with the 3DogE app. After much thought, I assigned the shapes:</p>
+                <ul>
+                    <li>Rectangle: Page</li>
+                    <li>Circle: Fill in the blank</li>
+                    <li>Triangle: Checklist</li>
+                    <li>Diamond: User Selection</li>
+                </ul>
+                <p>From there I began creating the start to finish Information Architecture. Throughout this process, I had to keep in mind the 3 E's and what I received from the directed storytelling and stakeholder/client interviews. I made sure that each flow was made with purpose and that the synthesized information was being taken into account with the information architecture.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Sketches & Low-Fidelity Wireframes</h2>
+                <img src="../uxImages/3DogE/wireframes.png" alt="Wireframes" class="project-image">
+                <p>During the sketching and low-fidelity process, I began with taking the synthesized information and surrounding it around the sketches and low-fidelity wireframes. One example being that one of our user's wanted a dog profile and so I took information and applied it to the mockup. I continued that process of looking at synthesized information which led to the completed sketches. I made sure that the sketches also reflected the information architecture. Throughout this process, I not only based the low-fidelity and sketches on the information architecture but I also based my information architecture to my low-fidelity and sketches. Whenever I came up with an idea, during this step, I knew that it wasn't to late to add that idea and so I would sketch it and add it to my information architecture. Throughout this journey, I made sure to apply my ideas up until the mid-fidelity wireframes were made. This gave me the time to create new ideas and execute on those ideas.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Mid Fidelity Wireframes & Interactive Prototype</h2>
+                <div class="side-by-side-content">
+                    <img src="../uxImages/3DogE/midfidelity.png" alt="Mid-Fidelity Wireframes" class="project-image">
+                    <div class="text-content">
+                        <p>During my high fidelity wireframe process, I created all of the important pages and prototyped the most important flows of the mockup. I did this so that I can prioritize the most important features within the 3DogE app. In my mid-fidelity wireframes, some flows that I prototyped were:</p>
+                        <ul>
+                            <li>Flow from the login page to completing a full analysis of dog's poop</li>
+                            <li>Flow from the login page to completing the dog log page</li>
+                            <li>Flow from the login page to viewing the contents page with all the information regarding their dog's breed</li>
+                            <li>Flow from the login page to the community hub page where they can view local dog owner's posts</li>
+                            <li>Flow from login page to the database</li>
+                            <li>Flow from the login page to the understand your dog's poop page</li>
+                        </ul>
+                        <p>These flows were the most important based on participant feedback and so I prototyped each page and button and began preparing for the usability tests.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Usability Testing</h2>
+                <div class="side-by-side-content">
+                    <img src="../uxImages/3DogE/usabilityTests.png" alt="Usability Testing" class="project-image">
+                    <div class="text-content">
+                        <div class="quote">"Is this just a checklist for what I see in the dog and then like, kind of emphasizing what I want to find?" – Participant</div>
+                        <p>During my usability test, I had the participants do a series of tasks surrounding the AI poop scanner, contents page, community hub page, database page, dog log page, and the dog poop chart. Some information I received from my usability test was:</p>
+                        <ul>
+                            <li>User's had issues with the visibility</li>
+                            <li>This resulted in my decision of changing my design system so that the colors were easy to see and worked well together</li>
+                            <li>The participants also expressed that they disliked the amount of information on each page and how they wanted a more simplistic feel. They specifically mentioned the home page of the app</li>
+                            <li>The users didn't complain about the information on the page. This made me shift my focus from more informational to more aethetically please</li>
+                        </ul>
+                        <p>From here, I began crafting my design systems. For the Usability Testing, I did a simple synthesis on my findings and made a list from high priority to low priority. From there, I began prototyping the high fidelity wireframes based on the finding that I had received.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>High Fidelity Wireframes & Design Systems</h2>
+                <img src="../uxImages/3DogE/designsystems.png" alt="Design Systems" class="project-image">
+                <p>During the high fidelity wireframes, I created components to bring the high-fidelity wireframes to life. I made some of the changes from the usability tests and made sure that the participants feedback that were listed as high priority were implemented within the wireframes. Once I completed the necessary changes I did a review of the full mockup to ensure that the flow is executing smoothly.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Home Page Design</h2>
+                <img src="../uxImages/3DogE/finalDesign1.png" alt="Final Design" class="project-image">
+                <p>Here you can see a blend of:</p>
+                <ul>
+                    <li>Neutral colors</li>
+                    <li>Combination of company colors</li>
+                </ul>
+                <p>With this main design, I wanted this mockup to be straightforward and make visible all necessary functionalities for the user's. With this design, I also wanted to make sure to limit the number of words. This mockup should be easy to read and get you whatever you need efficiently with little to no hesitation. I took into account the feed back the participants gave me to elevate aesthetic and usability of the mockup.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Daily Log</h2>
+                <p>One problem I ran into as I began forming the high-fidelity wireframes were that the app wasn't getting enough data on the dog's state. Although the app gets a good amount of information from the AI Dog Poop scanner, the app needed more information:</p>
+                <ul>
+                    <li>How much food are they eating?</li>
+                    <li>Are they exercising enough?</li>
+                    <li>What is there environment like?</li>
+                </ul>
+                <p>In order for the app to receive more data, I added a daily dog log to allow user's to input their dog's health state regularly. This will allow the app to have more information to work with and give the dog parent the necessary information to best aid their dog. This also allowed the app to implement more accurate data.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Next Steps & Challenges</h2>
+                <ul>
+                    <li>Dog Step Tracker Technology</li>
+                    <li>Food Recommendation Catered To Your Dog</li>
+                    <li>Dog Vet to 3DogE Direct Communication</li>
+                </ul>
+                <p>Lacking knowledge or experience regarding dog's</p>
+                <p>Knowledge of dog's is important for the formation of the mockup. This required lots of research in order to establish an understanding of dog's. This experience taught me how to handle the design process on topics I'm not familiar with and how to best approach these situations.</p>
+            </div>
+        </div>
+
+        <script src="../../web.js" async defer></script>
+    </body>
+</html> 
