@@ -10,23 +10,24 @@
         <title>3DogE Project</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preload" href="../../../logo.png" as="image" type="image/png">
         <link rel="stylesheet" href="../../style.css">
         <style>
             .project-section {
                 margin: 40px 0;
                 padding: 30px;
-                border: 1px solid #fff;
+                border: 1px solid #e0e0e0;
                 border-radius: 8px;
             }
             .project-section h2 {
-                color: #fff;
-                margin-bottom: 20px;
+                color: #e0e0e0;
+                margin: 40px 0 40px;
                 font-size: 24px;
                 text-align: center;
             }
             .project-section h3 {
-                color: #fff;
-                margin: 20px 0 15px;
+                color: #e0e0e0;
+                margin: 40px 0 40px;
                 font-size: 20px;
                 text-align: center;
             }
@@ -35,7 +36,7 @@
                 height: auto;
                 margin: 20px 0;
                 border-radius: 8px;
-                border: 1px solid #fff;
+                border: 1px solid #e0e0e0;
             }
             /* Specific styling for the mentioned images */
             img[src*="infoArchitecture.png"] {
@@ -88,11 +89,11 @@
             }
             .method-item, .tool-item {
                 background: #000;
-                color: #fff;
+                color: #e0e0e0;
                 padding: 15px;
                 border-radius: 6px;
                 text-align: center;
-                border: 1px solid #fff;
+                border: 1px solid #e0e0e0;
             }
             .process-flow {
                 display: flex;
@@ -107,7 +108,7 @@
             .process-step img {
                 max-width: 150px;
                 border-radius: 8px;
-                border: 1px solid #fff;
+                border: 1px solid #e0e0e0;
             }
             .process-content {
                 flex: 1;
@@ -120,18 +121,20 @@
             }
             .tag {
                 background: #000;
-                color: #fff;
+                color: #e0e0e0;
                 padding: 8px 20px;
                 border-radius: 20px;
                 font-size: 0.9em;
-                border: 1px solid #fff;
+                border: 1px solid #e0e0e0;
             }
             .quote {
                 font-style: italic;
                 color: #666;
                 padding: 15px;
-                border-left: 3px solid #D4AF37;
-                margin: 20px 0;
+                border-left: 3px solid #fff;
+                margin: 40px auto;
+                text-align: center;
+                max-width: 80%;
             }
             .project-detail-container {
                 max-width: 1200px;
@@ -139,7 +142,7 @@
                 padding: 20px;
             }
             .project-detail-container h1 {
-                color: #fff;
+                color: #e0e0e0;
                 text-align: center;
                 margin-bottom: 40px;
             }
@@ -169,7 +172,7 @@
     </head>
     <body>
         <nav class="nav-container">
-            <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
+            <img src="../../../logo.png" alt="Hamza's Portfolio Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="../../index.html">home</a></li>
                 <li><a href="../../navPages/projects.html">projects</a></li>
@@ -302,10 +305,10 @@
 
             <div class="project-section">
                 <h2>Usability Testing</h2>
+                <div class="quote">"Is this just a checklist for what I see in the dog and then like, kind of emphasizing what I want to find?" – Participant</div>
                 <div class="side-by-side-content">
                     <img src="../uxImages/3DogE/usabilityTests.png" alt="Usability Testing" class="project-image">
                     <div class="text-content">
-                        <div class="quote">"Is this just a checklist for what I see in the dog and then like, kind of emphasizing what I want to find?" – Participant</div>
                         <p>During my usability test, I had the participants do a series of tasks surrounding the AI poop scanner, contents page, community hub page, database page, dog log page, and the dog poop chart. Some information I received from my usability test was:</p>
                         <ul>
                             <li>User's had issues with the visibility</li>
@@ -344,6 +347,14 @@
                     <li>What is there environment like?</li>
                 </ul>
                 <p>In order for the app to receive more data, I added a daily dog log to allow user's to input their dog's health state regularly. This will allow the app to have more information to work with and give the dog parent the necessary information to best aid their dog. This also allowed the app to implement more accurate data.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Interactive Prototype</h2>
+                <img src="../uxImages/3DogE/3DogEMockup.png" alt="3DogE Mockup" style="max-width: 27%; margin: 40px auto; display: block;">
+                <div style="text-align: center; margin: 30px 0;">
+                    <button onclick="window.open('https://www.figma.com/proto/TzwZMMnbFME0jVazhPJMlE/Hamza-Solo-Project?page-id=1%3A2&node-id=831-3122&node-type=frame&viewport=2043%2C-6955%2C0.4&t=LZRmajUU10qqO5RP-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=831%3A3542&show-proto-sidebar=1', '_blank')" style="padding: 12px 24px; background: #000; color: #fff; border: 1px solid #fff; border-radius: 4px; cursor: pointer; font-size: 16px;">View Interactive Prototype</button>
+                </div>
             </div>
 
             <div class="project-section">

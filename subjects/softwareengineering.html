@@ -7,20 +7,27 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Software Engineering</title>
+        <title> Software Engineering </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="subjects.css">
+        <link rel="stylesheet" href="../style.css">
+        <style>
+            .project-block img[src*="logo.png"] {
+                max-width: 200px;
+                height: 300px;
+                object-fit: contain;
+            }
+        </style>
     </head>
     <body>
         <nav class="nav-container">
-            <h1 style="margin-left: 30px;">Hamza's Portfolio</h1>
+            <img src="../logo.png" alt="Hamza's Portfolio Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="../index.html">home</a></li>
-                <li><a href="./navPages/projects.html">projects</a></li>
-                <li><a href="./navPages/about.html">about</a></li>
+                <li><a href="../navPages/projects.html">projects</a></li>
+                <li><a href="../navPages/about.html">about</a></li>
                 <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
-                <li><a href="./navPages/login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
+                <li><a href="../navPages/login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
                 <span class="bar"></span>
@@ -29,8 +36,58 @@
             </div>
         </nav>
 
-        <h1 style="text-align: center;">Software Engineering Projects</h1>
+        <h1 style="text-align: center; margin-bottom: 50px;">Software Engineering Projects</h1>
+
+        <div class="projects-container">
+            <div class="project-block">
+                <h3>MyMarketPlace</h3>
+                <img src="../projects/amazon.jpg" alt="Amazon Project">
+                <p>Worked on improving the user experience for Amazon's internal tools, focusing on accessibility and efficiency.</p>
+                <div class="project-tags">
+                    <span>UX Design</span>
+                    <span>Figma</span>
+                    <span>User Research</span>
+                </div>
+                <button onclick="location.href='uxdesignProjects/amazon.html'">View Project</button>
+            </div>
+
+            <div class="project-block">
+                <h3>Macalester Guessing Game</h3>
+                <img src="../projects/saintpaul.jpg" alt="Saint Paul Project">
+                <p>Redesigned the Human Resources portal for the City of Saint Paul, improving navigation and user engagement.</p>
+                <div class="project-tags">
+                    <span>UX Design</span>
+                    <span>Web Development</span>
+                    <span>User Testing</span>
+                </div>
+                <button onclick="location.href='uxdesignProjects/saintpaul.html'">View Project</button>
+            </div>
+
+            <div class="project-block">
+                <h3>Checkers Game</h3>
+                <img src="../projects/tutord.jpg" alt="TutorD Project">
+                <p>Developed a platform connecting students with tutors, featuring real-time scheduling and video chat capabilities.</p>
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                </div>
+                <button onclick="location.href='uxdesignProjects/tutord.html'">View Project</button>
+            </div>
+
+            <div class="project-block">
+                <h3>Sudoku Game</h3>
+                <img src="../projects/tutord.jpg" alt="3DogE Project">
+                <p>Created an innovative e-commerce platform for pet products with 3D product visualization and AR features.</p>
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>AR/VR</span>
+                    <span>E-commerce</span>
+                </div>
+                <button onclick="location.href='uxdesignProjects/3doge.html'">View Project</button>
+            </div>
+        </div>
         
-        <script src="" async defer></script>
+        <script src="../web.js" async defer></script>
     </body>
 </html>
