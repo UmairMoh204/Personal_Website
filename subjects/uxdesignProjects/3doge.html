@@ -9,6 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>3DogE Project</title>
         <meta name="description" content="">
+        <link rel="icon" type="image/png" href="../../../logo.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preload" href="../../../logo.png" as="image" type="image/png">
         <link rel="stylesheet" href="../../style.css">
@@ -46,15 +47,36 @@
                 margin: 20px auto;
                 display: block;
             }
-            img[src*="wireframes.png"],
-            img[src*="designsystems.png"],
-            img[src*="finalDesign1.png"] {
-                max-width: 75% !important;
+            img[src*="wireframes.png"] {
+                max-width: 70% !important;
+                max-height: 300px !important;
                 height: auto;
                 margin: 20px auto;
                 display: block;
+                object-fit: contain;
             }
-            /* Special styling for mid-fidelity and usability testing sections */
+            img[src*="designsystems.png"] {
+                max-width: 40% !important;
+                max-height: 300px !important;
+                height: auto;
+                margin: 20px auto;
+                display: block;
+                object-fit: contain;
+            }
+            /* img[src*="finalDesign1.png"] {
+                max-width: 40% !important;
+                max-height: 300px !important;
+                height: auto;
+                margin: 20px;
+                display: inline-block;
+                object-fit: contain;
+            } */
+            img[src*="finalDesign1.png"] {
+                max-width: 200px !important;
+                height: auto;
+                margin: 20px;
+                display: inline-block;
+            }
             img[src*="midfidelity.png"] {
                 max-width: 200px !important;
                 height: auto;
@@ -66,6 +88,23 @@
                 height: auto;
                 margin: 20px;
                 display: inline-block;
+            }
+
+            img[src*="affinityDiagram.png"] {
+                max-width: 30% !important;
+                max-height: 300px !important;
+                height: auto;
+                margin: 20px auto;
+                display: block;
+                object-fit: contain;
+            }
+            img[src*="competitiveAudit.png"] {
+                max-width: 70% !important;
+                max-height: 300px !important;
+                height: auto;
+                margin: 20px auto;
+                display: block;
+                object-fit: contain;
             }
             .side-by-side-content {
                 display: flex;
@@ -261,21 +300,29 @@
 
             <div class="project-section">
                 <h2>Affinity Diagramming & Bullseye Diagramming</h2>
-                <img src="../uxImages/3DogE/affinityDiagram.png" alt="Affinity Diagram" class="project-image">
-                <p>I took both the raw data of the directed storytelling and stakeholder/client interviews and began creating the affinity diagram and bullseye diagram. I saved all of the synthesizing for the end so that I can synthesize all of the raw data all at once and establish a stronger mental model of how I can execute the information architecture and low-fidelity wireframes. While I was synthesizing, I kept in mind the 3 E's in 3DogE and how I can best ensure that all 3 E's are implemented within the 3DogE app. Once my mental model was secured, I began forming my information architecture.</p>
+                <div class="side-by-side-content">
+                    <img src="../uxImages/3DogE/infoArchitecture.png" alt="Information Architecture" class="project-image">
+                    <div class="text-content">
+                        <p>I took both the raw data of the directed storytelling and stakeholder/client interviews and began creating the affinity diagram and bullseye diagram. I saved all of the synthesizing for the end so that I can synthesize all of the raw data all at once and establish a stronger mental model of how I can execute the information architecture and low-fidelity wireframes. While I was synthesizing, I kept in mind the 3 E's in 3DogE and how I can best ensure that all 3 E's are implemented within the 3DogE app. Once my mental model was secured, I began forming my information architecture.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="project-section">
                 <h2>Information Architecture</h2>
-                <img src="../uxImages/3DogE/infoArchitecture.png" alt="Information Architecture" class="project-image">
-                <p>Before I began creating my information architecture, I created my key. This allowed me to think about what kinds of interactions the user would be having with the 3DogE app. After much thought, I assigned the shapes:</p>
-                <ul>
-                    <li>Rectangle: Page</li>
-                    <li>Circle: Fill in the blank</li>
-                    <li>Triangle: Checklist</li>
-                    <li>Diamond: User Selection</li>
-                </ul>
-                <p>From there I began creating the start to finish Information Architecture. Throughout this process, I had to keep in mind the 3 E's and what I received from the directed storytelling and stakeholder/client interviews. I made sure that each flow was made with purpose and that the synthesized information was being taken into account with the information architecture.</p>
+                <div class="side-by-side-content">
+                    <img src="../uxImages/3DogE/infoArchitecture.png" alt="Information Architecture" class="project-image">
+                    <div class="text-content">
+                        <p>Before I began creating my information architecture, I created my key. This allowed me to think about what kinds of interactions the user would be having with the 3DogE app. After much thought, I assigned the shapes:</p>
+                        <ul>
+                            <li>Rectangle: Page</li>
+                            <li>Circle: Fill in the blank</li>
+                            <li>Triangle: Checklist</li>
+                            <li>Diamond: User Selection</li>
+                        </ul>
+                        <p>From there I began creating the start to finish Information Architecture. Throughout this process, I had to keep in mind the 3 E's and what I received from the directed storytelling and stakeholder/client interviews. I made sure that each flow was made with purpose and that the synthesized information was being taken into account with the information architecture.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="project-section">
@@ -329,13 +376,17 @@
 
             <div class="project-section">
                 <h2>Home Page Design</h2>
-                <img src="../uxImages/3DogE/finalDesign1.png" alt="Final Design" class="project-image">
-                <p>Here you can see a blend of:</p>
-                <ul>
-                    <li>Neutral colors</li>
-                    <li>Combination of company colors</li>
-                </ul>
-                <p>With this main design, I wanted this mockup to be straightforward and make visible all necessary functionalities for the user's. With this design, I also wanted to make sure to limit the number of words. This mockup should be easy to read and get you whatever you need efficiently with little to no hesitation. I took into account the feed back the participants gave me to elevate aesthetic and usability of the mockup.</p>
+                <div class="side-by-side-content">
+                    <img src="../uxImages/3DogE/finalDesign1.png" alt="Final Design" class="project-image">
+                    <div class="text-content">
+                        <p>Here you can see a blend of:</p>
+                        <ul>
+                            <li>Neutral colors</li>
+                            <li>Combination of company colors</li>
+                        </ul>
+                        <p>With this main design, I wanted this mockup to be straightforward and make visible all necessary functionalities for the user's. With this design, I also wanted to make sure to limit the number of words. This mockup should be easy to read and get you whatever you need efficiently with little to no hesitation. I took into account the feed back the participants gave me to elevate aesthetic and usability of the mockup.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="project-section">

@@ -1,0 +1,193 @@
+.project-section {
+    margin: 40px 0;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+.project-section h2 {
+    color: #e0e0e0;
+    margin: 40px 0 40px;
+    font-size: 24px;
+    text-align: center;
+}
+.project-section h3 {
+    color: #e0e0e0;
+    margin: 40px 0 40px;
+    font-size: 20px;
+    text-align: center;
+}
+.project-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+/* Specific styling for the mentioned images */
+img[src*="infoArchitecture.png"] {
+    max-width: 75% !important;
+    max-height: 400px !important;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+img[src*="wireframes.png"] {
+    max-width: 70% !important;
+    max-height: 300px !important;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    object-fit: contain;
+}
+img[src*="designsystems.png"] {
+    max-width: 40% !important;
+    max-height: 300px !important;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    object-fit: contain;
+}
+/* img[src*="finalDesign1.png"] {
+    max-width: 40% !important;
+    max-height: 300px !important;
+    height: auto;
+    margin: 20px;
+    display: inline-block;
+    object-fit: contain;
+} */
+img[src*="finalDesign1.png"] {
+    max-width: 200px !important;
+    height: auto;
+    margin: 20px;
+    display: inline-block;
+}
+img[src*="midfidelity.png"] {
+    max-width: 200px !important;
+    height: auto;
+    margin: 20px;
+    display: inline-block;
+}
+img[src*="usabilityTests.png"] {
+    max-width: 350px !important;
+    height: auto;
+    margin: 20px;
+    display: inline-block;
+}
+
+img[src*="affinityDiagram.png"] {
+    max-width: 70% !important;
+    max-height: 300px !important;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    object-fit: contain;
+}
+img[src*="competitiveAudit.png"] {
+    max-width: 70% !important;
+    max-height: 300px !important;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    object-fit: contain;
+}
+.side-by-side-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    padding: 10px 0;
+}
+.side-by-side-content img {
+    flex-shrink: 0;
+    align-self: center;
+}
+.side-by-side-content .text-content {
+    flex: 1;
+    padding-left: 20px;
+}
+.method-list, .tool-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+.method-item, .tool-item {
+    background: #000;
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+.process-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.process-step {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+.process-step img {
+    max-width: 150px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+.process-content {
+    flex: 1;
+}
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+.tag {
+    background: #000;
+    color: #e0e0e0;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid #e0e0e0;
+}
+.quote {
+    font-style: italic;
+    color: #666;
+    padding: 15px;
+    border-left: 3px solid #fff;
+    margin: 40px auto;
+    text-align: center;
+    max-width: 80%;
+}
+.project-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.project-detail-container h1 {
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.project-section p {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+.project-section ul {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+.project-section li {
+    margin-bottom: 0.8em;
+}
+.side-by-side-content .text-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+.side-by-side-content .text-content ul {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+.side-by-side-content .text-content li {
+    margin-bottom: 0.8em;
+}
