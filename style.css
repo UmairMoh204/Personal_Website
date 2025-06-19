@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0 30px;
     height: 100%;
-    background: black;
+    background: #1a1a1a;
     color: white;
     background-size: cover; 
     background-attachment: fixed;
@@ -13,6 +13,10 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+h2 {
+    color: #e0e0e0;
 }
 
 .nav-container {
@@ -41,7 +45,7 @@ body {
 }
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: #e0e0e0;
     position: relative;
 }
 .nav-links a::after {
@@ -156,9 +160,9 @@ body {
 
 #introBlock {
     height: 450px;
-    background-color: rgb(0, 0, 0);
+    background-color: #1a1a1a;
     border-radius: 20px;
-    border: 2px solid black;
+    border: 2px solid #1a1a1a;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -190,12 +194,12 @@ body {
 .subjectBlock h3 {
     font-size: 1.5em;
     margin-bottom: 15px;
-    color: white;
+    color: #e0e0e0;
 }
 
 .subjectBlock p {
     font-size: 1em;
-    color: white;
+    color: #e0e0e0;
     margin-bottom: 20px;
 }
 
@@ -292,16 +296,17 @@ body {
 /* ---------------------------------------------------------------Contact Icons--------------------------------------------------------------- */
 
 #contactContainer {
-    height: 420px;
+    height: 350px;
+    width: 75%;
     margin: 25px;
-    background-color: rgb(27, 27, 27);
+    background-color: rgb(235, 235, 235);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
     align-items: center; 
-    border-color: black;
-    border: 2px solid black;
+    border-color: #404040;
+    border: 2px solid #404040;
     color: white;
 }
 
@@ -388,13 +393,13 @@ body {
 }
 
 .filter-btn:hover {
-    background-color: white;
-    color: black;
+    background-color: #e0e0e0;
+    color: #1a1a1a;
 }
 
 .filter-btn.active {
-    background-color: white;
-    color: black;
+    background-color: #e0e0e0;
+    color: #1a1a1a;
 }
 
 @media screen and (max-width: 768px) {
@@ -426,7 +431,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 20px;
+    padding: 40px;
     margin-top: 20px;
     max-width: 1400px;
     margin-left: auto;
@@ -436,21 +441,19 @@ body {
 .project-block {
     background-color: rgb(22, 22, 22);
     border-radius: 20px;
-    border: 2px solid black;
+    border: 2px solid #404040;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-block:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
 }
 
 .project-block h3 {
-    color: white;
+    color: #e0e0e0;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -464,7 +467,7 @@ body {
 }
 
 .project-block p {
-    color: white;
+    color: #e0e0e0;
     text-align: center;
     margin-bottom: 20px;
     line-height: 1.5;
@@ -590,48 +593,109 @@ body {
 }
 
 .experience-container h2 {
-    color: white;
+    color: #e0e0e0;
     margin-bottom: 90px;
     font-size: 2em;
     text-align: center;
     margin-top: 60px;
 }
 
-.experience-item {
-    display: flex;
-    margin-bottom: 40px;
-    gap: 40px;
+/* Experience Accordion Styles */
+.experience-accordion {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+.experience-accordion-item {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    /* transition: background-color 0.3s ease; */
+    background-color: transparent;
+}
+
+/* .experience-header:hover {
+    background-color: rgba(58, 58, 58, 0.3);
+}
+
+.experience-header.active {
+    background-color: rgba(64, 64, 64, 0.3); */
+/* } 
+
+*/
+
 .experience-title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
     flex: 1;
-    text-align: right;
+    justify-content: flex-start;
 }
 
 .experience-title h3 {
-    color: white;
-    margin-bottom: 5px;
-    font-size: 16px;
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.experience-title h4 {
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 1.1em;
+    min-width: 200px;
 }
 
 .experience-title span {
     color: #888;
     font-size: 14px;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
-.experience-details {
-    flex: 2;
-    border-left: 2px solid white;
-    padding-left: 40px;
+.accordion-toggle {
+    color: #e0e0e0;
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    min-width: 30px;
+    text-align: center;
 }
 
-.experience-details p {
-    color: white;
+.experience-header.active .accordion-toggle {
+    transform: rotate(45deg);
+}
+
+.experience-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: transparent;
+}
+
+.experience-content.active {
+    max-height: 200px;
+    padding: 20px 30px;
+}
+
+.experience-content p {
+    color: #e0e0e0;
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
-.experience-details .date {
+.experience-content .date {
     color: #888;
     font-size: 0.9em;
 }
@@ -838,6 +902,41 @@ body {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.placeholder-image {
+    width: 100%;
+    height: 200px;
+    background-color: #323232;
+    border: 2px solid #909090;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.placeholder-image::before {
+    content: "✕";
+    font-size: 80px;
+    color: #1a1a1a;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+.placeholder-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, #1a1a1a 40%, #1a1a1a 60%, transparent 60%);
+    opacity: 0.1;
+}
 
 @media screen and (max-width: 768px) {
     .social-footer {
@@ -847,6 +946,24 @@ body {
     .social-icon {
         font-size: 2rem;
     }
+}
+
+/* UX Design Project Images - Reduced Size */
+.projects-container .project-block img[src*="uxImages"] {
+    width: 80%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 20px auto 15px auto;
+    display: block;
+}
+
+.project-block img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 

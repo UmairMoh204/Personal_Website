@@ -1,13 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    margin-right: 30px;
+    margin: 0;
+    padding: 0 30px;
     height: 100%;
-    margin-bottom: 50px;
-    padding: 0;
-    background: black;
+    background: #1a1a1a;
     color: white;
+    background-size: cover; 
+    background-attachment: fixed;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {

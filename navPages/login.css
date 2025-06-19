@@ -6,7 +6,7 @@ body {
     height: 100%;
     margin-bottom: 50px;
     padding: 0;
-    background-color: black;
+    background-color: #1a1a1a;
     /* rgba(18, 18, 18, 0.185) */
     background-size: cover; 
     background-attachment: fixed; 
@@ -24,7 +24,7 @@ body {
     align-items: center;
     padding: 15px;
     padding-bottom: 40px;
-    color: black;
+    color: white;
 }
 .nav-links {
     display: flex;
@@ -36,7 +36,7 @@ body {
 }
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: white;
     position: relative;
 }
 .nav-links a::after {
@@ -44,7 +44,7 @@ body {
     display: block;
     width: 0;
     height: 2px;
-    background-color: black;
+    background-color: white;
     transition: width 0.3s ease-in-out;
     position: absolute;
     bottom: -3px;
@@ -72,13 +72,13 @@ body {
     height: 350px;
     width: 75%;
     margin: 25px;
-    background-color: rgb(235, 235, 235);
+    background-color: #2d2d2d;
     border-radius: 20px;
     display: flex;
     justify-content: center; 
     align-items: center; 
-    border-color: black;
-    border: 2px solid black;
+    border-color: #404040;
+    border: 2px solid #404040;
     max-width: 600px;
 }
 
