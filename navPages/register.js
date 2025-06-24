@@ -14,12 +14,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-console.log("Befeore DOM Loaded");
+console.log("Before DOM Loaded");
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM Loaded");
 
-  document.getElementById('submit').addEventListener('click', (event) => {
+  const loginForm = document.getElementById('loginForm');
+  
+  loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     let email = document.getElementById('email').value;
