@@ -50,17 +50,14 @@
                 </form>
                 
                 <div class="login-footer">
-                    <p>Contact me for credentials: hamzamohammedx23@gmail.com</p>
+                    <p>Contact the following email for credentials: hamzamohammedx23@gmail.com</p>
                 </div>
             </div>
         </div>
         
         <script type="module" src="register.js"></script>
         <script>
-          if (sessionStorage.getItem("isLoggedIn") === "true") {
-            window.location.replace("login.html");
-          }
-
+          // Prevent back navigation to login page if already logged in
           window.history.pushState(null, "", window.location.href);
           window.addEventListener("popstate", () => {
             window.history.pushState(null, "", window.location.href);

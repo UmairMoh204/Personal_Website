@@ -173,11 +173,25 @@
             });
         </script>
 
-        <script>
-            if (sessionStorage.getItem("isLoggedIn") !== "true") {
-                window.location.replace("./login.html");
-            }
-        </script>
         <script src="../web.js" type="module"></script>
+        <script src="./session-check.js"></script>
+        <script>
+            // Enhanced logout functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const signOutLink = document.querySelector('a[href="./login.html"]');
+                if (signOutLink) {
+                    signOutLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (window.sessionManager) {
+                            window.sessionManager.logout();
+                        } else {
+                            // Fallback logout
+                            sessionStorage.clear();
+                            window.location.replace("./login.html");
+                        }
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
