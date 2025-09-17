@@ -35,18 +35,21 @@
         </nav>
 
         <div class="about-container">
-            <div class="about-images">
-                <img src="./aboutImages/headShot.jpg" alt="Hamza Mohammed Headshot" class="about-image">
-                <img src="./aboutImages/cameraImage.jpg" alt="Camera and Photography" class="about-image">
-            </div>
-            <div class="about-content">
-                <h3>About Me</h3>
-                <p>Hello! My name is Hamza Mohammed! I am a first generation college student studying Computer Science with a concentration in Cognitive Science at Macalester College. I am a Posse Foundation Leadership Scholar and a UNCF/3M Scholar as well.</p>
-                                
-                <p>In college, I would take classes spanning from technology to understanding how people behave. The summer following my freshman year, I would take a UX/UI Design certification with Prime Digital Academy based in Minneapolis Minnesota on a full ride. There I would learn the full design process of doing UX/UI Design and would develop a foundational understanding of conducting UX Design and UX Research. After completing the certification, I would do my first internship at the City of Saint Paul and would help their team as a UX Designer and Researcher for their Talent Equity Resources page. Upon completion, I would spend my time developing my skills as a UX Designer through my coursework at Macalester. I would use my skills in UX Design to strengthen my ability to design and develop software. I would spend my sophomore and junior year working with two of these areas and strengthening those skills together. The summer following my junior year, I would intern at Amazon as a UX Design intern.</p>
-                
+            <h2 class="about-header">About Me</h2>
+            <div class="about-content-wrapper">
+                <div class="about-images">
+                    <img src="./aboutImages/headShot.jpg" alt="Hamza Mohammed Headshot" class="about-image">
+                    <img src="./aboutImages/cameraImage.jpg" alt="Camera and Photography" class="about-image">
+                </div>
+                <div class="about-content">
+                    <p>Hi! I’m Hamza Mohammed, a first-generation college student at Macalester College studying Computer Science with a concentration in Cognitive Science. I’m a Posse Foundation Leadership Scholar and a UNCF/3M Scholar.</p>                                    
+                    <p>I discovered a passion for understanding people and technology early on, which led me to UX/UI Design. I earned a full-ride certification with Prime Digital Academy, interned at the City of Saint Paul as a UX Designer and Researcher, and later at Amazon. I continue to develop my skills by integrating UX Design with software development in my coursework.</p>
+                    <p>When I’m not designing, I enjoy exploring how technology and human behavior intersect, solving problems, and refining my approach to user-centered design.</p>
+                </div>
             </div>
         </div>
+
+        <hr style="margin: 60px 0; border: none; height: 2px; background: linear-gradient(to right, transparent, #333, transparent);">
 
         <div class="experience-container">
             <h2 style="text-align: center; margin-top: 50px;">Experience</h2>
@@ -86,7 +89,6 @@
         <script src="../web.js" type="module"></script>
         <script src="./session-check.js"></script>
         <script>
-            // Enhanced logout functionality
             document.addEventListener('DOMContentLoaded', function() {
                 const signOutLink = document.querySelector('a[href="./login.html"]');
                 if (signOutLink) {
