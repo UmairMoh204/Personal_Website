@@ -1369,5 +1369,51 @@ h2 {
     transform: scale(1.02);
 }
 
+.moving-banner {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    left: 50%;
+    right: 0;
+    position: relative;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(34, 34, 34, 0.3);
+    color: #fff;
+    font-family: 'BBH Bartle', 'Montserrat', 'Inter', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    padding: 1.2em 0;
+    height: 4.5em;
+    z-index: 1000;
+}
+.moving-banner-inner {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    animation: banner-loop 12s linear infinite;
+    font-family: 'Orbitron', 'BBH Bartle', 'Montserrat', 'Inter', sans-serif !important;
+    font-weight: 700;
+}
+
+@keyframes banner-loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.introText {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+@keyframes banner-loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 
 

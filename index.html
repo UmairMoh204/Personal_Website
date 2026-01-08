@@ -20,6 +20,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav class="nav-container">
@@ -37,35 +41,29 @@
                 <span class="bar"></span>
             </div>
         </nav>
+        <br>
+        <div class="moving-banner">
+            <span class="moving-banner-inner">
+                CREATING SOFTWARE & DESIGN THAT MEETS THE USABILITY NEEDS OF EVERYBODY &nbsp; • &nbsp; CREATING SOFTWARE & DESIGN THAT MEETS THE USABILITY NEEDS OF EVERYBODY &nbsp; • &nbsp;
+            </span>
+        </div>
 
         <div id="introBlock">
             <div class="introText">
-                <h2>Welcome To My Portfolio! My Name is Hamza 👋🏽</h2>
-                <p>UX Design Intern @ Amazon - Previously @ City of Saint Paul </p>
+                <h2>Welcome To My Portfolio! My Name is Umair 👋🏽</h2>
+                <p>Multidisciplinary designer, engineer, and student working and based in Saint Paul, Minnesota. 
+                    He is a previous <strong>UX Designer & Researcher for Amazon</strong> and a previous <strong>UX Researcher for City
+                    Saint Paul</strong>. Studied at Macalester College with a degree in Computer Science & Cognitive Science
+                    with a minor in Psychology.</p>
             </div>
-            <img src="animation.png" alt="Animation" class="animation-image">
+            <!-- <img src="animation.png" alt="Animation" class="animation-image"> -->
         </div>
 
-        <div id="subjectContainer">
-            <div class="glow-center"></div>
-            <div class="subjectBlock">
-                <h3>UX Design</h3>
-                <img src="./subjects/uxdesign.jpg">
-                <p>UX design projects showcasing user research, Figma prototyping, and accessibility-focused solutions for web and mobile applications.</p>
-                <button onclick="location.href='./subjects/uxdesign.html'">Learn More</button>
-            </div>
-            <div class="subjectBlock">
-                <h3>Software Engineering</h3>
-                <img src="./subjects/swe.jpg">
-                <p>Full-stack development projects built with React, Django, and modern web technologies demonstrating end-to-end application development.</p>
-                <button onclick="location.href='./subjects/softwareengineering.html'">Learn More</button>
-            </div>
-            <div class="subjectBlock">
-                <h3>Data Science</h3>
-                <img src="./subjects/datasci.jpg">
-                <p>Machine learning and data science projects showcasing analytical skills and statistical modeling techniques.</p>
-                <button onclick="location.href='./subjects/datascience.html'">Learn More</button>
-            </div>
+        <div class="down-arrow-container">
+            <svg class="down-arrow" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="24" y1="12" x2="24" y2="36" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                <polyline points="15,27 24,36 33,27" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
 
         <footer class="social-footer">
@@ -83,7 +81,6 @@
         <script src="web.js" async defer></script>
         <script src="./navPages/session-check.js"></script>
         <script>
-            // Enhanced logout functionality
             document.addEventListener('DOMContentLoaded', function() {
                 const signOutLink = document.querySelector('a[href="./navPages/login.html"]');
                 if (signOutLink) {
@@ -92,13 +89,16 @@
                         if (window.sessionManager) {
                             window.sessionManager.logout();
                         } else {
-                            // Fallback logout
                             sessionStorage.clear();
                             window.location.replace("./navPages/login.html");
                         }
                     });
                 }
             });
+
+            (function() {
+                // No animation, no scroll, no card logic
+            })();
         </script>
     </body>
 </html>

@@ -51,7 +51,7 @@
 
         <hr style="margin: 60px 0; border: none; height: 2px; background: linear-gradient(to right, transparent, #333, transparent);">
 
-        <div class="experience-container">
+        <!-- <div class="experience-container">
             <h2 style="text-align: center; margin-top: 50px;">Experience</h2>
 
                 <div class="experience-accordion-item">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <script src="../web.js" type="module"></script>
         <script src="./session-check.js"></script>
@@ -97,7 +97,6 @@
                         if (window.sessionManager) {
                             window.sessionManager.logout();
                         } else {
-                            // Fallback logout
                             sessionStorage.clear();
                             window.location.replace("./login.html");
                         }
@@ -107,7 +106,6 @@
         </script>
         
         <script>
-            // Accordion functionality
             document.addEventListener('DOMContentLoaded', function() {
                 const experienceHeaders = document.querySelectorAll('.experience-header');
                 
@@ -116,10 +114,8 @@
                         const accordionItem = this.parentElement;
                         const experienceContent = accordionItem.querySelector('.experience-content');
                         
-                        // Toggle active class on header
                         this.classList.toggle('active');
                         
-                        // Toggle active class on content
                         experienceContent.classList.toggle('active');
                     });
                 });
