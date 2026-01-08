@@ -80,25 +80,6 @@
 
         <script src="web.js" async defer></script>
         <script src="./navPages/session-check.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const signOutLink = document.querySelector('a[href="./navPages/login.html"]');
-                if (signOutLink) {
-                    signOutLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        if (window.sessionManager) {
-                            window.sessionManager.logout();
-                        } else {
-                            sessionStorage.clear();
-                            window.location.replace("./navPages/login.html");
-                        }
-                    });
-                }
-            });
-
-            (function() {
-                // No animation, no scroll, no card logic
-            })();
-        </script>
+        
     </body>
 </html>
