@@ -13,27 +13,25 @@
         <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
         <meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="0">
-        <link rel="icon" type="image/png" href="logo.png">
-        <link rel="preload" href="logo.png" as="image" type="image/png">
+        <link rel="icon" type="image/png" href="logo-black.png">
+        <link rel="preload" href="logo-black.png" as="image" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav class="nav-container">
-            <img src="logo.png" alt="Hamza's Portfolio Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="index.html">home</a></li>
                 <li><a href="./navPages/projects.html">projects</a></li>
+                <li class="nav-logo-item"><a href="index.html"><img src="logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></a></li>
                 <li><a href="./navPages/about.html">about</a></li>
                 <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
-                <li><a href="./navPages/login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -41,31 +39,93 @@
                 <span class="bar"></span>
             </div>
         </nav>
-        <br>
+
+        <!-- Moving banner — uncomment to restore
         <div class="moving-banner">
             <span class="moving-banner-inner">
                 CREATING SOFTWARE & DESIGN THAT MEETS THE USABILITY NEEDS OF EVERYBODY &nbsp; • &nbsp; CREATING SOFTWARE & DESIGN THAT MEETS THE USABILITY NEEDS OF EVERYBODY &nbsp; • &nbsp;
             </span>
         </div>
+        -->
 
-        <div id="introBlock">
-            <div class="introText">
-                <h2>Welcome To My Portfolio! My Name is Umair 👋🏽</h2>
-                <p>Multidisciplinary designer, engineer, and student working and based in Saint Paul, Minnesota. 
-                    He is a previous <strong>UX Designer & Researcher for Amazon</strong> and a previous <strong>UX Researcher for City
-                    Saint Paul</strong>. Studied at Macalester College with a degree in Computer Science & Cognitive Science
-                    with a minor in Psychology.</p>
+        <div class="introText">
+            <h2>Hamza Mohammed</h2>
+            <p class="intro-description">PRODUCT DESIGNER PREVIOUSLY @ AMAZON and CITY OF SAINT PAUL</p>
+        </div>
+
+        <section class="ux-showcase" aria-label="UX work highlights">
+            <div class="ux-showcase-grid">
+                <article class="ux-gif-card ux-gif-card--hover-gif">
+                    <div class="ux-gif-wireframe ux-gif-wireframe--cool ux-gif-wireframe--has-media" aria-label="Amazon A to Z Mobile Experience">
+                        <img src="./subjects/uxImages/Amazon/amazon-showcase-frame-1.png?v=3" alt="" class="ux-gif-media ux-gif-media--frame ux-gif-media--frame-a">
+                        <img src="./subjects/uxImages/Amazon/amazon-showcase-frame-2.png?v=3" alt="Amazon's AtoZ Mobile App Experience" class="ux-gif-media ux-gif-media--frame ux-gif-media--frame-b">
+                    </div>
+                    <div class="ux-gif-meta">
+                        <h3 class="ux-gif-heading">Internal Tooling Experience</h3>
+                        <div class="ux-gif-tags">
+                            <span>MOBILE DESIGN</span>
+                            <span>USER RESEARCH</span>
+                            <span>DESIGN SYSTEM</span>
+                            <span>2025</span>
+                        </div>
+                    </div>
+                    <p class="ux-gif-description">Making complex internal tools feel simple for every employee.</p>
+                </article>
+
+                <article class="ux-gif-card">
+                    <div class="ux-gif-wireframe ux-gif-wireframe--warm" aria-label="GIF placeholder — City of Saint Paul project">
+                        <span class="ux-gif-label">GIF</span>
+                    </div>
+                    <div class="ux-gif-meta">
+                        <h3 class="ux-gif-heading">HR Portal Navigation</h3>
+                        <div class="ux-gif-tags">
+                            <span>UX RESEARCH</span>
+                            <span>INFORMATION ARCHITECTURE</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                    <p class="ux-gif-description">Restructuring a dense HR portal into clear, intuitive navigation.</p>
+                </article>
+
+                <article class="ux-gif-card">
+                    <div class="ux-gif-wireframe ux-gif-wireframe--tutord ux-gif-wireframe--has-media" aria-label="TutorD scheduling flow video">
+                        <div class="ux-gif-media-wrap">
+                            <video class="ux-gif-media ux-gif-media--video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
+                                <source src="./subjects/uxImages/tutorD/tutord-showcase.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="ux-gif-meta">
+                        <h3 class="ux-gif-heading">Tutor Scheduling Flow</h3>
+                        <div class="ux-gif-tags">
+                            <span>WEB DESIGN</span>
+                            <span>UX RESEARCH</span>
+                            <span>DESIGN SYSTEM</span>
+                            <span>PROTOTYPING</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                    <p class="ux-gif-description">Connecting students and tutors through seamless scheduling flows.</p>
+                </article>
+
+                <article class="ux-gif-card">
+                    <div class="ux-gif-wireframe ux-gif-wireframe--warm" aria-label="GIF placeholder — 3DogE project">
+                        <span class="ux-gif-label">GIF</span>
+                    </div>
+                    <div class="ux-gif-meta">
+                        <h3 class="ux-gif-heading">Pet Wellness Companion</h3>
+                        <div class="ux-gif-tags">
+                            <span>UX DESIGN</span>
+                            <span>MOBILE</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                    <p class="ux-gif-description">Helping dog owners track wellness with AI-guided health insights.</p>
+                </article>
             </div>
-            <!-- <img src="animation.png" alt="Animation" class="animation-image"> -->
-        </div>
+        </section>
 
-        <div class="down-arrow-container">
-            <svg class="down-arrow" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="24" y1="12" x2="24" y2="36" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-                <polyline points="15,27 24,36 33,27" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-
+        <!-- Footer — uncomment to restore
         <footer class="social-footer">
             <a href="https://github.com/UmairMoh204" target="_blank" class="social-icon">
                 <i class="fab fa-github"></i>
@@ -77,6 +137,7 @@
                 <i class="fas fa-envelope"></i>
             </a>
         </footer>
+        -->
 
         <script src="web.js" async defer></script>
         <script src="./navPages/session-check.js"></script>

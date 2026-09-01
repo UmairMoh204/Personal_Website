@@ -2,9 +2,16 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
 
 const auth = getAuth();
 
+window.toggleMenu = function() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger');
+    if (navLinks) navLinks.classList.toggle('active');
+    if (hamburger) hamburger.classList.toggle('active');
+};
+
 // Add event listener when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
     if (hamburger) {

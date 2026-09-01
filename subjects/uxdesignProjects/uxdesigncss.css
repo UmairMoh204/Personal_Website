@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #1a1a1a;
+    background-color: var(--bg-primary);
 }
 
 .project-section {
@@ -14,14 +14,14 @@ body {
 }
 
 .project-section h2 {
-    color: #b6b6b6;
+    color: var(--text-secondary);
     margin: 40px 0 40px;
     font-size: 24px;
     text-align: center;
 }
 
 .project-section h3 {
-    color: #b6b6b6;
+    color: var(--text-secondary);
     margin: 40px 0 40px;
     font-size: 20px;
     text-align: center;
@@ -126,8 +126,8 @@ img[src*="competitiveAudit.png"] {
     margin: 20px 0;
 }
 .method-item, .tool-item {
-    background: #1a1a1a;
-    color: #a7a7a7;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
     padding: 15px;
     border-radius: 6px;
     text-align: center;
@@ -158,8 +158,8 @@ img[src*="competitiveAudit.png"] {
     margin: 20px 0;
 }
 .tag {
-    background: #1a1a1a;
-    color: #a7a7a7;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -180,37 +180,37 @@ img[src*="competitiveAudit.png"] {
     padding: 20px;
 }
 .project-detail-container h1 {
-    color: #b6b6b6;
+    color: var(--text-secondary);
     text-align: center;
     margin-bottom: 40px;
 }
 .project-section p {
     line-height: 1.8;
     margin-bottom: 1.5em;
-    color: #a7a7a7;
+    color: var(--text-muted);
 }
 .project-section ul {
     line-height: 1.8;
     margin-bottom: 1.5em;
-    color: #a7a7a7;
+    color: var(--text-muted);
 }
 .project-section li {
     margin-bottom: 0.8em;
-    color: #a7a7a7;
+    color: var(--text-muted);
 }
 .side-by-side-content .text-content p {
     line-height: 1.8;
     margin-bottom: 1.5em;
-    color: #a7a7a7;
+    color: var(--text-muted);
 }
 .side-by-side-content .text-content ul {
     line-height: 1.8;
     margin-bottom: 1.5em;
-    color: #a7a7a7;
+    color: var(--text-muted);
 }
 .side-by-side-content .text-content li {
     margin-bottom: 0.8em;
-    color: #a7a7a7;
+    color: var(--text-muted);
 }
 
 /* Image specific styles */
@@ -252,8 +252,8 @@ img[src*="competitiveAudit.png"] {
 
 .prototype-button {
     padding: 12px 24px;
-    background: #1a1a1a;
-    color: #a7a7a7;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
     border: 1px solid #fff;
     border-radius: 4px;
     cursor: pointer;

@@ -9,20 +9,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Projects Page</title>
         <meta name="description" content="">
-        <link rel="icon" type="image/png" href="../logo.png">
+        <link rel="icon" type="image/png" href="../logo-black.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preload" href="../logo.png" as="image" type="image/png">
+        <link rel="preload" href="../logo-black.png" as="image" type="image/png">
         <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="./project-blueprint.css">
     </head>
     <body>
         <nav class="nav-container">
-            <img src="../logo.png" alt="Hamza's Portfolio Logo" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="../index.html">home</a></li>
                 <li><a href="./projects.html">projects</a></li>
+                <li class="nav-logo-item"><a href="../index.html"><img src="../logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></a></li>
                 <li><a href="./about.html">about</a></li>
                 <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
-                <li><a href="./login.html" onclick="sessionStorage.setItem('isLoggedIn', 'false');">sign out</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
                 <span class="bar"></span>
@@ -31,167 +31,151 @@
             </div>
         </nav>
 
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ux">UX Design</button>
-            <button class="filter-btn" data-filter="swe">Software Engineering</button>
-            <button class="filter-btn" data-filter="ds">Data Science</button>
-        </div>
-
-        <div class="projects-container">
-            <div class="project-block" data-category="ux">
-                <h3>Amazon</h3>
-                <img src="../subjects/uxImages/Amazon/amazonLogo.png" alt="Amazon Project">
-                <p>Worked on improving the user experience for Amazon's internal tools, focusing on accessibility and efficiency.</p>
-                <div class="project-tags">
-                    <span>UX Design</span>
-                    <span>Figma</span>
-                    <span>User Research</span>
+        <div class="projects-page">
+            <div class="blueprint-panel" id="blueprintPanel" tabindex="0" role="region" aria-label="Project Blueprint interactive preview">
+                <div class="blueprint-empty" id="blueprintEmpty">
+                    <p><strong>Project Blueprint</strong></p>
+                    <p>Drag a project card here — or hover to preview its architecture.<br>Explore how each product moved from ambiguity → evidence → outcome.</p>
                 </div>
-                <button onclick="location.href='../subjects/uxdesignProjects/amazon.html'">View Project</button>
+                <div class="blueprint-active" id="blueprintActive" hidden>
+                    <header class="blueprint-header">
+                        <div class="blueprint-header-top">
+                            <div>
+                                <p class="blueprint-org" id="blueprintOrg"></p>
+                                <h2 class="blueprint-title" id="blueprintTitle"></h2>
+                                <p class="blueprint-subtitle" id="blueprintSubtitle"></p>
+                                <span class="blueprint-type" id="blueprintType" hidden></span>
+                            </div>
+                            <div class="blueprint-toolbar">
+                                <div class="blueprint-tabs">
+                                    <button type="button" class="blueprint-tab is-active" data-tab="overview">Overview</button>
+                                    <button type="button" class="blueprint-tab" data-tab="process">Process</button>
+                                    <button type="button" class="blueprint-tab" data-tab="decisions">Decisions</button>
+                                </div>
+                                <label class="blueprint-toggle">
+                                    <input type="checkbox" id="recruiterMode"> Recruiter View
+                                </label>
+                                <label class="blueprint-toggle">
+                                    <input type="checkbox" id="contributionMode"> My Contribution
+                                </label>
+                                <button type="button" class="blueprint-trace-btn" id="traceModeBtn">Trace a Decision</button>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="blueprint-body">
+                        <div class="blueprint-content" id="blueprintContent"></div>
+                    </div>
+                    <div class="blueprint-detail" id="blueprintDetail" hidden></div>
+                </div>
             </div>
 
-            <div class="project-block" data-category="ux">
-                <h3>City of Saint Paul</h3>
-                <img src="../subjects/uxImages/CityOfStPaul/cityofstpaul.png" alt="Saint Paul Project">
-                <p>Redesigned the Human Resources portal for the City of Saint Paul, improving navigation and user engagement.</p>
-                <div class="project-tags">
-                    <span>UX Design</span>
-                    <span>Web Development</span>
-                    <span>User Testing</span>
-                </div>
-                <button onclick="location.href='../subjects/uxdesignProjects/saintpaul.html'">View Project</button>
-            </div>
+            <p class="portfolio-card__drag-hint">Drag a card into the blueprint above — or click to explore</p>
 
-            <div class="project-block" data-category="ux">
-                <h3>TutorD</h3>
-                <img src="../subjects/uxImages/tutorD/tutordImage.png" alt="TutorD Project">
-                <p>Developed a platform connecting students with tutors, featuring real-time scheduling and video chat capabilities.</p>
-                <div class="project-tags">
-                    <span>Web Development</span>
-                    <span>React</span>
-                    <span>Node.js</span>
-                </div>
-                <button onclick="location.href='../subjects/uxdesignProjects/tutord.html'">View Project</button>
-            </div>
-
-            <div class="project-block" data-category="ux">
-                <h3>3DogE</h3>
-                <img src="../subjects/uxImages/3DogE/logo.png" alt="3DogE Project">
-                <p>Created an innovative platform for pet products for dog owners to track and maintain their dog's health. This platform allows users to utilize AI to track their dog's health.</p>
-                <div class="project-tags">
-                    <span>Figma</span>
-                    <span>Mobile</span>
-                    <span>AI</span>
-                </div>
-                <button onclick="location.href='../subjects/uxdesignProjects/3doge.html'">View Project</button>
-            </div>
-
-            <div class="project-block" data-category="swe">
-                <h3>MyMarketPlace</h3>
-                <div class="placeholder-image"></div>
-                <p>Full-stack e-commerce platform with secure authentication, real-time shopping cart, and Stripe payment integration.</p>
-                <div class="project-tags">
-                    <span>React</span>
-                    <span>Django</span>
-                    <span>Stripe API</span>
-                </div>
-                <button onclick="location.href='../subjects/softwareengineer/mymarketplace.html'">View Project</button>
-            </div>
-
-            <div class="project-block" data-category="swe">
-                <div class="content-area">
-                    <h3>Macalester Guessing Game</h3>
-                    <div class="placeholder-image"></div>
-                    <p>Interactive web application that tests users' knowledge about Macalester College facts, history, and campus life.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
+            <div class="projects-grid">
+            <article class="portfolio-card is-draggable" data-project="amazon" draggable="true">
+                <div class="portfolio-card__visual portfolio-card__visual--amazon">
+                    <span class="portfolio-card__badge portfolio-card__badge--type">Mobile Design</span>
+                    <span class="portfolio-card__badge portfolio-card__badge--featured">Featured</span>
+                    <div class="portfolio-card__media">
+                        <img src="../subjects/uxImages/Amazon/amazonLogo.png" alt="Amazon logo">
                     </div>
                 </div>
-                <button onclick="location.href='../subjects/softwareengineer/macalesterguessinggame.html'">View Project</button>
-            </div>
-
-            <div class="project-block" data-category="swe">
-                <h3>Checkers Game</h3>
-                <div class="placeholder-image"></div>
-                <p>Complete Checkers game implementation with GUI using Python and Tkinter, featuring traditional game rules and mechanics.</p>
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>Tkinter</span>
-                    <span>Game Logic</span>
+                <div class="portfolio-card__body">
+                    <p class="portfolio-card__meta">Amazon • 4 months</p>
+                    <h3 class="portfolio-card__title">Self Help Hub</h3>
+                    <p class="portfolio-card__description">Worked on improving the user experience for Amazon's internal tools, focusing on accessibility and efficiency for employees across the organization.</p>
+                    <div class="portfolio-card__tags">
+                        <span>Mobile Design</span>
+                        <span>User Research</span>
+                        <span>Prototyping</span>
+                        <span>Figma</span>
+                    </div>
+                    <div class="portfolio-card__footer">
+                        <span class="portfolio-card__role">Role: UX Designer</span>
+                        <a href="../subjects/uxdesignProjects/amazon.html" class="portfolio-card__cta">View Case Study →</a>
+                    </div>
                 </div>
-                <button onclick="location.href='../subjects/softwareengineer/checkers.html'">View Project</button>
-            </div>
+            </article>
 
-            <div class="project-block" data-category="ds">
-                <h3>NBA Salary Analysis</h3>
-                <div class="placeholder-image"></div>
-                <p>Designed and developed a responsive portfolio website showcasing my work and skills.</p>
-                <div class="project-tags">
-                    <span>R/RStudio</span>
-                    <span>GGPlot</span>
-                    <span>Dyplyr</span>
+            <article class="portfolio-card is-draggable" data-project="stpaul" draggable="true">
+                <div class="portfolio-card__visual portfolio-card__visual--stpaul">
+                    <span class="portfolio-card__badge portfolio-card__badge--type">Product Design</span>
+                    <span class="portfolio-card__badge portfolio-card__badge--featured">Featured</span>
+                    <div class="portfolio-card__media">
+                        <img src="../subjects/uxImages/CityOfStPaul/cityofstpaul.png" alt="City of Saint Paul logo">
+                    </div>
                 </div>
-                <button onclick="location.href='../projects/portfolio.html'">View Project</button>
-            </div>
+                <div class="portfolio-card__body">
+                    <p class="portfolio-card__meta">City of Saint Paul • 5 months</p>
+                    <h3 class="portfolio-card__title">HR Portal Redesign</h3>
+                    <p class="portfolio-card__description">Redesigned the Human Resources portal for the City of Saint Paul, improving navigation and user engagement for employees and residents.</p>
+                    <div class="portfolio-card__tags">
+                        <span>Product Design</span>
+                        <span>Information Architecture</span>
+                        <span>User Testing</span>
+                        <span>Card Sorting</span>
+                    </div>
+                    <div class="portfolio-card__footer">
+                        <span class="portfolio-card__role">Role: UX Designer & Researcher</span>
+                        <a href="../subjects/uxdesignProjects/saintpaul.html" class="portfolio-card__cta">View Case Study →</a>
+                    </div>
+                </div>
+            </article>
 
-            <div class="project-block" data-category="ds">
-                <h3>MN Weather Analysis</h3>
-                <div class="placeholder-image"></div>
-                <p>Designed and developed a responsive portfolio website showcasing my work and skills.</p>
-                <div class="project-tags">
-                    <span>R/RStudio</span>
-                    <span>GGPlot</span>
-                    <span>Dyplyr</span>
+            <article class="portfolio-card is-draggable" data-project="tutord" draggable="true">
+                <div class="portfolio-card__visual portfolio-card__visual--tutord">
+                    <span class="portfolio-card__badge portfolio-card__badge--type">Product Design</span>
+                    <span class="portfolio-card__badge portfolio-card__badge--featured">Featured</span>
+                    <div class="portfolio-card__media">
+                        <img src="../subjects/uxImages/tutorD/tutordImage.png" alt="TutorD mockup">
+                    </div>
                 </div>
-                <button onclick="location.href='../projects/portfolio.html'">View Project</button>
-            </div>
+                <div class="portfolio-card__body">
+                    <p class="portfolio-card__meta">TutorD • 6 months</p>
+                    <h3 class="portfolio-card__title">TutorD Platform</h3>
+                    <p class="portfolio-card__description">Developed a platform connecting students with tutors, featuring real-time scheduling and video chat capabilities for seamless learning sessions.</p>
+                    <div class="portfolio-card__tags">
+                        <span>Product Design</span>
+                        <span>Prototyping</span>
+                        <span>User Research</span>
+                        <span>Figma</span>
+                    </div>
+                    <div class="portfolio-card__footer">
+                        <span class="portfolio-card__role">Role: UX/UI Designer</span>
+                        <a href="../subjects/uxdesignProjects/tutord.html" class="portfolio-card__cta">View Case Study →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="portfolio-card is-draggable" data-project="doge" draggable="true">
+                <div class="portfolio-card__visual portfolio-card__visual--doge">
+                    <span class="portfolio-card__badge portfolio-card__badge--type">Mobile Design</span>
+                    <span class="portfolio-card__badge portfolio-card__badge--featured">Featured</span>
+                    <div class="portfolio-card__media">
+                        <img src="../subjects/uxImages/3DogE/logo.png" alt="3DogE logo">
+                    </div>
+                </div>
+                <div class="portfolio-card__body">
+                    <p class="portfolio-card__meta">3DogE • 4 months</p>
+                    <h3 class="portfolio-card__title">3DogE App</h3>
+                    <p class="portfolio-card__description">Created an innovative platform for dog owners to track and maintain their dog's health, utilizing AI to deliver personalized wellness insights.</p>
+                    <div class="portfolio-card__tags">
+                        <span>Mobile Design</span>
+                        <span>Prototyping</span>
+                        <span>User Research</span>
+                        <span>AI</span>
+                    </div>
+                    <div class="portfolio-card__footer">
+                        <span class="portfolio-card__role">Role: UX Designer</span>
+                        <a href="../subjects/uxdesignProjects/3doge.html" class="portfolio-card__cta">View Case Study →</a>
+                    </div>
+                </div>
+            </article>
         </div>
         </div>
-
-        <script>
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectBlocks = document.querySelectorAll('.project-block');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const filterValue = button.getAttribute('data-filter');
-
-                    projectBlocks.forEach(block => {
-                        if (filterValue === 'all' || block.getAttribute('data-category') === filterValue) {
-                            block.style.display = 'flex';
-                        } else {
-                            block.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        </script>
 
         <script src="../web.js" type="module"></script>
         <script src="./session-check.js"></script>
-        <script>
-            // Enhanced logout functionality
-            document.addEventListener('DOMContentLoaded', function() {
-                const signOutLink = document.querySelector('a[href="./login.html"]');
-                if (signOutLink) {
-                    signOutLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        if (window.sessionManager) {
-                            window.sessionManager.logout();
-                        } else {
-                            // Fallback logout
-                            sessionStorage.clear();
-                            window.location.replace("./login.html");
-                        }
-                    });
-                }
-            });
-        </script>
+        <script src="./project-blueprint.js" defer></script>
     </body>
 </html>
