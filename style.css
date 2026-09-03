@@ -383,6 +383,17 @@ h2 {
     gap: 0;
 }
 
+.ux-gif-card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.ux-gif-card-link .ux-gif-card {
+    height: 100%;
+}
+
 .ux-gif-wireframe {
     aspect-ratio: 16 / 10;
     width: 100%;
@@ -2087,6 +2098,8 @@ input:disabled,
     transform: translateX(0);
 }
 
+html.has-project-cursor-js .ux-gif-card-link,
+html.has-project-cursor-js .ux-gif-card-link *,
 html.has-project-cursor-js .ux-gif-card,
 html.has-project-cursor-js .ux-gif-card *,
 html.has-project-cursor-js .portfolio-card,
