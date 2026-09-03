@@ -1,0 +1,10 @@
+{
+  "description": "Create animated GIFs from iPhone prototype interactions to easily showcase app flows and designs for developers and stakeholders.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

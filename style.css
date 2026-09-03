@@ -462,6 +462,65 @@ h2 {
     border-radius: 6px;
     pointer-events: none;
     display: block;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    filter: contrast(1.06) saturate(1.04);
+}
+
+.ux-gif-wireframe--doge {
+    background:
+        radial-gradient(
+            ellipse 120% 115% at 50% 50%,
+            var(--bg-primary) 0%,
+            #f5e8b0 42%,
+            #e6d08a 72%,
+            #c4a24a 100%
+        );
+}
+
+.ux-gif-wireframe--doge.ux-gif-wireframe--has-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15% 16%;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+            ellipse 120% 115% at 50% 50%,
+            var(--bg-primary) 0%,
+            #f5e8b0 42%,
+            #e6d08a 72%,
+            #c4a24a 100%
+        );
+}
+
+.ux-gif-wireframe--doge .ux-gif-media-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.ux-gif-wireframe--doge .ux-gif-media--video {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: auto;
+    max-width: 94%;
+    max-height: 72%;
+    object-fit: contain;
+    object-position: center center;
+    border-radius: 6px;
+    pointer-events: none;
+    display: block;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    filter: contrast(1.06) saturate(1.04);
 }
 
 .ux-gif-media--video {
@@ -1955,6 +2014,97 @@ input:disabled,
 .login-button:disabled,
 .form-group input:disabled {
     cursor: not-allowed;
+}
+
+/* Expanding “View Project” cursor on project cards */
+.project-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 28px;
+    height: 28px;
+    padding: 8px;
+    border-radius: 999px;
+    background: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-14px, -50%);
+    transform-origin: left center;
+    transition: opacity 0.16s ease;
+}
+
+.project-cursor.is-active {
+    opacity: 1;
+}
+
+.project-cursor__text {
+    display: grid;
+    grid-template-columns: 0fr;
+    min-width: 0;
+    overflow: hidden;
+    transition: grid-template-columns 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-cursor.is-active .project-cursor__text {
+    grid-template-columns: 1fr;
+}
+
+.project-cursor__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0;
+    color: var(--bg-primary);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.project-cursor__char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+        opacity 0.22s ease calc(var(--i) * 18ms),
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i) * 18ms);
+}
+
+.project-cursor.is-active .project-cursor__char {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+html.has-project-cursor-js .ux-gif-card,
+html.has-project-cursor-js .ux-gif-card *,
+html.has-project-cursor-js .portfolio-card,
+html.has-project-cursor-js .portfolio-card * {
+    cursor: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .project-cursor {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-cursor,
+    .project-cursor__text,
+    .project-cursor__char {
+        transition: none;
+    }
 }
 
 

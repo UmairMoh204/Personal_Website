@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "SF Pro:Semibold";
+  font-style: normal;
+  font-weight: 590;
+  src: url("https://static.figma.com/font/SF-Pro_1") format("woff2");
+}
+
+@font-face {
+  font-family: "SF Pro:Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://static.figma.com/font/SF-Pro_1") format("woff2");
+}
+
+@font-face {
+  font-family: "SF Pro:Medium";
+  font-style: normal;
+  font-weight: 510;
+  src: url("https://static.figma.com/font/SF-Pro_1") format("woff2");
+}
+
+@font-face {
+  font-family: "SF Pro:Light";
+  font-style: normal;
+  font-weight: 274;
+  src: url("https://static.figma.com/font/SF-Pro_1") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter:Semi Bold";
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter:Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+@keyframes spin-smooth {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
