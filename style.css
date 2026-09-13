@@ -478,6 +478,194 @@ h2 {
     filter: contrast(1.06) saturate(1.04);
 }
 
+.ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background:
+        radial-gradient(ellipse 90% 80% at 50% 42%, #fffdf9 0%, #f3ece4 58%, #ebe4dc 100%);
+}
+
+.ia-tree {
+    --ia-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ia-l1: 10.75rem;
+    --ia-line: var(--text-muted);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 7% 5% 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.ia-tree__node {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    border-radius: 7px;
+}
+
+.ia-tree__node--root {
+    width: var(--ia-l1);
+    max-width: 86%;
+    padding: 0.55em 0.7em;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.58rem, 1.15vw, 0.78rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(58, 50, 44, 0.12);
+    opacity: 0;
+    transform: translateY(10px) scale(0.94);
+    transition: opacity 0.45s var(--ia-ease), transform 0.45s var(--ia-ease);
+}
+
+.ia-tree__node--l2,
+.ia-tree__node--l3 {
+    background: #fffaf5;
+    border: 1.5px solid var(--text-primary);
+    opacity: 0;
+    transform: translateY(8px) scale(0.9);
+    transition: opacity 0.4s var(--ia-ease), transform 0.4s var(--ia-ease);
+}
+
+.ia-tree__node--l2 {
+    width: calc(var(--ia-l1) / 2);
+    max-width: 92%;
+    height: clamp(14px, 2.1vw, 22px);
+}
+
+.ia-tree__node--l3 {
+    width: calc(var(--ia-l1) / 4);
+    max-width: 88%;
+    height: clamp(10px, 1.55vw, 16px);
+}
+
+.ia-tree__line {
+    display: block;
+    flex: 0 0 auto;
+    background: var(--ia-line);
+    opacity: 0;
+}
+
+.ia-tree__line--v {
+    width: 1.5px;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: opacity 0.35s var(--ia-ease), transform 0.45s var(--ia-ease);
+}
+
+.ia-tree__line--h {
+    height: 1.5px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: opacity 0.35s var(--ia-ease), transform 0.5s var(--ia-ease);
+}
+
+.ia-tree__line--trunk-1 {
+    height: clamp(14px, 2.2vw, 22px);
+}
+
+.ia-tree__line--drop-2 {
+    height: clamp(12px, 1.9vw, 18px);
+}
+
+.ia-tree__line--bar-2 {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.ia-tree__line--trunk-3 {
+    height: clamp(11px, 1.7vw, 16px);
+}
+
+.ia-tree__line--drop-3 {
+    height: clamp(10px, 1.5vw, 14px);
+}
+
+.ia-tree__line--bar-3 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ia-tree.is-l1 .ia-tree__node--root {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.ia-tree.is-l2 .ia-tree__line--trunk-1,
+.ia-tree.is-l2 .ia-tree__line--drop-2,
+.ia-tree.is-l2 .ia-tree__line--bar-2 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ia-tree.is-l2 .ia-tree__node--l2 {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.ia-tree.is-l3 .ia-tree__line--trunk-3,
+.ia-tree.is-l3 .ia-tree__line--drop-3,
+.ia-tree.is-l3 .ia-tree__line--bar-3 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ia-tree.is-l3 .ia-tree__node--l3 {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.ia-tree.is-out .ia-tree__node,
+.ia-tree.is-out .ia-tree__line {
+    opacity: 0;
+    transition-duration: 0.45s;
+}
+
+.ia-tree__tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ia-tree__tier--3 {
+    width: 100%;
+}
+
+.ia-tree__cols {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.ia-tree__branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+}
+
+.ia-tree__cols--2 > .ia-tree__branch {
+    flex: 1 1 0;
+}
+
+.ia-tree__cols--3 {
+    gap: 0;
+}
+
+.ia-tree__cols--3 > .ia-tree__branch {
+    flex: 1 1 0;
+}
+
 .ux-gif-wireframe--doge {
     background:
         radial-gradient(
@@ -578,6 +766,13 @@ h2 {
 
     .ux-gif-card--hover-gif .ux-gif-media--frame-b {
         opacity: 0;
+    }
+
+    .ia-tree .ia-tree__node,
+    .ia-tree .ia-tree__line {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
 

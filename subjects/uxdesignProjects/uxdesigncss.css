@@ -300,3 +300,57 @@ img[src*="competitiveAudit.png"] {
     display: block;
     object-fit: contain;
 }
+
+.case-banner {
+    width: calc(100% + 46px);
+    max-width: none;
+    position: relative;
+    left: auto;
+    transform: none;
+    overflow: hidden;
+    margin: 0 -23px;
+    padding: 0;
+    background: var(--bg-primary);
+}
+
+.case-banner__track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: max-content;
+    animation: case-banner-scroll 18s linear infinite;
+}
+
+.case-banner__group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+}
+
+.case-banner__group img {
+    width: calc(100vw / 5) !important;
+    height: calc(100vw / 5) !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    display: block !important;
+    flex: 0 0 calc(100vw / 5);
+}
+
+@keyframes case-banner-scroll {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+@media screen and (max-width: 480px) {
+    .case-banner {
+        width: calc(100% + 26px);
+        margin: 0 -13px;
+    }
+}

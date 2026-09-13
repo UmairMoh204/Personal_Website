@@ -13,7 +13,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preload" href="../../../logo-black.png" as="image" type="image/png">
         <link rel="stylesheet" href="../../style.css">
-        <link rel="stylesheet" href="uxdesigncss.css">
+        <link rel="stylesheet" href="uxdesigncss.css?v=3">
+        <style>
+            .case-banner {
+                width: calc(100% + 46px);
+                max-width: none;
+                margin: 0 -23px 0 -23px;
+                left: auto;
+                transform: none;
+                overflow: hidden;
+                padding: 0;
+                background: var(--bg-primary);
+            }
+            .case-banner__track {
+                display: flex;
+                flex-wrap: nowrap;
+                width: max-content;
+                animation: case-banner-scroll 18s linear infinite;
+            }
+            .case-banner__group {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .case-banner__group img {
+                width: calc(100vw / 5) !important;
+                height: calc(100vw / 5) !important;
+                max-width: none !important;
+                max-height: none !important;
+                margin: 0 !important;
+                flex: 0 0 calc(100vw / 5);
+                object-fit: cover !important;
+                border-radius: 0 !important;
+                display: block !important;
+            }
+            @keyframes case-banner-scroll {
+                from { transform: translateX(-50%); }
+                to { transform: translateX(0); }
+            }
+        </style>
     </head>
     <body>
         <nav class="nav-container">
@@ -30,6 +67,25 @@
                 <span class="bar"></span>
             </div>
         </nav>
+
+        <div class="case-banner" aria-hidden="true">
+            <div class="case-banner__track">
+                <div class="case-banner__group">
+                    <img src="../uxImages/Amazon/banner-vest.png" alt="">
+                    <img src="../uxImages/Amazon/banner-hardhat.png" alt="">
+                    <img src="../uxImages/Amazon/banner-calendar.png" alt="">
+                    <img src="../uxImages/Amazon/banner-phone.png" alt="">
+                    <img src="../uxImages/Amazon/banner-badge.png" alt="">
+                </div>
+                <div class="case-banner__group">
+                    <img src="../uxImages/Amazon/banner-vest.png" alt="">
+                    <img src="../uxImages/Amazon/banner-hardhat.png" alt="">
+                    <img src="../uxImages/Amazon/banner-calendar.png" alt="">
+                    <img src="../uxImages/Amazon/banner-phone.png" alt="">
+                    <img src="../uxImages/Amazon/banner-badge.png" alt="">
+                </div>
+            </div>
+        </div>
 
         <div class="project-detail-container">
             <h1>Amazon</h1>
