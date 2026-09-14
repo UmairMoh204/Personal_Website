@@ -5,7 +5,7 @@
     height: clamp(400px, 52vw, 560px);
     margin-bottom: 32px;
     border: 1px solid var(--border-subtle);
-    border-radius: 20px;
+    border-radius: var(--radius-xl);
     background: var(--bg-primary);
     box-sizing: border-box;
     position: relative;

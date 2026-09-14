@@ -1,0 +1,64 @@
+/* WorkMarquee — full-bleed looping image strip */
+
+work-marquee {
+    display: block;
+    width: calc(100% + 46px);
+    max-width: none;
+    margin: 0 -23px;
+    overflow: hidden;
+    padding: 0;
+    background: var(--bg-primary);
+}
+
+work-marquee .work-marquee__track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: work-marquee-scroll 18s linear infinite;
+}
+
+work-marquee .work-marquee__group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+work-marquee .work-marquee__group img {
+    width: calc(100vw / 5);
+    height: calc(100vw / 5);
+    flex: 0 0 calc(100vw / 5);
+    margin: 0;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+}
+
+@keyframes work-marquee-scroll {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+.work-marquee-video {
+    display: block;
+    width: calc(100% + 46px);
+    max-width: none;
+    height: calc(100vw / 5);
+    margin: 0 -23px;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+.work-marquee-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 480px) {
+    work-marquee,
+    .work-marquee-video {
+        width: calc(100% + 26px);
+        margin: 0 -13px;
+    }
+}

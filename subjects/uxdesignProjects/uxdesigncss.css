@@ -75,18 +75,21 @@ img[src*="finalDesign1.png"] {
     height: auto;
     margin: 20px;
     display: inline-block;
+    border-radius: 10px;
 }
 img[src*="midfidelity.png"] {
     max-width: 200px !important;
     height: auto;
     margin: 20px;
     display: inline-block;
+    border-radius: 10px;
 }
 img[src*="usabilityTests.png"] {
     max-width: 350px !important;
     height: auto;
     margin: 20px;
     display: inline-block;
+    border-radius: 10px;
 }
 
 img[src*="affinityDiagram.png"] {
@@ -163,7 +166,7 @@ img[src*="competitiveAudit.png"] {
     padding: 8px 20px;
     border-radius: 20px;
     font-size: 0.9em;
-    border: 1px solid #e0e0e0;
+    border: 2px solid var(--text-primary);
 }
 .quote {
     font-style: italic;
