@@ -1,0 +1,240 @@
+/* Low-fidelity LinkedIn-style About. Iteration surface — keep it simple. */
+
+body.about-li {
+    --li-page: #f3f2ef;
+    --li-card: #ffffff;
+    --li-line: #b0b0b0;
+    --li-ink: #191919;
+    --li-muted: #666666;
+    --li-placeholder: #d9d9d9;
+    --li-placeholder-ink: #8a8a8a;
+    --font-ui: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: var(--li-page);
+    color: var(--li-ink);
+    font-family: var(--font-ui);
+    font-weight: 400;
+}
+
+html:has(body.about-li) {
+    background: var(--li-page);
+}
+
+.li-page {
+    width: min(928px, calc(100% - 48px));
+    margin: 24px auto 80px;
+}
+
+.li-card {
+    margin: 0 0 12px;
+    overflow: hidden;
+    border: 1px solid var(--li-line);
+    border-radius: 8px;
+    background: var(--li-card);
+}
+
+.li-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    background: var(--li-placeholder);
+    color: var(--li-placeholder-ink);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.li-identity {
+    position: relative;
+    padding: 0 24px 24px;
+}
+
+.li-avatar {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 152px;
+    height: 152px;
+    margin: -76px 0 16px;
+    overflow: hidden;
+    border: 4px solid var(--li-card);
+    border-radius: 50%;
+    background: var(--li-placeholder);
+}
+
+.li-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.li-identity h1 {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.li-identity .li-headline {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--li-ink);
+}
+
+.li-identity .li-meta {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--li-muted);
+}
+
+.li-card__pad {
+    padding: 16px 24px 24px;
+}
+
+.li-card__label {
+    margin: 0 0 12px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--li-muted);
+}
+
+.li-card__pad p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.li-card__pad p:last-child {
+    margin-bottom: 0;
+}
+
+.li-story {
+    padding: 16px 24px 20px;
+}
+
+.li-story__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+}
+
+.li-story__mark {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--li-line);
+    border-radius: 50%;
+    background: var(--li-placeholder);
+}
+
+.li-story__who {
+    min-width: 0;
+}
+
+.li-story__who strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.li-story__who span {
+    display: block;
+    font-size: 12px;
+    color: var(--li-muted);
+}
+
+.li-story h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.li-story p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.li-story p:last-of-type {
+    margin-bottom: 16px;
+}
+
+.li-ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+    border: 1px dashed var(--li-line);
+    border-radius: 4px;
+    background: var(--li-placeholder);
+    color: var(--li-placeholder-ink);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.li-ph--tall {
+    min-height: 280px;
+}
+
+.li-ph-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.li-ph-grid .li-ph {
+    min-height: 120px;
+}
+
+.li-story__bar {
+    display: flex;
+    gap: 16px;
+    margin: 12px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--li-line);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--li-placeholder-ink);
+}
+
+@media screen and (max-width: 672px) {
+    .li-cover {
+        height: 120px;
+    }
+
+    .li-avatar {
+        width: 112px;
+        height: 112px;
+        margin-top: -56px;
+    }
+
+    .li-identity,
+    .li-card__pad,
+    .li-story {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .li-ph-grid {
+        grid-template-columns: 1fr;
+    }
+}

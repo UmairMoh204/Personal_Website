@@ -7,119 +7,143 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>About</title>
-        <meta name="description" content="">
+        <title>About — Hamza Mohammed</title>
+        <meta name="description" content="About Hamza Mohammed — product designer and first-generation Macalester graduate.">
         <link rel="icon" type="image/png" href="../logo-black.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preload" href="../logo-black.png" as="image" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../eco-nav.css?v=7">
+        <script src="../eco-nav.js?v=5" defer></script>
+        <link rel="stylesheet" href="about-li.css?v=2">
     </head>
-    <body>
-        <nav class="nav-container">
+    <body class="about-li">
+        <nav class="nav-container eco-nav">
             <ul class="nav-links">
-                <li><a href="../index.html">home</a></li>
-                <li><a href="./projects.html">projects</a></li>
-                <li class="nav-logo-item"><a href="../index.html"><img src="../logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></a></li>
-                <li><a href="./about.html">about</a></li>
-                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li class="nav-logo-item"><img src="../logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></li>
+                <li><a class="is-active" href="./about.html" aria-current="page">About</a></li>
+                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank" rel="noopener">Resume</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
         </nav>
 
-        <div class="about-container">
-            <h2 class="about-header">About Me</h2>
-            <div class="about-content-wrapper">
-                <div class="about-images">
-                    <img src="./aboutImages/headShot.jpg" alt="Hamza Mohammed Headshot" class="about-image">
-                    <img src="./aboutImages/cameraImage.jpg" alt="Camera and Photography" class="about-image">
-                </div>
-                <div class="about-content">
-                    <p>Hi! I’m Hamza Mohammed, a first-generation college graduate from Macalester College with a major Computer Science with a concentration in Cognitive Science. I’m a Posse Foundation Leadership Scholar and a UNCF/3M Scholar.</p>                                    
-                    <p>I discovered a passion for understanding people and technology early on, which led me to UX/UI Design. I earned a full-ride certification with Prime Digital Academy, interned at the City of Saint Paul as a UX Designer and Researcher, and later at Amazon. I continue to develop my skills by integrating UX Design with software development in my coursework.</p>
-                    <p>When I’m not designing, I enjoy exploring how technology and human behavior intersect, solving problems, and refining my approach to user-centered design.</p>
-                </div>
-            </div>
-        </div>
-
-        <hr style="margin: 60px 0; border: none; height: 2px; background: linear-gradient(to right, transparent, #333, transparent);">
-
-        <!-- <div class="experience-container">
-            <h2 style="text-align: center; margin-top: 50px;">Experience</h2>
-
-                <div class="experience-accordion-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>2025</h3>
-                            <h4>UX Designer</h4>
-                            <span>Amazon</span>
-                        </div>
-                        <div class="accordion-toggle">+</div>
+        <main class="li-page">
+            <section class="li-card" aria-label="Profile">
+                <div class="li-cover" aria-hidden="true">Cover image placeholder</div>
+                <div class="li-identity">
+                    <div class="li-avatar">
+                        <img src="./aboutImages/headShot.jpg" alt="Headshot of Hamza Mohammed">
                     </div>
-                    <div class="experience-content">
-                        <p>Developed and maintained web applications using modern technologies.</p>
-                        <span class="date">January 2023 - May 2023</span>
-                    </div>
+                    <h1>Hamza Mohammed</h1>
+                    <p class="li-headline">Product Designer · Computer Science &amp; Cognitive Science · Macalester College</p>
+                    <p class="li-meta">Posse Foundation Leadership Scholar · Previously Amazon and City of Saint Paul</p>
                 </div>
+            </section>
 
-                <div class="experience-accordion-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>2023</h3>
-                            <h4>UX Designer & Researcher</h4>
-                            <span>City of Saint Paul</span>
-                        </div>
-                        <div class="accordion-toggle">+</div>
-                    </div>
-                    <div class="experience-content">
-                        <p>Conducted research in human-computer interaction and user experience design.</p>
-                        <span class="date">September 2022 - December 2022</span>
-                    </div>
+            <section class="li-card" aria-labelledby="li-about-heading">
+                <div class="li-card__pad">
+                    <p class="li-card__label" id="li-about-heading">About</p>
+                    <p>This page is a low-fidelity wireframe of my path — told in the shape of a LinkedIn profile. Each card below is a chapter. Image boxes are placeholders until we drop the real photos in.</p>
                 </div>
-            </div>
-        </div> -->
+            </section>
 
-        <script src="../web.js" type="module"></script>
+            <article class="li-card li-story" aria-labelledby="story-college">
+                <div class="li-story__head">
+                    <span class="li-story__mark" aria-hidden="true"></span>
+                    <p class="li-story__who">
+                        <strong>Hamza Mohammed</strong>
+                        <span>01 · College, Posse, and NSBE</span>
+                    </p>
+                </div>
+                <h2 id="story-college">Going to college — and learning how to lead</h2>
+                <p>I arrived at Macalester as a first-generation student and a Posse Foundation Leadership Scholar. Posse was not just a scholarship. It was the first place I had to practice leading a cohort — showing up for other people, not only for my own classes.</p>
+                <p>That work continued as Treasurer of NSBE. I learned how a student organization actually stays standing: budgets, follow-through, and making space for other Black engineers on campus.</p>
+                <div class="li-ph-grid" aria-hidden="true">
+                    <div class="li-ph">College photo</div>
+                    <div class="li-ph">Posse photo</div>
+                    <div class="li-ph">NSBE photo</div>
+                </div>
+                <p class="li-story__bar">Like · Comment · Repost</p>
+            </article>
+
+            <article class="li-card li-story" aria-labelledby="story-prime">
+                <div class="li-story__head">
+                    <span class="li-story__mark" aria-hidden="true"></span>
+                    <p class="li-story__who">
+                        <strong>Hamza Mohammed</strong>
+                        <span>02 · Prime Digital Academy</span>
+                    </p>
+                </div>
+                <h2 id="story-prime">Becoming a UX designer</h2>
+                <p>Prime Digital Academy is where the title became real. I earned a full-ride certification and learned the craft in sequence — research, flows, critique, and shipping a product someone else could use.</p>
+                <p>This is the chapter where I stopped treating design as a side interest and started treating it as the work.</p>
+                <div class="li-ph li-ph--tall" aria-hidden="true">Prime Digital Academy image</div>
+                <p class="li-story__bar">Like · Comment · Repost</p>
+            </article>
+
+            <article class="li-card li-story" aria-labelledby="story-hci">
+                <div class="li-story__head">
+                    <span class="li-story__mark" aria-hidden="true"></span>
+                    <p class="li-story__who">
+                        <strong>Hamza Mohammed</strong>
+                        <span>03 · Human-Computer Interaction · Macalester</span>
+                    </p>
+                </div>
+                <h2 id="story-hci">HCI — putting people next to the system</h2>
+                <p>The Human-Computer Interaction course at Macalester is where Computer Science and Cognitive Science met on the same desk. I was no longer only writing code or only thinking about users. I was asking how a person actually holds a system.</p>
+                <div class="li-ph" aria-hidden="true">HCI course image</div>
+                <p class="li-story__bar">Like · Comment · Repost</p>
+            </article>
+
+            <article class="li-card li-story" aria-labelledby="story-amazon">
+                <div class="li-story__head">
+                    <span class="li-story__mark" aria-hidden="true"></span>
+                    <p class="li-story__who">
+                        <strong>Hamza Mohammed</strong>
+                        <span>04 · Internship · Amazon</span>
+                    </p>
+                </div>
+                <h2 id="story-amazon">Designing help for people already at work</h2>
+                <p>At Amazon I interned as a UX designer on Workforce Solutions Transformative Tech. The work was an internal help destination for associates in transfer — using inquiry data so people could finish a process without getting stuck.</p>
+                <p>This is the chapter where school methods had to survive a real org, a real design system, and real constraints.</p>
+                <div class="li-ph li-ph--tall" aria-hidden="true">Amazon internship image</div>
+                <p class="li-story__bar">Like · Comment · Repost</p>
+            </article>
+
+            <article class="li-card li-story" aria-labelledby="story-grad">
+                <div class="li-story__head">
+                    <span class="li-story__mark" aria-hidden="true"></span>
+                    <p class="li-story__who">
+                        <strong>Hamza Mohammed</strong>
+                        <span>05 · Graduation · Macalester College</span>
+                    </p>
+                </div>
+                <h2 id="story-grad">Graduating</h2>
+                <p>I graduated from Macalester with a major in Computer Science and a concentration in Cognitive Science — a first-generation college graduate. The path above is how I got there: Posse, NSBE, Prime, HCI, and the internship that asked me to use all of it at once.</p>
+                <div class="li-ph" aria-hidden="true">Graduation photo</div>
+                <p class="li-story__bar">Like · Comment · Repost</p>
+            </article>
+        </main>
+
+        <script src="../web.js" async defer></script>
         <script src="./session-check.js"></script>
         <script src="../smooth-scroll.js" defer></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const signOutLink = document.querySelector('a[href="./login.html"]');
-                if (signOutLink) {
-                    signOutLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        if (window.sessionManager) {
-                            window.sessionManager.logout();
-                        } else {
-                            sessionStorage.clear();
-                            window.location.replace("./login.html");
-                        }
-                    });
-                }
-            });
-        </script>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const experienceHeaders = document.querySelectorAll('.experience-header');
-                
-                experienceHeaders.forEach(header => {
-                    header.addEventListener('click', function() {
-                        const accordionItem = this.parentElement;
-                        const experienceContent = accordionItem.querySelector('.experience-content');
-                        
-                        this.classList.toggle('active');
-                        
-                        experienceContent.classList.toggle('active');
-                    });
-                });
-            });
+            function toggleMenu() {
+                var nav = document.querySelector('.nav-links');
+                var burger = document.querySelector('.hamburger');
+                if (nav) nav.classList.toggle('active');
+                if (burger) burger.classList.toggle('active');
+            }
         </script>
     </body>
 </html>

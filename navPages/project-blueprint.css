@@ -1,12 +1,259 @@
+/* Subtle ashy-cold atmosphere + light glass surround */
+html:has(body.projects-blueprint),
+body.projects-blueprint {
+    background-color: #e8eaed;
+}
+
+body.projects-blueprint {
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.35) 0%, transparent 70%),
+        linear-gradient(180deg, #eef0f2 0%, #e4e7ea 100%);
+    background-attachment: fixed;
+}
+
+body.projects-blueprint::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 80px rgba(90, 102, 112, 0.06);
+}
+
+body.projects-blueprint .nav-container,
+body.projects-blueprint .projects-page {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-page {
+    width: 100%;
+    max-width: 1280px;
+    min-height: calc(100vh - 80px);
+    margin: 0 auto;
+    padding: 24px 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.docs-glass {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 10px 28px rgba(70, 82, 94, 0.08);
+}
+
+.docs-editor {
+    width: 100%;
+    border: 1px solid rgba(180, 188, 196, 0.35);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 4px 16px rgba(70, 82, 94, 0.06);
+}
+
+.docs-menubar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    min-height: 32px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.36);
+    border-bottom: 1px solid rgba(168, 182, 194, 0.4);
+}
+
+.docs-menu {
+    position: relative;
+}
+
+.docs-menu__btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: var(--cursor-brown-circle);
+}
+
+.docs-menu__btn:hover,
+.docs-menu__btn[aria-expanded="true"] {
+    background: var(--bg-secondary);
+}
+
+.docs-menu__drop {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 20;
+    min-width: 220px;
+    padding: 6px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 8px 20px rgba(70, 82, 94, 0.08);
+    box-sizing: border-box;
+}
+
+.docs-menu__drop[hidden] {
+    display: none !important;
+}
+
+.docs-menu__drop button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px 14px;
+    border: 0;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: var(--cursor-brown-circle);
+}
+
+.docs-menu__drop button:hover {
+    background: var(--bg-secondary);
+}
+
+.docs-menu__rule {
+    display: block;
+    height: 1px;
+    margin: 6px 0;
+    background: var(--border-subtle);
+}
+
+.docs-menu__hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+    padding: 4px 14px 2px;
+}
+
+.docs-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    min-height: 48px;
+    padding: 6px 12px;
+    background: rgba(210, 220, 228, 0.42);
+    border-bottom: 1px solid rgba(168, 182, 194, 0.4);
+}
+
+.docs-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.docs-sep {
+    width: 1px;
+    height: 24px;
+    background: var(--border-subtle);
+    flex-shrink: 0;
+}
+
+.docs-chip--bar {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 7px 12px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--text-secondary);
+    cursor: grab;
+}
+
+.docs-chip--bar:hover,
+.docs-chip--bar.is-previewing {
+    border-color: var(--border-subtle);
+    color: var(--text-primary);
+}
+
+.docs-chip--bar.is-selected {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+}
+
+.docs-chip--bar.is-dragging {
+    opacity: 0.55;
+    cursor: grabbing;
+}
+
+#menu-insert .docs-chip {
+    cursor: grab;
+}
+
+.docs-tabs {
+    border: 1px solid rgba(168, 182, 194, 0.4);
+    border-radius: 8px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.docs-icon-btn,
+.docs-zoom-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: var(--cursor-brown-circle);
+}
+
+.docs-icon-btn:hover,
+.docs-zoom-label:hover {
+    background: var(--bg-elevated);
+}
+
+.docs-zoom-label {
+    min-width: 52px;
+}
+
+.docs-toolbar .blueprint-toggle {
+    margin: 0;
+}
+
+.docs-toolbar .blueprint-tab {
+    padding: 6px 12px;
+}
+
+.docs-toolbar .blueprint-trace-btn {
+    background: rgba(255, 255, 255, 0.55);
+}
+
 /* Project Blueprint — interactive preview panel */
 .blueprint-panel {
     width: 100%;
-    min-height: 480px;
-    height: clamp(400px, 52vw, 560px);
-    margin-bottom: 32px;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    background: var(--bg-primary);
+    min-height: 0;
+    height: clamp(360px, calc(100vh - 220px), 640px);
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    background: rgba(250, 252, 254, 0.58);
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -15,8 +262,8 @@
 }
 
 .blueprint-panel.is-drag-over {
-    border-color: var(--text-secondary);
-    box-shadow: inset 0 0 0 2px rgba(92, 82, 74, 0.15);
+    box-shadow: inset 0 0 0 2px rgba(92, 82, 74, 0.22);
+    background: var(--bg-secondary);
 }
 
 .blueprint-empty {
@@ -38,6 +285,99 @@
     justify-content: stretch;
     padding: 0;
     text-align: left;
+}
+
+.blueprint-gif {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    background: #141414;
+}
+
+.blueprint-gif .ux-gif-wireframe,
+.blueprint-gif .ux-gif-wireframe--cool,
+.blueprint-gif .ux-gif-wireframe--amazon,
+.blueprint-gif .ux-gif-wireframe--tutord,
+.blueprint-gif .ux-gif-wireframe--doge,
+.blueprint-gif .ux-gif-wireframe--stpaul,
+.blueprint-gif .ux-gif-wireframe--has-media,
+.blueprint-gif .ux-gif-wireframe--tutord.ux-gif-wireframe--has-media,
+.blueprint-gif .ux-gif-wireframe--doge.ux-gif-wireframe--has-media,
+.blueprint-gif .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #141414;
+    overflow: hidden;
+}
+
+.blueprint-gif--amazon {
+    background: #000000;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.blueprint-gif--tutord,
+.blueprint-gif .ux-gif-wireframe--tutord,
+.blueprint-gif .ux-gif-wireframe--tutord.ux-gif-wireframe--has-media {
+    background: #5b3d8c;
+}
+
+.blueprint-gif--doge,
+.blueprint-gif .ux-gif-wireframe--doge,
+.blueprint-gif .ux-gif-wireframe--doge.ux-gif-wireframe--has-media {
+    background: #0b1c33;
+}
+
+.blueprint-banner {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.blueprint-gif .ux-gif-media-wrap {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.blueprint-gif .ux-gif-media--video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 0;
+    filter: none;
+}
+
+.blueprint-gif .ia-tree {
+    --ia-line: #a6b8d1;
+    width: 100%;
+    height: 100%;
+}
+
+.blueprint-gif .ia-tree__node--root {
+    background: #ffffff;
+    color: #0f111a;
+    box-shadow: none;
+}
+
+.blueprint-gif .ia-tree__node--l2,
+.blueprint-gif .ia-tree__node--l3 {
+    background: #141414;
+    border: 1px solid #a6b8d1;
 }
 
 .blueprint-empty p {
@@ -202,6 +542,7 @@
 
 .blueprint-content {
     animation: blueprintFade 0.35s ease;
+    transform-origin: top left;
 }
 
 @keyframes blueprintFade {
@@ -847,7 +1188,213 @@
     to { opacity: 1; }
 }
 
+/* User Experience Assembly */
+.ux-assembly {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 8px;
+}
+
+.ux-assembly__lede {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+    line-height: 1.45;
+}
+
+.ux-assembly__start-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.ux-assembly__phase {
+    position: relative;
+    padding: 8px 0 18px 28px;
+}
+
+.ux-assembly__spine {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border-subtle);
+}
+
+.ux-assembly__phase:last-child .ux-assembly__spine {
+    bottom: 24px;
+}
+
+.ux-assembly__phase.is-dim {
+    opacity: 0.28;
+    pointer-events: none;
+}
+
+.ux-assembly__phase-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 10px;
+}
+
+.ux-assembly__nodes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.ux-node {
+    text-align: left;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    background: var(--bg-primary);
+    cursor: var(--cursor-brown-circle);
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.ux-node--start {
+    max-width: 520px;
+    width: 100%;
+    border-color: var(--text-secondary);
+    background: var(--bg-secondary);
+}
+
+.ux-node:hover,
+.ux-node.is-linked {
+    border-color: var(--text-secondary);
+    background: var(--bg-secondary);
+}
+
+.ux-node.is-active {
+    border-color: var(--text-primary);
+    box-shadow: inset 0 0 0 1px var(--text-primary);
+}
+
+.ux-node__kind {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 6px;
+}
+
+.ux-node__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.ux-node__why {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    margin: 0 0 10px;
+}
+
+.ux-node__feeds {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin: 0;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-subtle);
+    line-height: 1.35;
+}
+
+.ux-node__feed em {
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    color: var(--text-secondary);
+}
+
+.ux-preview {
+    width: 100%;
+    padding: 18px 22px 12px;
+    box-sizing: border-box;
+}
+
+.ux-preview__start {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 14px;
+}
+
+.ux-preview__phases {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 16px;
+    margin-bottom: 12px;
+}
+
+.ux-preview__phase p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 6px;
+}
+
+.ux-preview__chip {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 3px 8px;
+    margin: 0 4px 4px 0;
+}
+
+.docs-tabs {
+    max-width: 100%;
+}
+
 @media screen and (max-width: 768px) {
+    .ux-preview__phases {
+        grid-template-columns: 1fr;
+    }
+
+    .ux-assembly__phase {
+        padding-left: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .docs-menubar,
+    .docs-toolbar {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .docs-toolbar {
+        gap: 8px;
+    }
+
+    .docs-sep {
+        display: none;
+    }
+
     .blueprint-panel {
         min-height: 360px;
         height: auto;

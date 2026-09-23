@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-primary: #ebe4dc;
+    --bg-primary: #ffffff;
     --bg-secondary: #e0d6ca;
     --bg-elevated: #d4c9bc;
     --bg-card: #dccfbf;
@@ -422,6 +422,14 @@ h2 {
     flex-direction: column;
     text-decoration: none;
     color: inherit;
+    transform-origin: center center;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ux-gif-card-link:hover {
+        transform: scale(0.96);
+    }
 }
 
 .ux-gif-card-link .ux-gif-card {
@@ -801,6 +809,14 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .ux-gif-card-link {
+        transition: none;
+    }
+
+    .ux-gif-card-link:hover {
+        transform: none;
+    }
+
     .ux-gif-card--hover-gif .ux-gif-media--frame-a,
     .ux-gif-card--hover-gif .ux-gif-media--frame-b {
         animation: none;
@@ -870,13 +886,13 @@ h2 {
 
 .ux-gif-tags span {
     font-family: 'Inter', sans-serif;
-    font-size: 0.58rem;
+    font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--text-secondary);
     padding: 4px 7px;
-    border: 2px solid var(--text-primary);
+    border: 2px solid #525252;
     border-radius: var(--radius-sm);
     line-height: 1;
     white-space: nowrap;

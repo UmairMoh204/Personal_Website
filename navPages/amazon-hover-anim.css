@@ -1,0 +1,378 @@
+@font-face {
+    font-family: 'Amazon Ember Cd RC';
+    src: url('./fonts/AmazonEmberCdRC-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Amazon Ember Display';
+    src: url('./fonts/AmazonEmberDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Sans Condensed';
+    src: url('./fonts/FiraSansCondensed-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+.az-anim {
+    --az-orange: #ff9900;
+    --az-font: 'Amazon Ember Cd RC', 'Amazon Ember Display', 'Fira Sans Condensed', Arial, sans-serif;
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background: #000;
+    pointer-events: none;
+    user-select: none;
+    perspective: 720px;
+    perspective-origin: 50% 46%;
+    transform-style: preserve-3d;
+}
+
+.az-anim__stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-style: preserve-3d;
+}
+
+.az-anim__sky {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: #000;
+    --az-streak: 0;
+    perspective: 720px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+}
+
+.az-anim__sky-rig {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.az-anim__sky-rig--near {
+    --az-d: 46vmin;
+}
+
+.az-anim__sky-rig--far {
+    --az-d: 86vmin;
+}
+
+.az-anim__sky-rig i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-style: normal;
+    transform-style: preserve-3d;
+}
+
+.az-anim__blur {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.az-anim__sky-rig .az-star {
+    display: block;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.88;
+    box-shadow:
+        0 0 4px #fff,
+        calc(var(--az-streak) * 0.35px) 0 calc(var(--az-streak) * 0.12px) #fff,
+        calc(var(--az-streak) * 0.75px) 0 calc(var(--az-streak) * 0.22px) rgba(255, 255, 255, 0.95),
+        calc(var(--az-streak) * 1.25px) 0 calc(var(--az-streak) * 0.35px) rgba(255, 255, 255, 0.7),
+        calc(var(--az-streak) * 1.9px) 0 calc(var(--az-streak) * 0.5px) rgba(255, 255, 255, 0.4),
+        calc(var(--az-streak) * 2.7px) 0 calc(var(--az-streak) * 0.7px) rgba(255, 255, 255, 0.18);
+}
+
+.az-anim__sky-rig .az-star--live {
+    animation-name: az-sparkle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.az-anim__sky-rig i:nth-child(3n) .az-star--live {
+    animation-name: az-sparkle-b;
+}
+
+.az-anim__sky-rig i:nth-child(4n) .az-star--live {
+    animation-name: az-sparkle-c;
+}
+
+@keyframes az-sparkle {
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+    16% {
+        opacity: 1;
+        transform: scale(2.2);
+    }
+    28% {
+        opacity: 0.45;
+        transform: scale(0.85);
+    }
+    58% {
+        opacity: 0.95;
+        transform: scale(1.7);
+    }
+    70% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes az-sparkle-b {
+    0%,
+    100% {
+        opacity: 0.38;
+        transform: scale(0.75);
+    }
+    22% {
+        opacity: 1;
+        transform: scale(2.5);
+    }
+    34% {
+        opacity: 0.42;
+        transform: scale(0.8);
+    }
+    74% {
+        opacity: 1;
+        transform: scale(1.9);
+    }
+    84% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes az-sparkle-c {
+    0%,
+    100% {
+        opacity: 0.42;
+        transform: scale(0.85);
+    }
+    8% {
+        opacity: 1;
+        transform: scale(2);
+    }
+    18% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.55);
+    }
+    60% {
+        opacity: 0.38;
+        transform: scale(0.75);
+    }
+}
+
+.az-anim.is-reduced .az-anim__sky-rig .az-star {
+    animation: none;
+    opacity: 0.9;
+    transform: none;
+}
+
+.az-anim__world {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+.az-anim__glyph,
+.az-anim__word span {
+    color: var(--az-orange);
+    font-family: var(--az-font);
+    font-weight: 700;
+    font-style: normal;
+    line-height: 0.86;
+    letter-spacing: -0.03em;
+    text-shadow: 0 0 6px rgba(255, 153, 0, 0.45);
+    white-space: nowrap;
+}
+
+.az-anim__glyph {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    z-index: 2;
+    font-size: clamp(6.6rem, 22vw, 13rem);
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.az-anim__glyph--alt {
+    opacity: 0;
+}
+
+.az-anim__word-lockup {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.az-anim__word {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.az-anim__word span {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    font-size: clamp(4.4rem, 13.5vw, 8.4rem);
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(var(--az-x, 0px));
+    will-change: transform, opacity;
+}
+
+.az-anim__glyph.is-z,
+.az-anim__word span.is-z {
+    color: #fff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+}
+
+.az-anim__word span.is-z {
+    opacity: 1;
+}
+
+.az-anim__logo-letter {
+    display: block;
+    height: 0.7em;
+    width: auto;
+    overflow: visible;
+    filter: drop-shadow(0 0 4px rgba(255, 153, 0, 0.5));
+}
+
+.az-anim__glyph.is-z .az-anim__logo-letter,
+.az-anim__word span.is-z .az-anim__logo-letter {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+.az-anim__logo-letter path {
+    fill: currentColor;
+}
+
+.az-anim__smile {
+    display: block;
+    overflow: visible;
+}
+
+.az-anim__smile-mask {
+    fill: none;
+    stroke: #fff;
+}
+
+.az-anim__smile--mark {
+    display: none;
+}
+
+.az-anim__smile--word .az-anim__smile-body,
+.az-anim__smile--word .az-anim__smile-head {
+    fill: #ff9900;
+    stroke: none;
+    filter: drop-shadow(0 0 3px rgba(255, 153, 0, 0.5));
+}
+
+.az-anim__smile-head {
+    opacity: 0;
+    transition: opacity 180ms ease;
+}
+
+.az-anim__smile--word {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: min(52%, 420px);
+    max-width: calc(100% - 80px);
+    height: auto;
+    overflow: visible;
+    font-size: clamp(4.4rem, 13.5vw, 8.4rem);
+    z-index: 1;
+    transform: translate(-50%, 0.42em);
+    opacity: 1;
+}
+
+.az-anim.is-pass,
+.az-anim.is-pass .az-anim__stage,
+.az-anim.is-z,
+.az-anim.is-z .az-anim__stage,
+.az-anim.is-word,
+.az-anim.is-word .az-anim__stage,
+.az-anim.is-complete,
+.az-anim.is-complete .az-anim__stage {
+    overflow: hidden;
+}
+
+.blueprint-gif--amazon,
+.blueprint-gif--amazon:has(.az-anim.is-pass),
+.blueprint-gif--amazon:has(.az-anim.is-word),
+.blueprint-gif--amazon:has(.az-anim.is-complete),
+.blueprint-gif--amazon:has(.az-anim.is-z) {
+    overflow: hidden;
+}
+
+.az-anim.is-pass .az-anim__smile--mark,
+.az-anim.is-z .az-anim__smile--mark,
+.az-anim.is-word .az-anim__smile--mark,
+.az-anim.is-word .az-anim__glyph {
+    opacity: 0;
+}
+
+.az-anim.is-word .az-anim__word-lockup {
+    opacity: 1;
+}
+
+.az-anim.is-complete .az-anim__smile--word,
+.az-anim.is-reduced .az-anim__smile--word {
+    opacity: 1;
+}
+
+.az-anim.is-reduced .az-anim__glyph,
+.az-anim.is-reduced .az-anim__smile--mark {
+    display: none;
+}
+
+.az-anim.is-reduced .az-anim__word-lockup {
+    opacity: 1;
+}
+
+.az-anim.is-reduced .az-anim__word span {
+    opacity: 1;
+}

@@ -1,0 +1,138 @@
+HR Portal Navigation — City of Saint Paul
+(previous case study copy, archived before Talent & Equity Resources rewrite)
+
+Tags
+UX Research
+Information Architecture
+2023
+
+Title
+HR Portal Navigation — City of Saint Paul
+
+Lede
+Restructuring a dense HR portal into clear, intuitive navigation for residents and employees.
+
+Meta
+Timeline: 2023
+Team: Hamza Mohammed
+Role: UX/UI Designer, UX Researcher
+Skills: Figma, FigJam, Zoom
+
+Quick Glance
+Information architecture and site map for Talent and Equity Resources
+Image: ../uxImages/CityOfStPaul/infoArchandMap.png
+
+01 - Assignment
+Upon my arrival as the UX Research Intern for the Human Resources team within the City of Saint Paul, I was met with previous research regarding the updates for the new Human Resources page. The team had completed and organized the user reviews of the existing Human Resource pages as well as numerous rounds of Usability tests on the existing Human Resources pages.
+
+One serious problem that the team was facing was creating a strategy for organizing a significant number of subpages into a neatly compacted and very efficient structure to create an improved user experience. I was given the responsibility of creating an efficient navigation for the Human Resources section of the City of Saint Paul. After discussions with the team, we decided that I would conduct a Card Sorting Activity and create an Information Architecture and Site Map from the research gathered from the activity.
+
+Identify
+Organize a significant number of HR subpages into a compact, efficient structure.
+
+Research
+Conduct a Card Sorting Activity to surface how residents group HR content.
+
+Structure
+Create an Information Architecture and Site Map from the research.
+
+Organization
+The City of Saint Paul is a city that radiates with rich history, tradition, diversity, and economic vitality. The city has a strong commitment to preserving and enhancing the urban villages of its residents with the likes of the thriving Downtown area and its revitalized riverfront.
+
+The City of Saint Paul plays an immense role as a commercial hub with many Fortune 500 companies such as 3M, Target, EcoLab and many more with numerous small businesses playing an immense role in the city's economy.
+
+The City of Saint Paul is not only the seat of government for Minnesota but also a cultural heart and a city that many of its residents call home. The City of Saint Paul offers numerous opportunities for its residents such as Public Safety, Community Development, Educational Support, and much more.
+
+Methods & Tools
+- User Research
+- Stakeholder Interviews
+- Information Architecture
+- Usability Testing
+- Synthesizing
+- Wireframing
+- Interactive Prototyping
+- Figma, FigJam, Zoom
+
+02 - Uncovering the Problem
+I analyzed the existing Human Resources landscape alongside prior usability tests to understand where navigation broke down across a large set of subpages and how residents and employees were already grouping HR content.
+
+Existing HR Pages
+User Reviews
+Usability Tests
+Employees
+Residents
+Stakeholders
+Subpages
+Navigation
+
+03 - Prioritizing Findings
+Before we began our Card Sorting Activity, we first analyzed what kind of Card Sorting Activity we would conduct. We had to make a decision between Open Card Sorting Activity and Closed Card Sorting Activity in order to observe the user's mental map of a recognizable user interface.
+
+Open Card Sort
+Give participants freedom to group cards and expand on their process, rather than forcing a closed structure.
+
+15 Participants
+The Open Card Sorting Activity was conducted on 15 participants, the majority of whom live within Saint Paul.
+
+Target Audience
+This pool allowed us to take direct insight from people who lived in the city and used Human Resources pages.
+
+Insight
+How can the Information Architecture and Site Map reflect residents’ cognitive model of an ideal Human Resources section?
+
+Image: ../uxImages/CityOfStPaul/openCardSorting.png
+
+In order to meet the needs of the team and observe user groups we decided to implement an Open Card Sorting Activity in order to best evaluate the participants’ groupings and observe their psychological process of grouping the cards. This gives us a stronger insight on the participants’ process in order to develop an Information Architecture and Site Map that best reflects the participants’ cognitive model of an ideal Human Resource section of the City of Saint Paul page.
+
+04 - Research to Design
+I walked through the card-sort groupings into affinity clusters, then structured the information architecture around how residents expected Human Resources content to live.
+
+Affinity Diagramming
+Image: ../uxImages/CityOfStPaul/affinityDiagramming.png
+FigJam Board: https://www.figma.com/board/J7DbVjT6zTX8fuXM8Nt4Cl/Card-Sorting-Activity?node-id=0-1&t=wqr222P36x8EkgJK-1
+
+Talent and Equity Resources
+Employees / Residents / HR Resources
+Grouping #1, Labels #2, Site Map #3
+
+Heading based on the Human Resources destination residents already look for.
+Tags to quickly identify whether content is relevant to employees, residents, or HR tasks before opening it.
+Groups, labels, and sitemap paths based on how participants sorted cards.
+
+Information Architecture & Site Map
+Image: ../uxImages/CityOfStPaul/infoArchandMap.png
+
+Associates of the city — internal employees and external users — needed a structure that would serve diverse groups without burying subpages. The existing experience did not give them an efficient way to find Human Resources content.
+
+To solve this, I mapped card-sort clusters into an information architecture, then into a site map the team could implement.
+
+Card Sort — 15 Participants
+Affinity — FigJam Clusters
+IA & Site Map — HR Navigation
+Internal employees
+External users
+Stakeholders
+
+The resulting structure is linked only through relevant HR destinations, so people encounter deeper subpages when those pages match their current need.
+
+View Interactive Prototype: https://drive.google.com/file/d/1VSkd1OLdmhJwpeFNRZPHs51jeuxXdv1V/view?usp=sharing
+Talent and Equity Resources Results: https://www.stpaul.gov/departments/talent-and-equity-resources-human-resources
+
+05 - Learning and Impact
+Organizing a large number of subpages
+Organizing a large number of subpages into an efficient navigation structure that would serve diverse user groups.
+
+Balancing stakeholders with a user-centered IA
+Balancing the needs of different stakeholders while maintaining a user-centered approach to information architecture.
+
+Making navigation intuitive for employees and the public
+Ensuring the new navigation structure would be intuitive for both internal employees and external users accessing HR resources.
+
+Next: validate the implemented navigation
+Conduct follow-up usability testing on the implemented navigation structure to validate the card sorting results.
+
+Next: a consistent pattern across city departments
+Expand the research to include other city departments to create a consistent navigation pattern across the entire website.
+
+Next: a content strategy for discoverability
+Develop a comprehensive content strategy to ensure all HR information is properly categorized and easily discoverable.
