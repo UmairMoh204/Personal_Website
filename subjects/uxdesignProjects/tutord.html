@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tutor Scheduling Flow — TutorD</title>
+        <title>Tutor Scheduling Flow: TutorD</title>
         <meta name="description" content="Case study: designing TutorD’s admin experience so school admins could roster, read classrooms, and act on reports.">
         <link rel="icon" type="image/png" href="../../logo-black.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +14,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../style.css">
-        <link rel="stylesheet" href="../../eco-nav.css?v=7">
-        <script src="../../eco-nav.js?v=5" defer></script>
+        <link rel="stylesheet" href="../../eco-nav.css?v=22">
+        <script src="../../eco-nav.js?v=18" defer></script>
         <link rel="stylesheet" href="uxdesigncss.css?v=3">
         <link rel="stylesheet" href="amazon-case.css?v=41">
-        <link rel="stylesheet" href="eco-case.css?v=34">
+        <link rel="stylesheet" href="eco-case.css?v=49">
         <link rel="stylesheet" href="../../components/work-marquee.css?v=2">
         <script src="../../components/work-marquee.js"></script>
     </head>
     <body class="cs-amazon eco-case eco-case-tutord">
+        <div class="cs-hero-band">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
                 <li><a href="../../index.html">Home</a></li>
@@ -42,7 +41,8 @@
 
         <div class="work-marquee-video">
             <img src="../uxImages/tutorD/tutord-banner.png" alt="TutorD owl mascot on a lavender banner">
-        </div>
+                    </div>
+                </div>
 
         <article class="cs">
             <div class="cs-tags" aria-label="Project tags">
@@ -51,7 +51,7 @@
                 <span class="cs-tag">2023</span>
             </div>
 
-            <h1 class="cs-title">Tutor Scheduling Flow — Designing the Admin Experience for K–12 STEM Tutoring</h1>
+            <h1 class="cs-title">Tutor Scheduling Flow: Designing the Admin Experience for K–12 STEM Tutoring</h1>
             <p class="cs-lede">I was tasked with designing TutorD’s admin experience so school admins could roster people, read classrooms, and act on reports without leaving the page they were on.</p>
 
             <dl class="cs-meta">
@@ -62,34 +62,16 @@
                 <div>
                     <dt class="cs-meta__label">Team</dt>
                     <dd class="cs-meta__value">Japrie, Andrea, Tyler</dd>
-                </div>
+            </div>
                 <div>
                     <dt class="cs-meta__label">Role</dt>
                     <dd class="cs-meta__value">UX/UI Designer, UX Researcher</dd>
-                </div>
+            </div>
                 <div>
                     <dt class="cs-meta__label">Tools</dt>
                     <dd class="cs-meta__value">Figma, FigJam, Zoom</dd>
                 </div>
             </dl>
-
-            <section class="cs-glance is-interactive" aria-labelledby="glance-heading">
-                <h2 class="cs-glance__title" id="glance-heading">
-                    <button type="button" class="cs-glance__title-btn cs-glance__open" aria-expanded="false" aria-haspopup="dialog" aria-controls="cs-glance-modal">
-                        Quick Glance
-                    </button>
-                </h2>
-                <div class="cs-glance__frame cs-glance__open" role="button" tabindex="0" aria-expanded="false" aria-haspopup="dialog" aria-controls="cs-glance-modal" aria-label="Open Quick Glance">
-                    <div class="cs-glance__copy">
-                        <p>Quick glance is unavailable at this time.</p>
-                    </div>
-                    <span class="cs-glance__expand" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                            <path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/>
-                        </svg>
-                    </span>
-                </div>
-            </section>
 
             <dialog class="cs-glance-modal" id="cs-glance-modal" aria-labelledby="cs-glance-modal-title">
                 <div class="cs-glance-modal__panel">
@@ -107,8 +89,8 @@
 
             <section class="cs-block" aria-labelledby="assign-heading">
                 <h2 class="cs-kicker" id="assign-heading">01 - Assignment</h2>
-                <p>TutorD is building thoughtful, adaptive STEM tutoring for K–12 students in urban settings. My team and I were asked to design the admin side — the people who roster classrooms and have to prove the product is working.</p>
-                <p>The client handed us a basic dashboard, user stories, and a teacher onboarding flow. The job was to turn that into an admin experience that could carry three jobs without sending someone hunting across pages.</p>
+                <p>TutorD is building thoughtful, adaptive STEM tutoring for K–12 students in urban settings. My team and I were asked to design the admin side. That meant the people who roster classrooms and have to prove the product is working.</p>
+                <p>The client handed us a basic dashboard, user stories, and a teacher onboarding flow. The job was to turn that into one admin experience that could carry three jobs without sending someone hunting across pages.</p>
                 <div class="cs-cards">
                     <article class="cs-card">
                         <h3>Rostering</h3>
@@ -116,7 +98,7 @@
                     </article>
                     <article class="cs-card">
                         <h3>Classrooms</h3>
-                        <p>Give admins enough progress in the row that they do not have to click in to know how a class is doing.</p>
+                        <p>Put enough progress in the row that an admin does not have to click in to know how a class is doing.</p>
                     </article>
                     <article class="cs-card">
                         <h3>Reports</h3>
@@ -128,16 +110,20 @@
             <section class="cs-block" aria-labelledby="problem-heading">
                 <h2 class="cs-kicker" id="problem-heading">02 - Uncovering the Problem</h2>
                 <p>The stakeholder interview was less about features and more about alignment. We needed to understand <span class="cs-underline">what the admin already had to build from</span> and <span class="cs-underline">where the experience still needed structure</span>.</p>
+                <figure class="cs-figure">
+                    <img src="../uxImages/tutorD/stakeholder.png" alt="Zoom stakeholder call with Andrea, Ja'Prie Posey, Tyler Prathumthong, Brandon Bailey, Jerald, and Hamza Mohammed">
+                    <figcaption>Stakeholder interview on Zoom. The conversation set what we could inherit versus what still needed a structure.</figcaption>
+                </figure>
                 <p>What we inherited was a starting point, not a destination. The dashboard could hold people. It could not tell an admin, at a glance, whether a classroom was moving.</p>
                 <figure class="cs-figure">
-                    <img src="../uxImages/tutorD/preExisting.png" alt="The inherited TutorD admin dashboard, with roster lists and a progress ring but no classroom you can read">
-                    <figcaption>The file we started from. Rostering and a ring. No classroom an admin could actually read.</figcaption>
+                    <img src="../uxImages/tutorD/preExisting.png" alt="Inherited TutorD admin dashboard labeled Before, with roster lists, a calendar, lesson chips, and a single progress ring">
+                    <figcaption>The file we started from. Rostering and a ring on a hub. No classroom list an admin could actually read.</figcaption>
                 </figure>
             </section>
 
             <section class="cs-block" aria-labelledby="priority-heading">
                 <h2 class="cs-kicker" id="priority-heading">03 - Prioritizing Findings</h2>
-                <p>We could not get into competitor admin pages, so the competitive audit looked at the surfaces we could actually open — and at jobs that overlapped with TutorD.</p>
+                <p>We could not get into competitor admin pages, so the competitive audit looked at the surfaces we could actually open. It also looked at jobs that overlapped with TutorD.</p>
                 <div class="cs-cards">
                     <article class="cs-card">
                         <h3>Schoology</h3>
@@ -152,7 +138,11 @@
                         <p>Shows progress as something you can scan, then open. That became the model for the classroom row.</p>
                     </article>
                 </div>
-                <p>We did not freeze a mid-fidelity and test it four times. After each of the four usability sessions we synthesized, changed the prototype, and tested the change. The alternative — one locked file — would have left the same pain points in place.</p>
+                <p>We did not freeze a mid-fidelity and test it four times. After each of the four usability sessions we synthesized, changed the prototype, and tested the change. The alternative was one locked file. That would have left the same empty-row pain in place.</p>
+                <figure class="cs-figure">
+                    <img loading="lazy" src="../uxImages/tutorD/usabilityTest.png" alt="Usability session on a Figma mid-fidelity prototype. The on-screen step asks which grade levels the admin administers. Hamza Mohammed, Ja'Prie Posey, and Robin Walls Couch are on the call">
+                    <figcaption>One of the four sessions. This frame is the institution onboarding step for grade levels. It is not the classroom row. The prototype moved after each test, including this flow.</figcaption>
+                </figure>
                 <div class="cs-cards">
                     <article class="cs-card">
                         <h3>Student progress</h3>
@@ -173,29 +163,40 @@
                         <path d="M10 19h4M11 22h2"/>
                     </svg>
                     <div class="cs-insight__copy">
-                        <p>How can admins see student progress, compare statistics,</p>
-                        <p>and open the current school year without leaving the classroom view?</p>
+                        <p>How can admins see student progress, compare statistics, and open the current school year without leaving the classroom view?</p>
                     </div>
                 </div>
             </section>
 
             <section class="cs-block" aria-labelledby="rtd-heading">
                 <h2 class="cs-kicker" id="rtd-heading">04 - Research to Design</h2>
-                <p>We first drew the information architecture from our own mental model of an admin product. Usability tests and the competitive audit kept rewriting it. That was the point — the map had to follow what admins were trying to do, not the pages we had already drawn.</p>
-                <p>We synthesized each session into three buckets — usability, functionality, and changes — then wrote action items from the third. That kept “they didn’t like it” from dying as a note.</p>
-                <p>Admins needed more information in the classroom view. To solve this, I used progressive disclosure: show classroom progress in the row, then a hover percentile, then the full classroom year.</p>
-                <figure class="cs-figure">
-                    <img src="../uxImages/tutorD/highFidelity3.png" alt="TutorD classrooms list with teacher, course, student count, subject, and a progress sparkline in each row">
-                    <figcaption>Progress lives in the row. An admin can scan the year before they enter a class.</figcaption>
+                <div class="cs-rtd">
+                    <figure class="cs-figure">
+                        <img loading="lazy" src="../uxImages/tutorD/highFidelity3-top.png" alt="TutorD Classrooms list with teacher, course count, student count, subject chip, progress sparkline, and Enter Class in each row">
+                        <figcaption>Teacher, subject, headcount, and a sparkline live in the row so an admin can read the year before they enter.</figcaption>
+                    </figure>
+                    <div class="cs-rtd__copy">
+                        <p>We first drew the information architecture from our own mental model of an admin product. Usability tests and the competitive audit kept rewriting it. The map had to follow what admins were trying to do, not the pages we had already drawn.</p>
+                        <p>We synthesized each session into three buckets. Those buckets were usability, functionality, and changes. Then we wrote action items from the third. That kept “they didn’t like it” from dying as a note.</p>
+                        <p>Admins needed more information in the classroom view. To solve this, I used progressive disclosure: classroom progress in the row, a percentile on hover, then the full classroom year once they entered.</p>
+                        <p>My pages were the classroom list, the organization page, and the navigation hover and dropdown states. I filled each classroom row and put a percentile on hover. That is how I kept whitespace from becoming the thing an admin had to click through.</p>
+                        <p>The home dashboard had to start work, not decorate a welcome. After the tests, classrooms and reports moved onto that first screen instead of hiding behind a ring.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cs-block cs-prototype" aria-labelledby="proto-heading">
+                <h2 class="cs-kicker" id="proto-heading">05 - Prototype</h2>
+                <figure class="cs-figure cs-figure--device">
+                    <img loading="lazy" src="../uxImages/tutorD/prototype-cutout.png" alt="Laptop showing the TutorD admin dashboard with staff, classrooms, reports, calendar, and tasks">
                 </figure>
-                <p>My pages were the classroom list, the organization page, and the navigation hover and dropdown states. Filling each classroom row — and putting a percentile on hover — was how I kept whitespace from becoming the thing an admin had to click through.</p>
                 <div class="cs-actions">
                     <a class="cs-btn" href="https://www.figma.com/proto/cCArAWOYl7XsUCGOyeKwY8/TutorD-Prototype-Deliverable?page-id=5812%3A72&amp;type=design&amp;node-id=5851-4924&amp;viewport=1819%2C-7969%2C0.36&amp;t=WUbcV1LTyIPu2beS-1&amp;scaling=min-zoom&amp;starting-point-node-id=5851%3A1183" target="_blank" rel="noopener">View Interactive Prototype</a>
                 </div>
             </section>
 
             <section class="cs-block" aria-labelledby="learn-heading">
-                <h2 class="cs-kicker" id="learn-heading">05 - Learning and Impact</h2>
+                <h2 class="cs-kicker" id="learn-heading">06 - Learning and Impact</h2>
                 <div class="cs-learns">
                     <article class="cs-learn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -296,8 +297,8 @@
                                                             <div class="ia-tree__node ia-tree__node--l3"></div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
+                </div>
+            </div>
                                             <div class="ia-tree__branch">
                                                 <span class="ia-tree__line ia-tree__line--v ia-tree__line--drop-2"></span>
                                                 <div class="ia-tree__node ia-tree__node--l2"></div>
@@ -313,27 +314,21 @@
                                                             <span class="ia-tree__line ia-tree__line--v ia-tree__line--drop-3"></span>
                                                             <div class="ia-tree__node ia-tree__node--l3"></div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+                </div>
+            </div>
+                </div>
+                </div>
+            </div>
+        </div>
                         <h3 class="cs-next__name">Talent &amp; Equity Resources</h3>
                     </a>
-                    <a class="cs-next__item" href="3doge.html">
-                        <div class="cs-next__media cs-next__media--wellness">
-                            <div class="ux-gif-wireframe ux-gif-wireframe--doge ux-gif-wireframe--has-media" aria-hidden="true">
-                                <div class="ux-gif-media-wrap">
-                                    <video class="ux-gif-media ux-gif-media--video" autoplay loop muted playsinline preload="auto">
-                                        <source src="../uxImages/3DogE/doge-showcase.mp4?v=2" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
+                    <a class="cs-next__item" href="mscs.html">
+                        <div class="cs-next__media">
+                            <div class="ux-gif-wireframe ux-gif-wireframe--blank" aria-label="Macalester MSCS Redesign preview"></div>
                         </div>
-                        <h3 class="cs-next__name">Pet Wellness Platform</h3>
+                        <h3 class="cs-next__name">Macalester's MSCS Redesign</h3>
                     </a>
                 </div>
             </section>
@@ -352,4 +347,4 @@
             }
         </script>
     </body>
-</html>
+</html> 

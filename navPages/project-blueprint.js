@@ -1,5 +1,6 @@
 /**
  * Project Blueprint — User Experience Assembly diagrams
+ * Interactive Tools — commented out from projects.html
  */
 (function () {
     var PHASES = [
@@ -31,8 +32,8 @@
                 why: 'The assignment was to create a new help destination so associates could find answers and complete a transfer — not to decorate a standalone FAQ.',
                 feeds: [{ to: 'am-journey', via: 'opens' }]
             },
-            nodes: [
-                {
+                    nodes: [
+                        {
                     id: 'am-journey',
                     phase: 'research',
                     kind: 'method',
@@ -79,9 +80,9 @@
                     label: 'Walk the existing transfer flow',
                     why: 'Support had to live where associates already were. Mapping the current flow showed insertion points instead of inventing a new destination first.',
                     feeds: [{ to: 'am-ia', via: 'structures' }]
-                },
-                {
-                    id: 'am-ia',
+                        },
+                        {
+                            id: 'am-ia',
                     phase: 'design',
                     kind: 'method',
                     label: 'Need-based information architecture',
@@ -162,8 +163,8 @@
                 why: 'The brief was to rebuild the information architecture of Talent & Equity Resources so residents and employees could find city services without hunting a maze of subpages.',
                 feeds: [{ to: 'sp-voc', via: 'opens' }]
             },
-            nodes: [
-                {
+                    nodes: [
+                        {
                     id: 'sp-voc',
                     phase: 'research',
                     kind: 'method',
@@ -202,9 +203,9 @@
                     label: 'Gap between what people say and what they do',
                     why: 'Strong associations between page titles created ambiguity about purpose. People clustered words that sounded alike even when the pages did different jobs.',
                     feeds: [{ to: 'sp-patterns', via: 'produces' }]
-                },
-                {
-                    id: 'sp-patterns',
+                        },
+                        {
+                            id: 'sp-patterns',
                     phase: 'synthesis',
                     kind: 'method',
                     label: 'Grouping patterns',
@@ -301,8 +302,8 @@
                 why: 'The job was an admin experience that could carry rostering, classroom reading, and reporting without sending someone hunting across pages.',
                 feeds: [{ to: 'td-stake', via: 'opens' }]
             },
-            nodes: [
-                {
+                    nodes: [
+                        {
                     id: 'td-stake',
                     phase: 'research',
                     kind: 'method',
@@ -440,9 +441,9 @@
                 why: 'The product had to help owners stay ahead of a dog’s health. Eat, Exercise, and Environment had to be jobs in the app — not labels next to an AI scan.',
                 feeds: [{ to: 'dg-domain', via: 'opens' }]
             },
-            nodes: [
-                {
-                    id: 'dg-domain',
+                    nodes: [
+                        {
+                            id: 'dg-domain',
                     phase: 'research',
                     kind: 'method',
                     label: 'Domain research first',
@@ -473,8 +474,8 @@
                     why: 'People did not ask for more information. They asked for visibility and a simpler home. Those notes ranked high and rebuilt the last mile.',
                     feeds: [{ to: 'dg-restraint', via: 'feeds' }]
                 },
-                {
-                    id: 'dg-affinity',
+                        {
+                            id: 'dg-affinity',
                     phase: 'synthesis',
                     kind: 'method',
                     label: 'Affinity & bullseye, held until the end',
@@ -596,7 +597,7 @@
     var ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 
     var currentProjectId = null;
-    var currentPhase = 'all';
+    var currentPhase = 'research';
     var activeNodeId = null;
     var hoverTimeout = null;
     var zoom = 1;
@@ -683,39 +684,47 @@
         );
     }
 
-    function renderAssembly(project, phaseFilter) {
-        var phases = PHASES.map(function (phase) {
-            var nodes = project.nodes.filter(function (node) {
-                return node.phase === phase.id;
-            });
-            if (!nodes.length) return '';
-            var hidden = phaseFilter && phaseFilter !== 'all' && phaseFilter !== phase.id ? ' is-dim' : '';
-            return (
-                '<section class="ux-assembly__phase' +
-                hidden +
-                '" data-phase="' +
-                phase.id +
-                '">' +
-                '<div class="ux-assembly__spine" aria-hidden="true"></div>' +
-                '<h3 class="ux-assembly__phase-label">' +
-                escapeHtml(phase.label) +
-                '</h3>' +
-                '<div class="ux-assembly__nodes">' +
-                nodes.map(function (node) {
-                    return renderNode(project, node, false);
-                }).join('') +
-                '</div>' +
-                '</section>'
-            );
-        }).join('');
+    function phaseById(id) {
+        for (var i = 0; i < PHASES.length; i++) {
+            if (PHASES[i].id === id) return PHASES[i];
+        }
+        return PHASES[0];
+    }
+
+    function renderStep(project, phaseId) {
+        var phase = phaseById(phaseId);
+        var nodes = project.nodes.filter(function (node) {
+            return node.phase === phase.id;
+        });
+        var start =
+            phase.id === 'research'
+                ? '<div class="ux-step__start">' + renderNode(project, project.start, true) + '</div>'
+                : '';
+        var cards = nodes
+            .map(function (node) {
+                return renderNode(project, node, false);
+            })
+            .join('');
+        var empty = !start && !cards
+            ? '<p class="ux-step__empty">No content in this step yet.</p>'
+            : '';
 
         return (
-            '<div class="ux-assembly">' +
-            '<p class="ux-assembly__lede">User Experience Assembly — click a node to see which methods it feeds and which methods feed it.</p>' +
-            '<div class="ux-assembly__start-wrap">' +
-            renderNode(project, project.start, true) +
+            '<div class="ux-step" data-phase="' +
+            escapeHtml(phase.id) +
+            '">' +
+            '<header class="ux-step__head">' +
+            '<p class="ux-step__kicker">Step interface</p>' +
+            '<h3 class="ux-step__title">' +
+            escapeHtml(phase.label) +
+            '</h3>' +
+            '<p class="ux-step__lede">Content for this step. Assemble this interface with intention.</p>' +
+            '</header>' +
+            '<div class="ux-step__board">' +
+            start +
+            cards +
+            empty +
             '</div>' +
-            phases +
             '</div>'
         );
     }
@@ -806,16 +815,16 @@
     function renderContent() {
         var project = PROJECTS[currentProjectId];
         if (!project || !contentEl) return;
-        contentEl.innerHTML = renderAssembly(project, currentPhase);
+        contentEl.innerHTML = renderStep(project, currentPhase);
         bindAssembly();
         if (activeNodeId) highlightNode(activeNodeId);
         applyZoom();
     }
 
     function setPhase(phase) {
-        currentPhase = phase || 'all';
+        currentPhase = phaseById(phase).id;
         tabButtons.forEach(function (btn) {
-            btn.classList.toggle('is-active', (btn.dataset.tab || 'all') === currentPhase);
+            btn.classList.toggle('is-active', (btn.dataset.tab || 'research') === currentPhase);
         });
         if (currentProjectId) renderContent();
     }
@@ -853,7 +862,7 @@
         var project = PROJECTS[projectId];
         if (!project) return;
         currentProjectId = projectId;
-        currentPhase = 'all';
+        currentPhase = 'research';
         activeNodeId = null;
         document.querySelectorAll('.docs-chip[data-project]').forEach(function (card) {
             card.classList.toggle('is-selected', card.dataset.project === projectId);
@@ -871,7 +880,7 @@
         emptyEl.hidden = true;
         activeEl.hidden = false;
         panel.classList.add('has-project');
-        setPhase('all');
+        setPhase('research');
     }
 
     function applyZoom() {
@@ -920,7 +929,7 @@
 
     tabButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
-            setPhase(btn.dataset.tab || 'all');
+            setPhase(btn.dataset.tab || 'research');
         });
     });
 
@@ -935,16 +944,6 @@
         card.addEventListener('dragend', function () {
             card.classList.remove('is-dragging');
             panel.classList.remove('is-drag-over');
-        });
-        card.addEventListener('mouseenter', function () {
-            clearTimeout(hoverTimeout);
-            hoverTimeout = setTimeout(function () {
-                showHoverPreview(projectId);
-            }, 120);
-        });
-        card.addEventListener('mouseleave', function () {
-            clearTimeout(hoverTimeout);
-            hoverTimeout = setTimeout(resetEmptyState, 180);
         });
         card.addEventListener('click', function (e) {
             e.preventDefault();
@@ -995,7 +994,7 @@
             var action = btn.dataset.action;
             if (action === 'open-case') openCaseStudy();
             if (action === 'open-project' && btn.dataset.project) selectProject(btn.dataset.project);
-            if (action === 'tab') setPhase(btn.dataset.tab || 'all');
+            if (action === 'tab') setPhase(btn.dataset.tab || 'research');
             if (action === 'zoom-in') stepZoom(1);
             if (action === 'zoom-out') stepZoom(-1);
             if (action === 'zoom-fit') setZoom(1);

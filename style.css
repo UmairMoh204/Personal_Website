@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-primary: #ffffff;
+    --bg-primary: #f6fbff;
+    --page-bg-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
     --bg-secondary: #e0d6ca;
     --bg-elevated: #d4c9bc;
     --bg-card: #dccfbf;
@@ -22,7 +25,8 @@ body {
     margin: 0;
     padding: 0 23px;
     height: 100%;
-    background: var(--bg-primary);
+    background-color: var(--bg-primary);
+    background-image: var(--page-bg-image);
     color: var(--text-primary);
     background-size: cover; 
     background-attachment: fixed;
@@ -38,7 +42,9 @@ body {
 /* Ensure proper viewport handling */
 html {
     scroll-behavior: smooth;
-    background: var(--bg-primary);
+    background-color: var(--bg-primary);
+    background-image: var(--page-bg-image);
+    background-attachment: fixed;
     cursor: var(--cursor-brown-circle);
 }
 
@@ -287,7 +293,7 @@ h2 {
     margin: 25px 0;
     background-color: var(--bg-secondary);
     border-radius: var(--radius-xl);
-    /* border: 2px solid black; */
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1538,19 +1544,8 @@ h2 {
     align-items: center;
     padding: 20px 30px;
     cursor: pointer;
-    /* transition: background-color 0.3s ease; */
     background-color: transparent;
 }
-
-/* .experience-header:hover {
-    background-color: rgba(58, 58, 58, 0.3);
-}
-
-.experience-header.active {
-    background-color: rgba(64, 64, 64, 0.3); */
-/* } 
-
-*/
 
 .experience-title {
     display: flex;

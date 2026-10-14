@@ -1,158 +1,202 @@
-body {
-    font-family: Arial, sans-serif;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    margin-right: 30px;
-    height: 100%;
-    margin-bottom: 50px;
-    padding: 0;
-    background-color: var(--bg-primary);
-    /* rgba(18, 18, 18, 0.185) */
-    background-size: cover; 
-    background-attachment: fixed; 
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove extra margins */
-    padding: 0; /* Ensure no padding interferes */
+/* Eco login — pale sky canvas, vault-ink type, 8px radius, ghost button. */
+
+body.eco-login {
+    --color-bone: #ffffff;
+    --color-ash-mist: #f6fbff;
+    --page-bg-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
+    --color-vault-ink: #0f111a;
+    --color-charcoal: #2a2a2a;
+    --color-silver-veil: #aeaeae;
+    --font-interdisplay: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-roobert: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-fragmentmono: 'IBM Plex Mono', ui-monospace, monospace;
+    --radius-cards: 8px;
+    --radius-buttons: 8px;
+
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-ash-mist);
+    background-image: var(--page-bg-image);
+    background-attachment: fixed;
+    color: var(--color-vault-ink);
+    font-family: var(--font-interdisplay);
+    font-weight: 400;
+    overflow-x: hidden;
 }
 
-.nav-container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+html:has(body.eco-login) {
+    background-color: #f6fbff;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
+    background-attachment: fixed;
+    scrollbar-color: #0f111a #f6fbff;
+}
+
+body.eco-login *,
+body.eco-login *::before,
+body.eco-login *::after {
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+.eco-login__stage {
+    display: flex;
     align-items: center;
-    padding: 15px;
-    padding-bottom: 40px;
-    color: white;
-}
-
-.nav-logo {
-    grid-column: 1;
-    margin-left: 30px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    grid-column: 2;
     justify-content: center;
-}
-.nav-links li {
-    margin: 0 15px;
-}
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    position: relative;
-}
-.nav-links a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease-in-out;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
+    min-height: 100vh;
+    padding: 40px 20px;
 }
 
-.nav-links a:hover::after {
+.eco-login__card {
     width: 100%;
+    max-width: 560px;
+    padding: 40px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-bone);
 }
-.hamburger {
-    display: none;
-    cursor: pointer;
-    grid-column: 3;
-    justify-self: end;
-    margin-right: 30px;
+
+.eco-login__header {
+    text-align: center;
+    margin-bottom: 32px;
 }
-.bar {
+
+.eco-login__logo {
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: white;
+    width: 72px;
+    height: auto;
+    margin: 0 auto 24px;
+    filter: brightness(0);
 }
 
-/* -----------------------------Log in and Sign up CSS-------------------------------- */
-
-.loginContainer {
-    height: 350px;
-    width: 75%;
-    margin: 25px;
-    background-color: #2d2d2d;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    border-color: #404040;
-    border: 2px solid #404040;
-    max-width: 600px;
-}
-
-#loginBlock {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    height: 100%; 
-    position: relative;
-}
-
-#loginBlock h2 {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-#loginBlock p {
-    text-align: center;
-}
-
-#textFields {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    gap: 10px;
-    margin: 40px;
-}
-
-#loginBlock button {
-    padding: 10px 20px;
-    width: 100px;
-    margin-bottom: 20px;
-    font-size: 1em;
-    color: white;
-    background-color: rgb(49, 162, 76);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* border-color: black;
-    border: 2px solid black; */
-}
-
-#textFields input {
-    font-family: 'Roboto', sans-serif;
+.eco-login__eyebrow {
+    margin: 0 0 16px;
+    font-family: var(--font-fragmentmono);
     font-size: 14px;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    width: 500px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
 }
 
-#textFields input:focus {
-    border-color: rgba(64, 5, 0, 0.659);
-    box-shadow: 0 0 5px rgba(64, 5, 0, 0.659);
-    outline: none;
+.eco-login__title {
+    margin: 0 0 12px;
+    font-family: var(--font-roobert);
+    font-size: 40px;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--color-vault-ink);
 }
 
+.eco-login__lede {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--color-charcoal);
+}
 
+.eco-login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.eco-login__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eco-login__field label {
+    font-family: var(--font-fragmentmono);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    color: var(--color-charcoal);
+}
+
+.eco-login__field input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-vault-ink);
+    border-radius: var(--radius-buttons);
+    background: transparent;
+    color: var(--color-vault-ink);
+    font-family: var(--font-interdisplay);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.eco-login__field input::placeholder {
+    color: var(--color-silver-veil);
+}
+
+.eco-login__field input:focus,
+.eco-login__field input:focus-visible {
+    outline: 1px solid var(--color-vault-ink);
+    outline-offset: 3px;
+}
+
+.eco-login__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+    padding: 12px 16px;
+    border: 1px solid var(--color-vault-ink);
+    border-radius: var(--radius-buttons);
+    background: transparent;
+    color: var(--color-vault-ink);
+    font-family: var(--font-interdisplay);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+}
+
+.eco-login__submit:hover,
+.eco-login__submit:focus-visible {
+    background: var(--color-ash-mist);
+    border-color: rgba(15, 17, 26, 0.7);
+}
+
+.eco-login__submit:focus-visible {
+    outline: 1px solid var(--color-vault-ink);
+    outline-offset: 3px;
+}
+
+.eco-login__note {
+    margin: 24px 0 0;
+    font-family: var(--font-fragmentmono);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    color: var(--color-charcoal);
+    text-align: center;
+}
+
+.eco-login__note a {
+    color: var(--color-vault-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.eco-login__note a:hover,
+.eco-login__note a:focus-visible {
+    color: var(--color-charcoal);
+}
+
+@media screen and (max-width: 768px) {
+    .eco-login__card {
+        padding: 32px 20px;
+    }
+
+    .eco-login__title {
+        font-size: 32px;
+    }
+}

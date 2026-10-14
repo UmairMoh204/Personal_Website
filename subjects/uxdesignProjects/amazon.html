@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Enterprise Help Experience — Amazon</title>
         <meta name="description" content="Case study: improving the Transfer help experience for Amazon associates.">
@@ -16,31 +14,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../style.css">
-        <link rel="stylesheet" href="../../eco-nav.css?v=7">
-        <script src="../../eco-nav.js?v=5" defer></script>
+        <link rel="stylesheet" href="../../eco-nav.css?v=22">
+        <script src="../../eco-nav.js?v=18" defer></script>
         <link rel="stylesheet" href="uxdesigncss.css?v=3">
-        <link rel="stylesheet" href="amazon-case.css?v=40">
-        <link rel="stylesheet" href="eco-case.css?v=31">
+        <link rel="stylesheet" href="amazon-case.css?v=44">
+        <link rel="stylesheet" href="eco-case.css?v=46">
         <link rel="stylesheet" href="../../components/work-marquee.css?v=2">
         <script src="../../components/work-marquee.js"></script>
     </head>
     <body class="cs-amazon eco-case">
-        <!-- Existing navigation
-        <nav class="nav-container">
-            <ul class="nav-links">
-                <li><a href="../../index.html">home</a></li>
-                <li><a href="../../navPages/projects.html">projects</a></li>
-                <li class="nav-logo-item"><a href="../../index.html"><img src="../../logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></a></li>
-                <li><a href="../../navPages/about.html">about</a></li>
-                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-        -->
+        
+        <div class="cs-hero-band">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
                 <li><a href="../../index.html">Home</a></li>
@@ -56,9 +40,11 @@
             </div>
         </nav>
 
-        <!-- WorkMarquee — restore by uncommenting this and removing the video below
-        <work-marquee images="../uxImages/Amazon/banner-vest.png, ../uxImages/Amazon/banner-hardhat.png, ../uxImages/Amazon/banner-calendar.png, ../uxImages/Amazon/banner-phone.png, ../uxImages/Amazon/banner-badge.png"></work-marquee>
-        -->
+        
+        <div hidden>
+<work-marquee images="../uxImages/Amazon/banner-vest.png, ../uxImages/Amazon/banner-hardhat.png, ../uxImages/Amazon/banner-calendar.png, ../uxImages/Amazon/banner-phone.png, ../uxImages/Amazon/banner-badge.png"></work-marquee>
+        </div>
+
         <div class="work-marquee-video">
             <video autoplay loop muted playsinline preload="auto" aria-hidden="true">
                 <source src="../uxImages/Amazon/animo-sphere-cascade-banner.mp4?v=2" type="video/mp4">
@@ -73,8 +59,23 @@
             </svg>
             <span>Some details of this work are confidential and have been intentionally omitted or generalized. Please <a href="mailto:hamzamohammedx23@gmail.com">email me</a> if you would like to chat and learn more.</span>
         </p>
+        </div>
 
-        <article class="cs">
+        <div class="cs-browser" data-cs-tabs>
+            <div class="cs-browser__bar">
+                <div class="cs-browser__tabs" role="tablist" aria-label="Internal Tools Experience case studies">
+                    <button class="cs-browser__tab" type="button" role="tab" id="tab-help" aria-controls="panel-help" aria-selected="true">
+                        <span class="cs-browser__favicon" aria-hidden="true"></span>
+                        <span class="cs-browser__label">Enterprise Help Experience</span>
+                    </button>
+                    <button class="cs-browser__tab" type="button" role="tab" id="tab-offline" aria-controls="panel-offline" aria-selected="false" tabindex="-1">
+                        <span class="cs-browser__favicon" aria-hidden="true"></span>
+                        <span class="cs-browser__label">Offline Mode</span>
+                    </button>
+                </div>
+            </div>
+
+        <article class="cs" id="panel-help" role="tabpanel" aria-labelledby="tab-help">
             <div class="cs-tags" aria-label="Project tags">
                 <span class="cs-tag">Mobile Design</span>
                 <span class="cs-tag">Case Study</span>
@@ -103,24 +104,6 @@
                     <dd class="cs-meta__value">Figma, FigJam, Slack, Chime</dd>
                 </div>
             </dl>
-
-            <section class="cs-glance is-interactive" aria-labelledby="glance-heading">
-                <h2 class="cs-glance__title" id="glance-heading">
-                    <button type="button" class="cs-glance__title-btn cs-glance__open" aria-expanded="false" aria-haspopup="dialog" aria-controls="cs-glance-modal">
-                        Quick Glance
-                    </button>
-                </h2>
-                <div class="cs-glance__frame cs-glance__open" role="button" tabindex="0" aria-expanded="false" aria-haspopup="dialog" aria-controls="cs-glance-modal" aria-label="Open Quick Glance">
-                    <div class="cs-glance__copy">
-                        <p>Quick glance is unavailable at this time.</p>
-                    </div>
-                    <span class="cs-glance__expand" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                            <path d="M9 3H3v6M15 3h6v6M9 21H3v-6M21 15v6h-6"/>
-                        </svg>
-                    </span>
-                </div>
-            </section>
 
             <dialog class="cs-glance-modal" id="cs-glance-modal" aria-labelledby="cs-glance-modal-title">
                 <div class="cs-glance-modal__panel">
@@ -282,7 +265,7 @@
                         <span class="cs-flow__drop" aria-hidden="true"></span>
                     </div>
                     <div class="cs-crit" aria-label="Content criticality">
-                        <!-- Priority dots: red = high, green = medium, yellow = low -->
+                        
                         <span class="cs-crit__high">High Criticality</span>
                         <span class="cs-crit__high">High Criticality</span>
                         <span class="cs-crit__low">Low Criticality</span>
@@ -332,21 +315,23 @@
                 </div>
             </section>
 
+        </article>
+
+        <article class="cs" id="panel-offline" role="tabpanel" aria-labelledby="tab-offline" hidden>
+            <h1 class="cs-title">Offline Mode — Creating UI for offline experiences</h1>
+        </article>
+        </div>
+
+        <div class="cs cs--after-tabs">
             <section class="cs-next cs-next--tooling" aria-labelledby="next-heading">
                 <hr class="cs-next__break">
                 <h2 class="cs-next__title" id="next-heading">Next Up...</h2>
                 <div class="cs-next__row">
-                    <a class="cs-next__item" href="3doge.html">
-                        <div class="cs-next__media cs-next__media--wellness">
-                            <div class="ux-gif-wireframe ux-gif-wireframe--doge ux-gif-wireframe--has-media" aria-hidden="true">
-                                <div class="ux-gif-media-wrap">
-                                    <video class="ux-gif-media ux-gif-media--video" autoplay loop muted playsinline preload="auto">
-                                        <source src="../uxImages/3DogE/doge-showcase.mp4?v=2" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
+                    <a class="cs-next__item" href="mscs.html">
+                        <div class="cs-next__media">
+                            <div class="ux-gif-wireframe ux-gif-wireframe--blank" aria-label="Macalester MSCS Redesign preview"></div>
                         </div>
-                        <h3 class="cs-next__name">Pet Wellness Platform</h3>
+                        <h3 class="cs-next__name">Macalester's MSCS Redesign</h3>
                     </a>
                     <a class="cs-next__item" href="saintpaul.html">
                         <div class="cs-next__media">
@@ -436,14 +421,15 @@
                         </div>
                         <h3 class="cs-next__name">Talent &amp; Equity Resources</h3>
                     </a>
-                </div>
+            </div>
             </section>
-        </article>
+        </div>
 
         <script src="../../ia-tree.js" defer></script>
         <script src="../../web.js" async defer></script>
         <script src="../../smooth-scroll.js" defer></script>
         <script src="cs-glance.js?v=2" defer></script>
+        <script src="cs-tabs.js?v=1" defer></script>
         <script>
             function toggleMenu() {
                 var nav = document.querySelector('.nav-links');
@@ -453,4 +439,4 @@
             }
         </script>
     </body>
-</html>
+</html> 

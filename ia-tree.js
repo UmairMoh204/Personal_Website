@@ -2,8 +2,10 @@
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function initIaTrees(root) {
-        var trees = (root || document).querySelectorAll('.ia-tree:not([data-ia-ready])');
+        var trees = (root || document).querySelectorAll('.ia-tree');
         trees.forEach(function (tree) {
+            if (tree._iaBound) return;
+            tree._iaBound = true;
             tree.setAttribute('data-ia-ready', '1');
             if (reduced) {
                 tree.classList.add('is-l1', 'is-l2', 'is-l3');

@@ -2,7 +2,10 @@
 
 body.eco-case {
     --color-bone: #ffffff;
-    --color-ash-mist: #efefef;
+    --color-ash-mist: #f6fbff;
+    --page-bg-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
     --color-vault-ink: #0f111a;
     --color-absolute: #000000;
     --color-carbon: #141414;
@@ -52,25 +55,35 @@ body.eco-case {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: var(--color-vault-ink);
-    color: var(--color-bone);
+    background-color: var(--color-ash-mist);
+    background-image: var(--page-bg-image);
+    background-attachment: fixed;
+    color: var(--color-vault-ink);
     font-family: var(--font-interdisplay);
     font-weight: 400;
     overflow-x: hidden;
 }
 
 html:has(body.eco-case) {
-    background: var(--color-vault-ink, #0f111a);
-    scrollbar-color: #0f111a #efefef;
+    background-color: #f6fbff;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
+    background-attachment: fixed;
+    scrollbar-color: #0f111a #f6fbff;
+}
+
+body.eco-case .cs-hero-band {
+    background: var(--color-vault-ink);
 }
 
 html:has(body.eco-case)::-webkit-scrollbar-track {
-    background: #efefef;
+    background: #f6fbff;
 }
 
 html:has(body.eco-case)::-webkit-scrollbar-thumb {
     background: #0f111a;
-    border-color: #efefef;
+    border-color: #f6fbff;
 }
 
 body.eco-case .cs,
@@ -99,9 +112,10 @@ body.eco-case .work-marquee-video img {
 
 html:has(body.eco-case-stpaul),
 body.eco-case-stpaul {
-    background: #c0daeb;
+    background-color: var(--color-ash-mist);
 }
 
+body.eco-case-stpaul .cs-hero-band,
 body.eco-case-stpaul .work-marquee-video {
     background: #c0daeb;
 }
@@ -568,7 +582,7 @@ body.eco-case .cs {
     max-width: none;
     margin: 0;
     padding: 48px 40px 160px;
-    background: var(--color-ash-mist);
+    background: transparent;
     color: var(--color-vault-ink);
     font-family: var(--font-interdisplay);
 }
@@ -1020,7 +1034,8 @@ body.eco-case .cs-ia__tags .is-action {
 
 @media screen and (max-width: 768px) {
     body.eco-case .cs-note,
-    body.eco-case .cs {
+    body.eco-case .cs,
+    body.eco-case .cs-browser__bar {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -1038,6 +1053,14 @@ body.eco-case .cs-ia__tags .is-action {
         padding-bottom: 80px;
     }
 
+    body.eco-case .cs-browser .cs {
+        padding-bottom: 0;
+    }
+
+    body.eco-case .cs--after-tabs {
+        padding-top: 0;
+    }
+
     body.eco-case .cs-title {
         font-size: 32px;
         line-height: 1.1;
@@ -1052,12 +1075,24 @@ body.eco-case .cs-ia__tags .is-action {
 
 html:has(body.eco-case-tutord),
 body.eco-case-tutord {
+    background-color: var(--color-ash-mist);
+}
+
+body.eco-case-tutord .cs-hero-band {
     background: #a87dff;
 }
 
 html:has(body.eco-case-doge),
 body.eco-case-doge {
-    background: #5b3d8c;
+    background-color: var(--color-ash-mist);
+}
+
+body.eco-case-doge .cs-hero-band {
+    background-color: #000000;
+    background-image: url("../uxImages/3DogE/doge-banner-paws.svg?v=2");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: 420px 420px;
 }
 
 body.eco-case-tutord .work-marquee-video {
@@ -1073,5 +1108,158 @@ body.eco-case-tutord .work-marquee-video img {
 }
 
 body.eco-case-doge .work-marquee-video {
-    background: #5b3d8c;
+    background: transparent;
+}
+
+body.eco-case .cs-browser__bar {
+    padding: 0 40px;
+}
+
+body.eco-case .cs-browser__tabs {
+    width: 100%;
+    max-width: 928px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--color-silver-veil);
+}
+
+body.eco-case .cs-browser__tab {
+    background: transparent;
+    border-color: transparent;
+    color: var(--color-vault-ink);
+    font-family: var(--font-fragmentmono);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.018em;
+}
+
+body.eco-case .cs-browser__tab:hover,
+body.eco-case .cs-browser__tab:focus-visible {
+    color: var(--color-vault-ink);
+    background: transparent;
+}
+
+body.eco-case .cs-browser__tab[aria-selected="true"] {
+    color: var(--color-vault-ink);
+    background: var(--color-ash-mist);
+    border-color: var(--color-silver-veil);
+    border-bottom: 1px solid var(--color-ash-mist);
+}
+
+body.eco-case .cs-browser__favicon {
+    background: var(--eco-mark);
+}
+
+body.eco-case-blank .cs-hero-band,
+body.eco-case-blank .work-marquee-video {
+    background: #000000;
+}
+
+body.eco-case .cs-wire-frame,
+body.eco-case .ux-gif-wireframe--blank {
+    background: #000000;
+}
+
+body.eco-case .cs-wire-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin: 24px 0 0;
+    border-radius: var(--radius-cards);
+}
+
+body.eco-case-tutord .cs-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--g16, 16px);
+    align-items: start;
+    margin: 0 0 var(--g32, 32px);
+}
+
+body.eco-case-tutord .cs-pair .cs-figure {
+    margin: 0;
+}
+
+body.eco-case-tutord .cs-gallery--2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+body.eco-case-tutord .cs-gallery .cs-figure {
+    margin: 0;
+}
+
+body.eco-case-tutord .cs-block .cs-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body.eco-case-tutord .cs-figure + p,
+body.eco-case-tutord .cs-gallery + p,
+body.eco-case-tutord .cs-pair + p {
+    margin-top: var(--g24, 24px);
+}
+
+body.eco-case-tutord .cs-kicker + p {
+    margin-top: 0;
+}
+
+body.eco-case-tutord .cs-rtd {
+    display: flex;
+    flex-direction: column;
+    gap: var(--g24, 24px);
+}
+
+body.eco-case-tutord .cs-rtd .cs-figure {
+    margin: 0;
+}
+
+body.eco-case-tutord .cs-rtd__copy > p {
+    margin: 0 0 var(--g16, 16px);
+    font-size: 20px;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+    color: var(--color-charcoal);
+}
+
+body.eco-case-tutord .cs-rtd__copy > p:last-child {
+    margin-bottom: 0;
+}
+
+body.eco-case-tutord .cs-figure--device {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.eco-case-tutord .cs-figure--device img {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+body.eco-case-tutord .cs-prototype .cs-actions {
+    justify-content: center;
+    margin-top: var(--g16, 16px);
+}
+
+body.eco-case-doge .cs-figure--device {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.eco-case-doge .cs-figure--device img {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+body.eco-case-doge .cs-prototype .cs-actions {
+    justify-content: center;
+    margin-top: var(--g16, 16px);
+}
+
+@media screen and (max-width: 900px) {
+    body.eco-case-tutord .cs-pair,
+    body.eco-case-tutord .cs-gallery--2 {
+        grid-template-columns: 1fr;
+    }
 }

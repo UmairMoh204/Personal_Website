@@ -1522,3 +1522,88 @@ body.eco-case .cs-next--tooling .cs-next__title {
 body.eco-case .cs-next--tooling .cs-next__name {
     font-weight: 500;
 }
+
+.cs-browser {
+    width: 100%;
+}
+
+.cs-browser__bar {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 24px 0 0;
+    padding: 0 40px;
+}
+
+.cs-browser__tabs {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    width: 100%;
+    max-width: 928px;
+    min-height: 40px;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 1px solid var(--cds-line, #aeaeae);
+}
+
+.cs-browser__tab {
+    appearance: none;
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: min(280px, 48%);
+    height: 36px;
+    margin: 0 0 -1px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cs-browser__tab:hover,
+.cs-browser__tab:focus-visible {
+    outline: none;
+}
+
+.cs-browser__tab[aria-selected="true"] {
+    z-index: 1;
+}
+
+.cs-browser__favicon {
+    flex: 0 0 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+.cs-browser__label {
+    overflow: hidden;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cs-browser .cs[hidden] {
+    display: none !important;
+}
+
+.cs-browser .cs {
+    padding-top: 32px;
+    padding-bottom: 0;
+}
+
+.cs--after-tabs {
+    padding-top: 0;
+}

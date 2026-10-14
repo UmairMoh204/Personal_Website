@@ -828,7 +828,11 @@
     }
 
     function start(host) {
-        if (!host || host.dataset.amazonReady === '1') return;
+        if (!host || host._azBound) return;
+        host._azBound = true;
+        clearHost(host);
+        host.innerHTML = '';
+        host.className = 'az-anim';
         host.dataset.amazonReady = '1';
         build(host);
 
@@ -866,4 +870,12 @@
     }
 
     window.initAmazonHoverAnim = initAmazonHoverAnim;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            initAmazonHoverAnim();
+        });
+    } else {
+        initAmazonHoverAnim();
+    }
 })();

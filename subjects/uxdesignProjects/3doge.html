@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Pet Wellness Companion — 3DogE</title>
         <meta name="description" content="Case study: helping dog owners track wellness with AI-guided health insights in the 3DogE app.">
@@ -16,15 +14,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../style.css">
-        <link rel="stylesheet" href="../../eco-nav.css?v=7">
-        <script src="../../eco-nav.js?v=5" defer></script>
+        <link rel="stylesheet" href="../../eco-nav.css?v=22">
+        <script src="../../eco-nav.js?v=18" defer></script>
         <link rel="stylesheet" href="uxdesigncss.css?v=3">
         <link rel="stylesheet" href="amazon-case.css?v=41">
-        <link rel="stylesheet" href="eco-case.css?v=32">
+        <link rel="stylesheet" href="eco-case.css?v=52">
         <link rel="stylesheet" href="../../components/work-marquee.css?v=2">
         <script src="../../components/work-marquee.js"></script>
     </head>
     <body class="cs-amazon eco-case eco-case-doge">
+        <div class="cs-hero-band">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
                 <li><a href="../../index.html">Home</a></li>
@@ -41,6 +40,7 @@
         </nav>
 
         <div class="work-marquee-video" aria-hidden="true"></div>
+        </div>
 
         <article class="cs">
             <div class="cs-tags" aria-label="Project tags">
@@ -64,11 +64,11 @@
                 <div>
                     <dt class="cs-meta__label">Role</dt>
                     <dd class="cs-meta__value">UX/UI Designer, UX Researcher</dd>
-                </div>
+            </div>
                 <div>
                     <dt class="cs-meta__label">Tools</dt>
                     <dd class="cs-meta__value">Figma, FigJam, Zoom</dd>
-                </div>
+            </div>
             </dl>
 
             <section class="cs-glance is-interactive" aria-labelledby="glance-heading">
@@ -120,7 +120,7 @@
                         <h3>Environment</h3>
                         <p>Capture what the dog’s environment is like so the app can support a balanced life.</p>
                     </article>
-                </div>
+            </div>
             </section>
 
             <section class="cs-block" aria-labelledby="problem-heading">
@@ -170,13 +170,20 @@
                     <figcaption>Eat and Exercise as questions an owner will actually answer. Environment follows in the same log.</figcaption>
                 </figure>
                 <p>Usability testing walked the scanner, the log, contents, community, and the stool chart. People did not ask for more information. They asked for visibility and a simpler home. I ranked those notes high to low and rebuilt the design system so the colors held together and the home used fewer words.</p>
+            </section>
+
+            <section class="cs-block cs-prototype" aria-labelledby="proto-heading">
+                <h2 class="cs-kicker" id="proto-heading">05 - Prototype</h2>
+                <figure class="cs-figure cs-figure--device">
+                    <img loading="lazy" src="../uxImages/3DogE/3DogEMockup-cutout.png" alt="Two iPhones showing 3DogE: a daily wellness dashboard with eating progress and stool detection, and the login screen">
+                </figure>
                 <div class="cs-actions">
                     <a class="cs-btn" href="https://www.figma.com/proto/TzwZMMnbFME0jVazhPJMlE/Hamza-Solo-Project?page-id=1%3A2&amp;node-id=831-3122&amp;node-type=frame&amp;viewport=2043%2C-6955%2C0.4&amp;t=LZRmajUU10qqO5RP-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=831%3A3542&amp;show-proto-sidebar=1" target="_blank" rel="noopener">View Interactive Prototype</a>
                 </div>
             </section>
 
             <section class="cs-block" aria-labelledby="learn-heading">
-                <h2 class="cs-kicker" id="learn-heading">05 - Learning and Impact</h2>
+                <h2 class="cs-kicker" id="learn-heading">06 - Learning and Impact</h2>
                 <div class="cs-learns">
                     <article class="cs-learn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -197,7 +204,7 @@
                         <div class="cs-learn__copy">
                             <h3>A scanner is not a wellness product</h3>
                             <p>The AI read was the hook. It was not enough data. The daily log is what let Eat, Exercise, and Environment become something the app could actually use.</p>
-                        </div>
+            </div>
                     </article>
                     <article class="cs-learn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -207,7 +214,7 @@
                         <div class="cs-learn__copy">
                             <h3>Usability pushed me from more information to more restraint</h3>
                             <p>Participants did not complain that pages were thin. They asked for a simpler home and colors they could see. I shifted the last mile from explaining everything to making the three jobs obvious.</p>
-                        </div>
+            </div>
                     </article>
                 </div>
             </section>
@@ -224,8 +231,8 @@
                                         <source src="../uxImages/tutorD/tutord-showcase.mp4?v=2" type="video/mp4">
                                     </video>
                                 </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
                         <h3 class="cs-next__name">Tutor Scheduling Flow</h3>
                     </a>
                     <a class="cs-next__item ux-gif-card--hover-gif" href="amazon.html">
@@ -233,8 +240,8 @@
                             <div class="ux-gif-wireframe ux-gif-wireframe--cool ux-gif-wireframe--has-media" aria-hidden="true">
                                 <img src="../uxImages/Amazon/amazon-showcase-frame-1.png?v=3" alt="" class="ux-gif-media ux-gif-media--frame ux-gif-media--frame-a">
                                 <img src="../uxImages/Amazon/amazon-showcase-frame-2.png?v=3" alt="" class="ux-gif-media ux-gif-media--frame ux-gif-media--frame-b">
-                            </div>
-                        </div>
+            </div>
+        </div>
                         <h3 class="cs-next__name">Internal Tooling Experience</h3>
                     </a>
                 </div>
@@ -253,4 +260,4 @@
             }
         </script>
     </body>
-</html>
+</html> 

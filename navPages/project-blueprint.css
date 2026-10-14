@@ -1,13 +1,13 @@
 /* Subtle ashy-cold atmosphere + light glass surround */
 html:has(body.projects-blueprint),
 body.projects-blueprint {
-    background-color: #e8eaed;
+    background-color: #f6fbff;
 }
 
 body.projects-blueprint {
     background-image:
-        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.35) 0%, transparent 70%),
-        linear-gradient(180deg, #eef0f2 0%, #e4e7ea 100%);
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
     background-attachment: fixed;
 }
 
@@ -20,10 +20,15 @@ body.projects-blueprint::before {
     box-shadow: inset 0 0 80px rgba(90, 102, 112, 0.06);
 }
 
-body.projects-blueprint .nav-container,
 body.projects-blueprint .projects-page {
     position: relative;
     z-index: 1;
+}
+
+body.projects-blueprint nav.eco-nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
 }
 
 .projects-page {
@@ -128,6 +133,10 @@ body.projects-blueprint .projects-page {
     background: var(--bg-secondary);
 }
 
+.docs-menu__drop button.docs-chip:hover {
+    background: transparent;
+}
+
 .docs-menu__rule {
     display: block;
     height: 1px;
@@ -181,16 +190,11 @@ body.projects-blueprint .projects-page {
     cursor: grab;
 }
 
-.docs-chip--bar:hover,
-.docs-chip--bar.is-previewing {
-    border-color: var(--border-subtle);
-    color: var(--text-primary);
-}
-
 .docs-chip--bar.is-selected {
-    border-color: var(--text-secondary);
-    color: var(--text-primary);
-    background: var(--bg-elevated);
+    border: 2.5px solid #3a322c;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.55);
+    padding: 5.5px 10.5px;
 }
 
 .docs-chip--bar.is-dragging {
@@ -245,7 +249,7 @@ body.projects-blueprint .projects-page {
     background: rgba(255, 255, 255, 0.55);
 }
 
-/* Project Blueprint — interactive preview panel */
+* Project Blueprint — interactive preview panel *
 .blueprint-panel {
     width: 100%;
     min-height: 0;
@@ -550,7 +554,7 @@ body.projects-blueprint .projects-page {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Overview */
+* Overview *
 .blueprint-overview-grid {
     display: grid;
     gap: 16px;
@@ -607,7 +611,7 @@ body.projects-blueprint .projects-page {
     text-underline-offset: 3px;
 }
 
-/* Process — vertical blueprint */
+* Process — vertical blueprint *
 .blueprint-process {
     display: flex;
     flex-direction: column;
@@ -699,7 +703,7 @@ body.projects-blueprint .projects-page {
     pointer-events: none;
 }
 
-/* Decisions */
+* Decisions *
 .blueprint-decisions {
     display: flex;
     flex-direction: column;
@@ -786,7 +790,7 @@ body.projects-blueprint .projects-page {
     display: inline-block;
 }
 
-/* Reasoning chain */
+* Reasoning chain *
 .blueprint-chain {
     max-width: 420px;
     margin-top: 8px;
@@ -842,7 +846,7 @@ body.projects-blueprint .projects-page {
     margin: 0;
 }
 
-/* Detail panel (node click) */
+* Detail panel (node click) *
 .blueprint-detail {
     border-top: 1px solid var(--border-subtle);
     padding: 14px 22px;
@@ -880,7 +884,7 @@ body.projects-blueprint .projects-page {
     margin: 0;
 }
 
-/* Draggable cards */
+* Draggable cards *
 .portfolio-card.is-draggable {
     cursor: grab;
 }
@@ -907,7 +911,7 @@ body.projects-blueprint .projects-page {
     letter-spacing: 0.04em;
 }
 
-/* Architecture map tree — horizontal flow */
+* Architecture map tree — horizontal flow *
 .blueprint-map {
     margin-bottom: 24px;
     padding-bottom: 20px;
@@ -1188,7 +1192,7 @@ body.projects-blueprint .projects-page {
     to { opacity: 1; }
 }
 
-/* User Experience Assembly */
+* User Experience Assembly *
 .ux-assembly {
     display: flex;
     flex-direction: column;
@@ -1231,6 +1235,66 @@ body.projects-blueprint .projects-page {
 .ux-assembly__phase.is-dim {
     opacity: 0.28;
     pointer-events: none;
+}
+
+.ux-step {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ux-step__head {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.ux-step__kicker {
+    margin: 0 0 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.ux-step__title {
+    margin: 0 0 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text-primary);
+}
+
+.ux-step__lede {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+.ux-step__board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    min-height: 220px;
+    padding: 14px;
+    border: 1px dashed var(--border-subtle);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.ux-step__start {
+    grid-column: 1 / -1;
+}
+
+.ux-step__empty {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 .ux-assembly__phase-label {
@@ -1408,4 +1472,230 @@ body.projects-blueprint .projects-page {
     .blueprint-toolbar {
         width: 100%;
     }
+}
+
+body.eco-home.projects-blueprint .eco-work {
+    overflow-x: clip;
+}
+
+body.eco-home.projects-blueprint .ux-gif-card-link:has(.ux-gif-wireframe--stpaul) {
+    isolation: auto;
+}
+
+body.eco-home.projects-blueprint .ux-gif-wireframe,
+body.eco-home.projects-blueprint .ux-gif-wireframe--has-media,
+body.eco-home.projects-blueprint .bball-play,
+body.eco-home.projects-blueprint .ia-tree,
+body.eco-home.projects-blueprint .az-anim {
+    isolation: auto;
+}
+
+body.eco-home.projects-blueprint::before {
+    display: none;
+}
+
+body.eco-home.projects-blueprint .eco-work {
+    padding-bottom: 64px;
+}
+
+body.eco-home.projects-blueprint .eco-work__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 40px;
+    padding-bottom: 16px;
+    overflow: visible;
+}
+
+body.eco-home.projects-blueprint .eco-work__heading .eco-work__title {
+    margin: 0;
+    line-height: 1.08;
+    padding-bottom: 0.12em;
+    overflow: visible;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 24px;
+}
+
+body.eco-home.projects-blueprint .projects-grid .ux-gif-card-link,
+body.eco-home.projects-blueprint .projects-grid .ux-gif-card-link:hover,
+body.eco-home.projects-blueprint .projects-grid .ux-gif-card-link:focus-visible {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    flex: none;
+    transform: none;
+    z-index: auto;
+    transition: none;
+}
+
+.projects-grid .ux-gif-wireframe,
+.projects-grid .ux-gif-wireframe--has-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.projects-grid .az-anim,
+.projects-grid .ux-gif-media-wrap,
+.projects-grid .ux-gif-yt,
+.projects-grid .bball-play {
+    width: 100%;
+    height: 100%;
+}
+
+.projects-grid .ux-gif-wireframe--stpaul .ia-tree,
+body.eco-home.projects-blueprint .ux-gif-wireframe--stpaul .ia-tree {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects-grid .ux-gif-media-wrap {
+    position: absolute;
+    inset: 0;
+}
+
+.projects-grid .ux-gif-wireframe--tutord .ux-gif-media-wrap {
+    inset: 9% 10%;
+    width: auto;
+    height: auto;
+}
+
+.projects-grid .ux-gif-media,
+.projects-grid .ux-gif-media--video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.projects-grid .ux-gif-wireframe--tutord .ux-gif-media--video {
+    object-fit: contain;
+}
+
+.projects-grid .ux-gif-wireframe--doge,
+.projects-grid .ux-gif-wireframe--doge.ux-gif-wireframe--has-media,
+body.eco-home.projects-blueprint .ux-gif-wireframe--doge,
+body.eco-home.projects-blueprint .ux-gif-wireframe--doge.ux-gif-wireframe--has-media {
+    background: #000000;
+}
+
+.projects-grid .ux-gif-wireframe--doge .ux-gif-media-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+}
+
+.projects-grid .ux-gif-wireframe--doge .ux-gif-media--video,
+body.eco-home.projects-blueprint .ux-gif-wireframe--doge .ux-gif-media--video {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: 78%;
+    max-width: 42%;
+    max-height: 78%;
+    object-fit: contain;
+    border-radius: 22px;
+    background: #000000;
+    filter: none;
+    transform: none;
+    box-shadow:
+        0 0 0 1.5px #ffffff,
+        0 0 16px rgba(255, 255, 255, 0.55),
+        0 10px 22px rgba(255, 255, 255, 0.22);
+}
+
+.projects-grid .ux-gif-heading {
+    min-width: 0;
+    white-space: normal;
+    font-size: 18px;
+}
+
+.projects-grid .ux-gif-meta,
+.projects-grid .ux-gif-tags {
+    flex-wrap: wrap;
+}
+
+.projects-grid .ux-gif-description {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.projects-grid .ux-gif-featured,
+body.eco-home.projects-blueprint .projects-grid .ux-gif-featured {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border: 1px solid #ffffff;
+    border-radius: 999px;
+    background: #000000;
+    color: #ffffff;
+    font-family: var(--font-fragmentmono, 'IBM Plex Mono', ui-monospace, monospace);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+body.eco-home.projects-blueprint .eco-tools {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 40px clamp(16px, 4vw, 52px) 80px;
+    box-sizing: border-box;
+}
+
+body.eco-home.projects-blueprint .eco-tools .eco-work__title {
+    margin-bottom: 16px;
+}
+
+body.eco-home.projects-blueprint .eco-tools__lede {
+    margin: 0 0 40px;
+    max-width: 720px;
+    font-family: var(--font-inter-24-pt, Inter, sans-serif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--color-charcoal, #2a2a2a);
+}
+
+body.eco-home.projects-blueprint .projects-page {
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
 }

@@ -1,7 +1,3 @@
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
-
-const auth = getAuth();
-
 window.toggleMenu = function() {
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger');

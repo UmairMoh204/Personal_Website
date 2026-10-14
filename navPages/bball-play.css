@@ -1,0 +1,75 @@
+/* Virtual Basketball Playbook — half-court formation on black. */
+
+.ux-gif-wireframe--playbook,
+body.eco-home .ux-gif-wireframe--playbook,
+body.eco-home .ux-gif-wireframe--playbook.ux-gif-wireframe--has-media {
+    background: #000;
+    overflow: hidden;
+}
+
+.bball-play {
+    position: absolute;
+    inset: 0;
+    background: #000;
+}
+
+.bball-play__field {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bball-play__court {
+    width: 86%;
+    height: 90%;
+    overflow: visible;
+}
+
+.bball-play__court > rect:not(.bball-play__node),
+.bball-play__court > circle:not(.bball-play__rim):not(.bball-play__cover),
+.bball-play__court > path {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1.35;
+}
+
+.bball-play__rim {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 1.35;
+}
+
+.bball-play.is-score .bball-play__rim {
+    fill: rgba(245, 208, 0, 0.35);
+    stroke: #f5d000;
+}
+
+.bball-play__node {
+    fill: #ffffff;
+    stroke: none;
+}
+
+.bball-play__cover {
+    fill: rgba(209, 38, 38, 0.14);
+    stroke: rgba(209, 38, 38, 0.22);
+    stroke-width: 0.7;
+}
+
+.bball-play__node--def {
+    fill: #d12626;
+}
+
+.bball-play__node--ball {
+    fill: #f5d000;
+}
+
+.bball-play__pass line {
+    stroke: #f5d000;
+    stroke-width: 1.6;
+}
+
+.bball-play__pass polygon {
+    fill: #f5d000;
+    stroke: none;
+}

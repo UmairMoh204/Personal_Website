@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
 
-/* Site-wide Eco glass navigation. Old nav styles remain in style.css. */
+[hidden] {
+    display: none !important;
+}
 
 nav.eco-nav {
     --color-bone: #ffffff;
@@ -213,25 +215,135 @@ nav.eco-nav .hamburger .bar {
 }
 
 /* Contrast cursor: inverts against whatever is behind it */
-.eco-cursor-dot {
+.eco-cursor-dot,
+.eco-cursor-dot:popover-open {
     position: fixed;
+    inset: auto;
     top: 0;
     left: 0;
-    z-index: 99990;
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     width: 18px;
     height: 18px;
     margin: -9px 0 0 -9px;
-    border-radius: 50%;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
     background: #ffffff;
+    color: #0f111a;
     mix-blend-mode: difference;
     pointer-events: none;
     opacity: 0;
-    transform: translate3d(var(--eco-cursor-x, -100px), var(--eco-cursor-y, -100px), 0);
-    transition: opacity 0.12s ease;
+    overflow: visible;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    transition:
+        width 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+        margin 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+        padding 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eco-cursor-dot::backdrop {
+    display: none;
+    pointer-events: none;
+    background: none;
 }
 
 .eco-cursor-dot.is-on {
     opacity: 1;
+}
+
+.eco-cursor-dot.is-expanded {
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+}
+
+.eco-cursor-dot.is-copied {
+    width: auto;
+    min-width: 72px;
+    height: 36px;
+    margin: -18px 0 0 -36px;
+    padding: 0 14px;
+    mix-blend-mode: normal;
+    background: #0f111a;
+    color: #ffffff;
+}
+
+.eco-cursor-dot__label {
+    display: none;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.eco-cursor-dot.is-copied .eco-cursor-dot__label--copy {
+    display: block;
+}
+
+.eco-cursor-dot.is-over-media,
+.eco-cursor-dot.is-soon {
+    mix-blend-mode: normal;
+    background: #ffffff;
+    color: #0f111a;
+}
+
+.eco-cursor-dot.is-soon {
+    width: auto;
+    height: 36px;
+    margin: -18px 0 0 -9px;
+    padding: 8px 16px;
+}
+
+.eco-cursor-dot.is-soon .eco-cursor-dot__label--soon {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.eco-cursor-dot.is-soon-compact {
+    height: 28px;
+    margin: -14px 0 0 -9px;
+    padding: 5px 10px;
+}
+
+.eco-cursor-dot.is-soon-compact .eco-cursor-dot__label--soon {
+    font-size: 14px;
+}
+
+.eco-cursor-dot.is-copied .eco-cursor-dot__icon {
+    display: none;
+}
+
+.eco-cursor-dot__icon {
+    display: none;
+    width: 16px;
+    height: 16px;
+    color: #0f111a;
+}
+
+.eco-cursor-dot__icon svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.eco-cursor-dot.is-redirect {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+}
+
+.eco-cursor-dot.is-redirect .eco-cursor-dot__icon {
+    display: block;
 }
 
 html.has-eco-contrast-cursor,
@@ -246,22 +358,33 @@ html.has-eco-contrast-cursor [contenteditable="true"] {
     cursor: text !important;
 }
 
-html:has(.project-cursor.is-active) .eco-cursor-dot {
-    opacity: 0;
-}
-
 html.is-cs-expanded iframe,
 html.is-cs-expanded .cs-figjam {
     cursor: auto !important;
 }
 
-@media (hover: none), (pointer: coarse) {
-    .eco-cursor-dot {
-        display: none;
-    }
+@view-transition {
+    navigation: auto;
+}
 
-    html.has-eco-contrast-cursor,
-    html.has-eco-contrast-cursor * {
-        cursor: auto;
+::view-transition-old(root) {
+    animation: eco-page-out 0.18s ease-out both;
+}
+
+::view-transition-new(root) {
+    animation: eco-page-in 0.26s ease-out both;
+}
+
+@keyframes eco-page-out {
+    to { opacity: 0; }
+}
+
+@keyframes eco-page-in {
+    from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    @view-transition {
+        navigation: none;
     }
 }

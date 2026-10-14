@@ -1,0 +1,127 @@
+/* Immediate CSS reveal — no wait for JS. Nav stays visible. */
+
+@keyframes page-reveal-rise {
+    from {
+        opacity: 0.55;
+        transform: translate3d(0, 10px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes page-expand-up {
+    from {
+        opacity: 0.2;
+        transform: translate3d(0, 40px, 0);
+        clip-path: inset(100% 0 0 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0);
+    }
+}
+
+@keyframes page-expand-up-clip {
+    from {
+        opacity: 0.2;
+        clip-path: inset(100% 0 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0);
+    }
+}
+
+@keyframes page-reveal-fade {
+    from { opacity: 0.45; }
+    to { opacity: 1; }
+}
+
+.page-reveal .eco-hero__copy > *,
+.page-reveal .li-hero-copy > *,
+.page-reveal .eco-work__heading,
+.page-reveal .eco-work__inner > .eco-work__title,
+.page-reveal footer.eco-footer {
+    animation: page-reveal-rise 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-reveal .li-page > .li-card {
+    animation: page-expand-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-reveal .eco-page-globe,
+.page-reveal .ux-showcase-grid > .ux-gif-card-link {
+    animation: page-reveal-fade 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-reveal .projects-grid > .ux-gif-card-link {
+    animation: page-expand-up-clip 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-reveal .eco-hero__copy > *:nth-child(1),
+.page-reveal .li-hero-copy > *:nth-child(1) { animation-delay: 0ms; }
+.page-reveal .eco-hero__copy > *:nth-child(2),
+.page-reveal .li-hero-copy > *:nth-child(2) { animation-delay: 40ms; }
+.page-reveal .eco-hero__copy > *:nth-child(3),
+.page-reveal .li-hero-copy > *:nth-child(3) { animation-delay: 80ms; }
+.page-reveal .eco-hero__copy > *:nth-child(4),
+.page-reveal .li-hero-copy > *:nth-child(4) { animation-delay: 120ms; }
+
+.page-reveal .eco-work__heading,
+.page-reveal .eco-work__inner > .eco-work__title {
+    animation-delay: 80ms;
+}
+
+.page-reveal .ux-showcase-grid > .ux-gif-card-link:nth-child(1) { animation-delay: 110ms; }
+.page-reveal .ux-showcase-grid > .ux-gif-card-link:nth-child(2) { animation-delay: 155ms; }
+.page-reveal .ux-showcase-grid > .ux-gif-card-link:nth-child(3) { animation-delay: 200ms; }
+.page-reveal .ux-showcase-grid > .ux-gif-card-link:nth-child(4) { animation-delay: 245ms; }
+.page-reveal .ux-showcase-grid > .ux-gif-card-link:nth-child(5) { animation-delay: 290ms; }
+.page-reveal .ux-showcase-grid > .ux-gif-card-link:nth-child(n+6) { animation-delay: 330ms; }
+
+.page-reveal .projects-grid > .ux-gif-card-link:nth-child(1) { animation-delay: 120ms; }
+.page-reveal .projects-grid > .ux-gif-card-link:nth-child(2) { animation-delay: 200ms; }
+.page-reveal .projects-grid > .ux-gif-card-link:nth-child(3) { animation-delay: 280ms; }
+.page-reveal .projects-grid > .ux-gif-card-link:nth-child(4) { animation-delay: 360ms; }
+.page-reveal .projects-grid > .ux-gif-card-link:nth-child(5) { animation-delay: 440ms; }
+.page-reveal .projects-grid > .ux-gif-card-link:nth-child(n+6) { animation-delay: 520ms; }
+
+.page-reveal .li-page > .li-card:nth-child(1) { animation-delay: 40ms; }
+.page-reveal .li-page > .li-card:nth-child(2) { animation-delay: 160ms; }
+.page-reveal .li-page > .li-card:nth-child(3) { animation-delay: 280ms; }
+.page-reveal .li-page > .li-card:nth-child(4) { animation-delay: 400ms; }
+.page-reveal .li-page > .li-card:nth-child(5) { animation-delay: 500ms; }
+.page-reveal .li-page > .li-card:nth-child(6) { animation-delay: 600ms; }
+.page-reveal .li-page > .li-card:nth-child(n+7) { animation-delay: 680ms; }
+
+.page-reveal .li-page > .li-card:nth-child(1) .li-hero-copy > *:nth-child(1) { animation-delay: 120ms; }
+.page-reveal .li-page > .li-card:nth-child(1) .li-hero-copy > *:nth-child(2) { animation-delay: 160ms; }
+.page-reveal .li-page > .li-card:nth-child(1) .li-hero-copy > *:nth-child(3) { animation-delay: 200ms; }
+.page-reveal .li-page > .li-card:nth-child(2) .li-hero-copy > *:nth-child(1) { animation-delay: 240ms; }
+.page-reveal .li-page > .li-card:nth-child(2) .li-hero-copy > *:nth-child(2) { animation-delay: 280ms; }
+.page-reveal .li-page > .li-card:nth-child(2) .li-hero-copy > *:nth-child(3) { animation-delay: 320ms; }
+
+.page-reveal footer.eco-footer {
+    animation-delay: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-reveal .eco-hero__copy > *,
+    .page-reveal .eco-page-globe,
+    .page-reveal .eco-work__heading,
+    .page-reveal .eco-work__inner > .eco-work__title,
+    .page-reveal .ux-showcase-grid > .ux-gif-card-link,
+    .page-reveal .projects-grid > .ux-gif-card-link,
+    .page-reveal footer.eco-footer,
+    .page-reveal .li-hero-copy > *,
+    .page-reveal .li-page > .li-card,
+    .page-reveal .projects-grid > .ux-gif-card-link {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        clip-path: none;
+    }
+}

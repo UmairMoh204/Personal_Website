@@ -2,6 +2,7 @@
     class WorkMarquee extends HTMLElement {
         connectedCallback() {
             if (this.dataset.ready === 'true') return;
+            if (this.closest('[hidden]')) return;
 
             var sources = (this.getAttribute('images') || '')
                 .split(',')

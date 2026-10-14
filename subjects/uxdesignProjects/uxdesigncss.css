@@ -62,14 +62,6 @@ img[src*="designsystems.png"] {
     object-fit: contain;
 }
 
-/* img[src*="finalDesign1.png"] {
-    max-width: 40% !important;
-    max-height: 300px !important;
-    height: auto;
-    margin: 20px;
-    display: inline-block;
-    object-fit: contain;
-} */
 img[src*="finalDesign1.png"] {
     max-width: 200px !important;
     height: auto;

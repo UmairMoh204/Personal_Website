@@ -1,45 +1,29 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html class="has-eco-contrast-cursor">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Hamza's Portfolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
         <link rel="icon" type="image/png" href="logo-black.png">
         <link rel="preload" href="logo-black.png" as="image" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400&family=Plus+Jakarta+Sans:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css?v=ia-anim-10">
-        <link rel="stylesheet" href="eco-nav.css?v=7">
-        <script src="eco-nav.js?v=5" defer></script>
-        <link rel="stylesheet" href="eco-home.css?v=26">
+        <link rel="stylesheet" href="style.css?v=ia-anim-16">
+        <link rel="stylesheet" href="eco-nav.css?v=22">
+        <script src="eco-nav.js?v=18" defer></script>
+        <link rel="stylesheet" href="eco-home.css?v=47">
+        <link rel="stylesheet" href="page-reveal.css?v=6">
+        <link rel="preload" href="./navPages/fonts/AmazonEmberCdRC-Bold.ttf" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="./navPages/fonts/AmazonEmberDisplay-Bold.ttf" as="font" type="font/ttf" crossorigin>
+        <link rel="stylesheet" href="./navPages/amazon-hover-anim.css?v=46">
     </head>
-    <body class="eco-home">
-        <!-- Existing navigation
-        <nav class="nav-container">
-            <ul class="nav-links">
-                <li><a href="index.html">home</a></li>
-                <li><a href="./navPages/projects.html">projects</a></li>
-                <li class="nav-logo-item"><a href="index.html"><img src="logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></a></li>
-                <li><a href="./navPages/about.html">about</a></li>
-                <li><a href="https://drive.google.com/file/d/1iI3A637sB-cdWAgcUygaSzReGTXzYWYu/view?usp=sharing" target="_blank">resume</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-        -->
+    <body class="eco-home page-reveal">
+        
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
                 <li><a class="is-active" href="index.html" aria-current="page">Home</a></li>
@@ -60,11 +44,8 @@
                 <p class="eco-eyebrow">Product designer</p>
                 <h1 class="eco-hero__title">Hamza Mohammed</h1>
                 <p class="eco-hero__lede">Previously @ Amazon and City of Saint Paul</p>
-                <a class="eco-arrow" href="#work">
-                    Selected work
-                    <span class="eco-mark" aria-hidden="true"></span>
-                </a>
-            </div>
+                <a class="eco-btn" href="#work">Selected work</a>
+        </div>
         </section>
 
         <div class="eco-page-globe eco-hero--light" aria-hidden="true">
@@ -73,20 +54,18 @@
 
         <section class="ux-showcase eco-work" id="work" aria-label="UX work highlights">
             <div class="eco-work__inner">
-                <p class="eco-eyebrow">Portfolio</p>
-                <h2 class="eco-work__title">Selected work</h2>
-                <div class="ux-showcase-grid">
+                <h2 class="eco-work__title">Featured Work</h2>
+            <div class="ux-showcase-grid">
                 <a href="./subjects/uxdesignProjects/amazon.html" class="ux-gif-card-link">
-                <article class="ux-gif-card ux-gif-card--hover-gif">
-                    <div class="ux-gif-wireframe ux-gif-wireframe--cool ux-gif-wireframe--has-media" aria-label="Amazon A to Z Mobile Experience">
-                        <img src="./subjects/uxImages/Amazon/amazon-showcase-frame-1.png?v=3" alt="" class="ux-gif-media ux-gif-media--frame ux-gif-media--frame-a">
-                        <img src="./subjects/uxImages/Amazon/amazon-showcase-frame-2.png?v=3" alt="Amazon's AtoZ Mobile App Experience" class="ux-gif-media ux-gif-media--frame ux-gif-media--frame-b">
+                <article class="ux-gif-card">
+                    
+                    <div class="ux-gif-wireframe ux-gif-wireframe--cool ux-gif-wireframe--has-media ux-gif-wireframe--amazon-anim" aria-label="Amazon A to Z animation">
+                        <div class="az-anim" data-amazon-anim></div>
                     </div>
                     <div class="ux-gif-meta">
                         <h3 class="ux-gif-heading">Internal Tooling Experience</h3>
                         <div class="ux-gif-tags">
                             <span>MOBILE DESIGN</span>
-                            <span>USER RESEARCH</span>
                             <span>DESIGN SYSTEM</span>
                             <span>2025</span>
                         </div>
@@ -207,7 +186,6 @@
                             <span>WEB DESIGN</span>
                             <span>UX RESEARCH</span>
                             <span>DESIGN SYSTEM</span>
-                            <span>PROTOTYPING</span>
                             <span>2023</span>
                         </div>
                     </div>
@@ -215,24 +193,18 @@
                 </article>
                 </a>
 
-                <a href="./subjects/uxdesignProjects/3doge.html" class="ux-gif-card-link">
+                <a href="./subjects/uxdesignProjects/mscs.html" class="ux-gif-card-link">
                 <article class="ux-gif-card">
-                    <div class="ux-gif-wireframe ux-gif-wireframe--doge ux-gif-wireframe--has-media" aria-label="Pet Wellness Companion prototype">
-                        <div class="ux-gif-media-wrap">
-                            <video class="ux-gif-media ux-gif-media--video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
-                                <source src="./subjects/uxImages/3DogE/doge-showcase.mp4?v=2" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
+                    <div class="ux-gif-wireframe ux-gif-wireframe--blank" aria-label="Macalester MSCS Redesign preview"></div>
                     <div class="ux-gif-meta">
-                        <h3 class="ux-gif-heading">Pet Wellness Companion</h3>
+                        <h3 class="ux-gif-heading">Macalester's MSCS Redesign</h3>
                         <div class="ux-gif-tags">
-                            <span>MOBILE DESIGN</span>
-                            <span>UX RESEARCH</span>
-                            <span>2023</span>
+                            <span>UX DESIGN</span>
+                            <span>WEB DESIGN</span>
+                            <span>2025</span>
                         </div>
                     </div>
-                    <p class="ux-gif-description">Helping dog owners track wellness with AI-guided health insights.</p>
+                    <p class="ux-gif-description">Redesigning how students find and understand the MSCS program.</p>
                 </article>
                 </a>
                 </div>
@@ -261,8 +233,8 @@
         </footer>
 
         <script src="web.js" async defer></script>
-        <script src="./navPages/session-check.js"></script>
-        <script src="cursor.js?v=2" defer></script>
+        <script src="./navPages/amazon-hover-anim.js?v=68" defer></script>
+        <script src="cursor.js?v=7" defer></script>
         <script src="eco-globe.js?v=2" defer></script>
         <script src="ia-tree.js?v=2" defer></script>
         <script src="smooth-scroll.js" defer></script>

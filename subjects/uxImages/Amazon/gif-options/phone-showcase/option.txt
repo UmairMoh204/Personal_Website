@@ -1,0 +1,3 @@
+Internal Tooling Experience — phone showcase GIF option.
+Saved from the homepage card (amazon-showcase-frame-1/2).
+To restore: use these frames in index.html with ux-gif-card--hover-gif.

@@ -1,67 +1,67 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
-<html>
-    <!-- <head>
+<html lang="en" class="has-eco-contrast-cursor">
+    <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login</title>
-        <meta name="description" content="">
-        <link rel="icon" type="image/png" href="../logo-black.png">
+        <title>Sign in — Hamza Mohammed</title>
+        <meta name="description" content="Sign in to Hamza Mohammed’s portfolio.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="../logo-black.png">
         <link rel="preload" href="../logo-black.png" as="image" type="image/png">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400&family=Plus+Jakarta+Sans:wght@400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../eco-nav.css?v=22">
+        <script src="../eco-nav.js?v=18" defer></script>
+        <link rel="stylesheet" href="login.css?v=3">
     </head>
-    <body>
-        <div class="login-container">
-            <div class="login-card">
-                <div class="login-header">
-                    <img src="../logo-black.png" alt="Hamza's Portfolio Logo" class="login-logo">
-                    <h2>Welcome Back</h2>
-                    <p>Sign in to access my portfolio</p>
-                </div>
-                
-                <form class="login-form" id="loginForm">
-                    <div class="form-group">
+    <body class="eco-login">
+        <main class="eco-login__stage">
+            <section class="eco-login__card" aria-labelledby="login-title">
+                <header class="eco-login__header">
+                    <img class="eco-login__logo" src="../logo-black.png" alt="Hamza Mohammed">
+                    <p class="eco-login__eyebrow">Portfolio</p>
+                    <h1 class="eco-login__title" id="login-title">Welcome back</h1>
+                    <p class="eco-login__lede">Sign in to access the site.</p>
+                </header>
+
+                <form class="eco-login__form" id="loginForm" action="../index.html" method="get">
+                    <div class="eco-login__field">
                         <label for="email">Email</label>
-                        <input 
-                            id="email" 
-                            type="email" 
-                            placeholder="Enter your email"
-                            required
+                        <input
+                            id="email"
+                            type="email"
+                            autocomplete="username"
+                            placeholder="you@email.com"
                         >
                     </div>
-                    
-                    <div class="form-group">
+                    <div class="eco-login__field">
                         <label for="password">Password</label>
-                        <input 
-                            id="password" 
-                            type="password" 
+                        <input
+                            id="password"
+                            type="password"
+                            autocomplete="current-password"
                             placeholder="Enter your password"
-                            required
                         >
                     </div>
-                    
-                    <button type="submit" class="login-button">
-                        <span>Sign In</span>
+                    <button type="submit" class="eco-login__submit">
+                        <span>Sign in</span>
                     </button>
                 </form>
-                
-                <div class="login-footer">
-                    <p>Contact the following email for credentials: hamzamohammedx23@gmail.com</p>
-                </div>
-            </div>
-        </div>
-        
-        <script type="module" src="register.js"></script>
+
+                <p class="eco-login__note">
+                    Contact:
+                    <a href="mailto:hamzamohammedx23@gmail.com">hamzamohammedx23@gmail.com</a>
+                </p>
+            </section>
+        </main>
         <script>
-          // Prevent back navigation to login page if already logged in
-          window.history.pushState(null, "", window.location.href);
-          window.addEventListener("popstate", () => {
-            window.history.pushState(null, "", window.location.href);
-          });
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                location.replace('../index.html');
+            });
         </script>
-    </body> -->
+    </body>
 </html>
