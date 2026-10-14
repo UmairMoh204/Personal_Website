@@ -75,6 +75,18 @@ html:has(body.eco-case) {
 
 body.eco-case .cs-hero-band {
     background: var(--color-vault-ink);
+    padding-top: 68px;
+}
+
+body.eco-case nav.eco-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    z-index: 400;
+    margin: 0;
 }
 
 html:has(body.eco-case)::-webkit-scrollbar-track {
@@ -115,13 +127,21 @@ body.eco-case-stpaul {
     background-color: var(--color-ash-mist);
 }
 
-body.eco-case-stpaul .cs-hero-band,
+body.eco-case-stpaul .cs-hero-band {
+    padding-top: 0;
+    background: #061433;
+}
+
 body.eco-case-stpaul .work-marquee-video {
-    background: #c0daeb;
+    width: 100%;
+    height: calc(100vw * 425 / 640 / 2);
+    margin: 0;
+    background: #061433;
 }
 
 body.eco-case-stpaul .work-marquee-video img {
-    object-position: center top;
+    object-fit: cover;
+    object-position: center 22%;
 }
 
 body.eco-case .cs-block .cs-kicker {
