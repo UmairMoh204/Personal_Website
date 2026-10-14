@@ -1360,10 +1360,12 @@ body.eco-case .cs > .cs-next {
 .cs-next__media .ux-gif-wireframe--tutord,
 .cs-next__media .ux-gif-wireframe--doge,
 .cs-next__media .ux-gif-wireframe--stpaul,
+.cs-next__media .ux-gif-wireframe--mscs,
 .cs-next__media .ux-gif-wireframe--has-media,
 .cs-next__media .ux-gif-wireframe--tutord.ux-gif-wireframe--has-media,
 .cs-next__media .ux-gif-wireframe--doge.ux-gif-wireframe--has-media,
-.cs-next__media .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media {
+.cs-next__media .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media,
+.cs-next__media .ux-gif-wireframe--mscs.ux-gif-wireframe--has-media {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -1376,9 +1378,38 @@ body.eco-case .cs > .cs-next {
 
 .cs-next__media .ux-gif-media-wrap,
 .cs-next__media .ux-gif-wireframe--tutord .ux-gif-media-wrap,
-.cs-next__media .ux-gif-wireframe--doge .ux-gif-media-wrap {
+.cs-next__media .ux-gif-wireframe--doge .ux-gif-media-wrap,
+.cs-next__media .ux-gif-wireframe--mscs .ux-gif-media-wrap {
     border-radius: 0;
     background: transparent;
+}
+
+.cs-next__media .ux-gif-wireframe--mscs,
+.cs-next__media .ux-gif-wireframe--mscs.ux-gif-wireframe--has-media {
+    background: #000000;
+}
+
+.cs-next__media .ux-gif-wireframe--mscs .ux-gif-media-wrap {
+    position: absolute;
+    inset: 9% 10%;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cs-next__media .ux-gif-wireframe--mscs .ux-gif-media,
+.cs-next__media .ux-gif-wireframe--mscs .ux-gif-media--video,
+.cs-next__media .ux-gif-wireframe--mscs img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
 }
 
 .cs-next__media--wellness,
@@ -1553,7 +1584,8 @@ body.eco-case .cs-next--tooling .cs-next__name {
     z-index: 0;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 0;
     max-width: min(280px, 48%);
     height: 36px;
     margin: 0 0 -1px;
@@ -1567,7 +1599,7 @@ body.eco-case .cs-next--tooling .cs-next__name {
     font-size: 14px;
     line-height: 1;
     letter-spacing: 0;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -1581,18 +1613,16 @@ body.eco-case .cs-next--tooling .cs-next__name {
 }
 
 .cs-browser__favicon {
-    flex: 0 0 8px;
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    background: currentColor;
+    display: none;
 }
 
 .cs-browser__label {
     overflow: hidden;
     min-width: 0;
+    flex: 1 1 auto;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: center;
 }
 
 .cs-browser .cs[hidden] {

@@ -250,6 +250,10 @@ body.eco-home .ux-showcase-grid {
     overflow: visible;
 }
 
+body.eco-home .ux-gif-card-link[data-coming-soon] {
+    cursor: none;
+}
+
 body.eco-home .ux-gif-card-link {
     display: flex;
     flex-direction: column;
@@ -316,10 +320,12 @@ body.eco-home .ux-gif-wireframe--warm,
 body.eco-home .ux-gif-wireframe--tutord,
 body.eco-home .ux-gif-wireframe--doge,
 body.eco-home .ux-gif-wireframe--stpaul,
+body.eco-home .ux-gif-wireframe--mscs,
 body.eco-home .ux-gif-wireframe--has-media,
 body.eco-home .ux-gif-wireframe--tutord.ux-gif-wireframe--has-media,
 body.eco-home .ux-gif-wireframe--doge.ux-gif-wireframe--has-media,
-body.eco-home .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media {
+body.eco-home .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media,
+body.eco-home .ux-gif-wireframe--mscs.ux-gif-wireframe--has-media {
     aspect-ratio: 16 / 10;
     width: 100%;
     margin-bottom: 16px;
@@ -361,22 +367,56 @@ body.eco-home .ux-gif-wireframe--amazon-anim .az-anim__smile--word {
 body.eco-home .ux-gif-wireframe--cool.ux-gif-wireframe--has-media,
 body.eco-home .ux-gif-wireframe--tutord.ux-gif-wireframe--has-media,
 body.eco-home .ux-gif-wireframe--doge.ux-gif-wireframe--has-media,
-body.eco-home .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media {
+body.eco-home .ux-gif-wireframe--stpaul.ux-gif-wireframe--has-media,
+body.eco-home .ux-gif-wireframe--mscs.ux-gif-wireframe--has-media {
     border: 0;
     outline: none;
     box-shadow: none;
+    padding: 0;
 }
 
 body.eco-home .ux-gif-wireframe .ux-gif-media-wrap,
 body.eco-home .ux-gif-wireframe--tutord .ux-gif-media-wrap,
-body.eco-home .ux-gif-wireframe--doge .ux-gif-media-wrap {
+body.eco-home .ux-gif-wireframe--doge .ux-gif-media-wrap,
+body.eco-home .ux-gif-wireframe--mscs .ux-gif-media-wrap {
     border-radius: 0;
     background: transparent;
 }
 
 body.eco-home .ux-gif-wireframe--tutord .ux-gif-media--video,
-body.eco-home .ux-gif-wireframe--doge .ux-gif-media--video {
+body.eco-home .ux-gif-wireframe--doge .ux-gif-media--video,
+body.eco-home .ux-gif-wireframe--mscs .ux-gif-media--video {
     border-radius: 0;
+}
+
+body.eco-home .ux-gif-wireframe--mscs,
+body.eco-home .ux-gif-wireframe--mscs.ux-gif-wireframe--has-media {
+    background: #000000;
+}
+
+body.eco-home .ux-gif-wireframe--tutord .ux-gif-media-wrap,
+body.eco-home .ux-gif-wireframe--mscs .ux-gif-media-wrap {
+    position: absolute;
+    inset: 9% 10%;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.eco-home .ux-gif-wireframe--tutord .ux-gif-media,
+body.eco-home .ux-gif-wireframe--tutord .ux-gif-media--video,
+body.eco-home .ux-gif-wireframe--mscs .ux-gif-media,
+body.eco-home .ux-gif-wireframe--mscs .ux-gif-media--video {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
 }
 
 body.eco-home .ia-tree {

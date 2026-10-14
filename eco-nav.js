@@ -206,6 +206,18 @@
         }
     }
 
+    document.addEventListener('click', function (event) {
+        var soon = event.target && event.target.closest && event.target.closest('[data-coming-soon]');
+        if (!soon) return;
+        event.preventDefault();
+        event.stopPropagation();
+    }, true);
+    document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        var soon = event.target && event.target.closest && event.target.closest('[data-coming-soon]');
+        if (!soon) return;
+        event.preventDefault();
+    }, true);
     document.addEventListener('pointermove', move, { passive: true });
     document.addEventListener('pointerdown', move, { passive: true });
     document.addEventListener('pointerover', function (event) {

@@ -651,6 +651,11 @@ body.eco-case .cs-meta__label {
     color: var(--color-silver-veil);
 }
 
+body.eco-case-stpaul .cs-meta__value a {
+    color: inherit;
+    text-underline-offset: 4px;
+}
+
 body.eco-case .cs-meta__value {
     font-family: var(--font-interdisplay);
     font-size: var(--text-body);
@@ -846,9 +851,9 @@ body.eco-case .cs-flow__drop {
 }
 
 body.eco-case .cs-ia__screen {
-    border: 0;
+    border: 1px solid var(--color-silver-veil);
     border-radius: var(--radius-cards);
-    background: var(--color-carbon);
+    background: var(--color-bone);
     box-shadow: none;
 }
 
@@ -858,47 +863,47 @@ body.eco-case .cs-ia__screen h3 {
     font-size: var(--text-heading-sm);
     font-weight: 400;
     letter-spacing: -0.48px;
-    color: var(--color-bone);
+    color: var(--color-vault-ink);
 }
 
 body.eco-case .cs-ia__tags li {
     border: 1px solid var(--color-silver-veil);
     border-radius: var(--radius-tags);
-    background: transparent;
+    background: var(--color-ash-mist);
     font-family: var(--font-fragmentmono);
     font-size: var(--text-caption);
     font-weight: 400;
     letter-spacing: 0.018em;
-    color: var(--color-bone);
+    color: var(--color-vault-ink);
 }
 
 body.eco-case .cs-ia__chip {
     border-radius: var(--radius-cards);
-    background: var(--color-charcoal);
+    background: var(--color-ash-mist);
     font-family: var(--font-interdisplay);
     font-size: var(--text-caption);
-    color: var(--color-bone);
+    color: var(--color-vault-ink);
     box-shadow: none;
 }
 
 body.eco-case .cs-ia__chip strong {
     font-size: var(--text-body);
     font-weight: 400;
-    color: var(--color-bone);
+    color: var(--color-vault-ink);
 }
 
 body.eco-case .cs-ia__chip.is-warm {
-    background: var(--color-graphite);
-    color: var(--color-bone);
+    background: var(--color-frost);
+    color: var(--color-vault-ink);
 }
 
 body.eco-case .cs-ia__chip.is-accent {
-    background: var(--color-charcoal);
-    color: var(--color-frost);
+    background: var(--color-silver-veil);
+    color: var(--color-vault-ink);
 }
 
 body.eco-case .cs-ia__chip.is-accent strong {
-    color: var(--color-frost);
+    color: var(--color-vault-ink);
 }
 
 body.eco-case .cs-ia__note p {
@@ -1123,6 +1128,8 @@ body.eco-case .cs-browser__tabs {
 }
 
 body.eco-case .cs-browser__tab {
+    justify-content: center;
+    gap: 0;
     background: transparent;
     border-color: transparent;
     color: var(--color-vault-ink);
@@ -1130,6 +1137,7 @@ body.eco-case .cs-browser__tab {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.018em;
+    text-align: center;
 }
 
 body.eco-case .cs-browser__tab:hover,
@@ -1146,7 +1154,11 @@ body.eco-case .cs-browser__tab[aria-selected="true"] {
 }
 
 body.eco-case .cs-browser__favicon {
-    background: var(--eco-mark);
+    display: none;
+}
+
+body.eco-case .cs-browser__label {
+    text-align: center;
 }
 
 body.eco-case-blank .cs-hero-band,
@@ -1224,7 +1236,7 @@ body.eco-case-tutord .cs-rtd__copy > p:last-child {
 }
 
 body.eco-case-tutord .cs-figure--device {
-    max-width: 720px;
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1262,4 +1274,620 @@ body.eco-case-doge .cs-prototype .cs-actions {
     body.eco-case-tutord .cs-gallery--2 {
         grid-template-columns: 1fr;
     }
+}
+
+body.cs-amazon.eco-case .cs-insight {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 24px 0 0;
+    padding: 16px 20px;
+}
+
+body.cs-amazon.eco-case .cs-insight::before {
+    display: none;
+}
+
+body.cs-amazon.eco-case .cs-insight__icon {
+    flex: 0 0 32px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+body.cs-amazon.eco-case .cs-insight__icon svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+}
+
+body.cs-amazon.eco-case .cs-insight p {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+body.cs-amazon.eco-case .cs-process {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 48px 0;
+}
+
+body.cs-amazon.eco-case .cs-process__node {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-bone);
+    font-family: var(--font-interdisplay);
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-process__arrow {
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-process__arrow::before {
+    content: "";
+    flex: 1 1 auto;
+    height: 2px;
+    background: currentColor;
+}
+
+body.cs-amazon.eco-case .cs-process__arrow::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid currentColor;
+}
+
+body.cs-amazon.eco-case .cs-cards--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.cs-amazon.eco-case .cs-offline-rtd {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 48px;
+}
+
+body.cs-amazon.eco-case .cs-phones {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+body.cs-amazon.eco-case .cs-phone {
+    margin: 0;
+    flex: 0 1 248px;
+    width: 248px;
+    max-width: 100%;
+}
+
+body.cs-amazon.eco-case .cs-phone__device {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__screen {
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    border-radius: 6px;
+    background: var(--color-bone);
+    overflow: hidden;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px 6px;
+    font-family: var(--font-fragmentmono);
+    font-size: 9px;
+    letter-spacing: 0.02em;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__signal {
+    color: var(--color-charcoal);
+    white-space: nowrap;
+}
+
+body.cs-amazon.eco-case .cs-phone__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 10px 10px;
+}
+
+body.cs-amazon.eco-case .cs-phone__brand {
+    font-family: var(--font-interdisplay);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__badge {
+    padding: 2px 8px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    font-family: var(--font-fragmentmono);
+    font-size: 9px;
+    letter-spacing: 0.02em;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__empty {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 16px 24px;
+    text-align: center;
+}
+
+body.cs-amazon.eco-case .cs-phone__empty svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__title {
+    margin: 4px 0 0;
+    font-family: var(--font-interdisplay);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__body {
+    margin: 0;
+    max-width: 11.5em;
+    font-family: var(--font-inter-24-pt);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--color-vault-ink);
+    border-radius: var(--radius-buttons);
+    font-family: var(--font-interdisplay);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__hello {
+    margin: 0 10px 8px;
+    font-family: var(--font-interdisplay);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__shift {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0 10px 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-ash-mist);
+}
+
+body.cs-amazon.eco-case .cs-phone__kicker,
+body.cs-amazon.eco-case .cs-phone__meta {
+    font-family: var(--font-fragmentmono);
+    font-size: 9px;
+    letter-spacing: 0.02em;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__fail {
+    font-family: var(--font-interdisplay);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__banner {
+    margin: 0 10px 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-bone);
+    font-family: var(--font-inter-24-pt);
+    font-size: 10px;
+    line-height: 1.35;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0 10px;
+    padding-bottom: 8px;
+}
+
+body.cs-amazon.eco-case .cs-phone__tile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 52px;
+    padding: 8px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-bone);
+}
+
+body.cs-amazon.eco-case .cs-phone__tile b {
+    font-family: var(--font-interdisplay);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__tile span {
+    font-family: var(--font-inter-24-pt);
+    font-size: 9px;
+    font-weight: 400;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__tabbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: auto;
+    padding: 8px 4px 10px;
+    border-top: 1px solid var(--color-silver-veil);
+    font-family: var(--font-fragmentmono);
+    font-size: 8px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-phone__tabbar span.is-on {
+    color: var(--color-vault-ink);
+}
+
+body.cs-amazon.eco-case .cs-phone__tabbar--dim {
+    opacity: 0.45;
+}
+
+body.cs-amazon.eco-case .cs-phone figcaption {
+    margin: 12px 0 0;
+    font-family: var(--font-inter-24-pt);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    color: var(--color-charcoal);
+}
+
+body.cs-amazon.eco-case .cs-offline-rtd__copy p {
+    margin: 0 0 16px;
+}
+
+body.cs-amazon.eco-case .cs-offline-rtd__copy p:last-child {
+    margin-bottom: 0;
+}
+
+body.cs-amazon.eco-case .cs-comp__logo {
+    display: block;
+    width: auto;
+    height: 40px;
+    max-width: 168px;
+    margin: 0 0 12px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+body.cs-amazon.eco-case .cs-comp__logo--workday {
+    height: 32px;
+}
+
+body.cs-amazon.eco-case .cs-comp__logo--maps {
+    height: 48px;
+}
+
+@media screen and (max-width: 900px) {
+    body.cs-amazon.eco-case .cs-phones {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body.cs-amazon.eco-case .cs-process {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+
+    body.cs-amazon.eco-case .cs-process__node {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    body.cs-amazon.eco-case .cs-process__arrow {
+        flex: 0 0 32px;
+        width: 2px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    body.cs-amazon.eco-case .cs-process__arrow::before {
+        width: 2px;
+        height: auto;
+        flex: 1 1 auto;
+    }
+
+    body.cs-amazon.eco-case .cs-process__arrow::after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 8px solid currentColor;
+        border-bottom: 0;
+    }
+
+    body.cs-amazon.eco-case .cs-cards--2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+body.eco-case-stpaul #cs-ia-modal {
+    width: min(1240px, calc(100vw - 32px));
+    height: min(88vh, 860px);
+}
+
+body.eco-case-stpaul .cs-glance-modal__body--ia {
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    overflow: hidden;
+}
+
+body.eco-case-stpaul .cs-ia-board {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    background: var(--color-ash-mist);
+}
+
+body.eco-case-stpaul .cs-ia-board__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-silver-veil);
+    background: var(--color-bone);
+}
+
+body.eco-case-stpaul .cs-ia-board__hint {
+    margin: 0;
+    font-family: var(--font-inter-24-pt);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-charcoal);
+}
+
+body.eco-case-stpaul .cs-ia-board__tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.eco-case-stpaul .cs-ia-board__tools button,
+body.eco-case-stpaul .cs-ia-board__tools span {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-buttons);
+    background: var(--color-bone);
+    color: var(--color-vault-ink);
+    font-family: var(--font-fragmentmono);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+}
+
+body.eco-case-stpaul .cs-ia-board__tools button {
+    cursor: pointer;
+}
+
+body.eco-case-stpaul .cs-ia-board__tools button:hover,
+body.eco-case-stpaul .cs-ia-board__tools button:focus-visible {
+    background: var(--color-ash-mist);
+}
+
+body.eco-case-stpaul .cs-ia-board__tools span {
+    min-width: 56px;
+    border: 0;
+    background: transparent;
+}
+
+body.eco-case-stpaul .cs-ia-board__viewport {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: none;
+}
+
+body.eco-case-stpaul .cs-ia-board__viewport.is-panning {
+    cursor: grabbing;
+}
+
+body.eco-case-stpaul .cs-ia-board__world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+
+body.eco-case-stpaul .cs-ia-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.eco-case-stpaul .cs-ia-node__frame {
+    appearance: none;
+    position: relative;
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    min-width: 168px;
+    max-width: 220px;
+    margin: 0;
+    padding: 12px 16px;
+    border: 1px solid var(--color-silver-veil);
+    border-radius: var(--radius-cards);
+    background: var(--color-bone);
+    color: var(--color-vault-ink);
+    font-family: var(--font-interdisplay);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+body.eco-case-stpaul .cs-ia-node__frame.has-children {
+    cursor: pointer;
+    padding-bottom: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%232a2a2a' stroke-width='1.5'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center bottom 8px;
+}
+
+body.eco-case-stpaul .cs-ia-node.is-open > .cs-ia-node__frame.has-children {
+    border-color: var(--color-charcoal);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%232a2a2a' stroke-width='1.5'%3E%3Cpath d='M2 8l4-4 4 4'/%3E%3C/svg%3E");
+}
+
+body.eco-case-stpaul .cs-ia-node__frame.has-children:hover,
+body.eco-case-stpaul .cs-ia-node__frame.has-children:focus-visible {
+    background-color: var(--color-ash-mist);
+}
+
+body.eco-case-stpaul .cs-ia-node__children {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 28px;
+}
+
+body.eco-case-stpaul .cs-ia-node.is-open > .cs-ia-node__children::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 28px;
+    background: var(--color-silver-veil);
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node {
+    position: relative;
+    padding: 20px 12px 0;
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 20px;
+    background: var(--color-silver-veil);
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background: var(--color-silver-veil);
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node:first-child:not(:only-child)::after {
+    left: 50%;
+    right: 0;
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node:last-child:not(:only-child)::after {
+    left: 0;
+    right: 50%;
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node:not(:first-child):not(:last-child)::after {
+    left: 0;
+    right: 0;
+}
+
+body.eco-case-stpaul .cs-ia-node__children > .cs-ia-node:only-child::after {
+    display: none;
 }
