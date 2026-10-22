@@ -292,7 +292,7 @@
         },
         tutord: {
             org: 'TutorD',
-            title: 'Tutor Scheduling Flow',
+            title: 'TutorD Education Platform',
             subtitle: 'User Experience Assembly — Admin Experience',
             type: 'Web Design',
             caseStudyUrl: '../subjects/uxdesignProjects/tutord.html',

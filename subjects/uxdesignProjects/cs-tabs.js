@@ -35,6 +35,7 @@
                 location.hash = key;
             }
         }
+        root.dispatchEvent(new CustomEvent('cs-tabchange', { bubbles: true, detail: { id: id } }));
     }
 
     tabs.forEach(function (tab) {

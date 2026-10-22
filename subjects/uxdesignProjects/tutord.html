@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
         <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tutor Scheduling Flow: TutorD</title>
+        <title>TutorD Education Platform</title>
         <meta name="description" content="Case study: designing TutorD’s admin experience so school admins could roster, read classrooms, and act on reports.">
         <link rel="icon" type="image/png" href="../../logo-black.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,11 +18,16 @@
         <script src="../../eco-nav.js?v=19" defer></script>
         <link rel="stylesheet" href="uxdesigncss.css?v=3">
         <link rel="stylesheet" href="amazon-case.css?v=42">
-        <link rel="stylesheet" href="eco-case.css?v=51">
+        <link rel="stylesheet" href="eco-case.css?v=77">
         <link rel="stylesheet" href="../../components/work-marquee.css?v=2">
         <script src="../../components/work-marquee.js"></script>
     </head>
     <body class="cs-amazon eco-case eco-case-tutord">
+        <script>
+            if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.body.classList.add('js-reveal');
+            }
+        </script>
         <div class="cs-hero-band">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
@@ -40,7 +45,7 @@
         </nav>
 
         <div class="work-marquee-video">
-            <img src="../uxImages/tutorD/tutord-banner.png" alt="TutorD owl mascot on a lavender banner">
+            <img src="../uxImages/tutorD/tutord-banner.png?v=4" alt="TutorD owl mascot on a lavender banner">
                     </div>
                 </div>
 
@@ -51,7 +56,7 @@
                 <span class="cs-tag">2023</span>
             </div>
 
-            <h1 class="cs-title">Tutor Scheduling Flow: Designing the Admin Experience for K–12 STEM Tutoring</h1>
+            <h1 class="cs-title">TutorD Education Platform: Designing the Admin Experience for K–12 STEM Tutoring</h1>
             <p class="cs-lede">I was tasked with designing TutorD’s admin experience so school admins could roster people, read classrooms, and act on reports without leaving the page they were on.</p>
 
             <dl class="cs-meta">
@@ -72,20 +77,6 @@
                     <dd class="cs-meta__value">Figma, FigJam, Zoom</dd>
                 </div>
             </dl>
-
-            <dialog class="cs-glance-modal" id="cs-glance-modal" aria-labelledby="cs-glance-modal-title">
-                <div class="cs-glance-modal__panel">
-                    <div class="cs-glance-modal__bar">
-                        <h3 id="cs-glance-modal-title">Quick Glance</h3>
-                        <button type="button" class="cs-glance-modal__close" aria-label="Close Quick Glance">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                                <path d="M6 6l12 12M18 6L6 18"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="cs-glance-modal__body"></div>
-                </div>
-            </dialog>
 
             <section class="cs-block" aria-labelledby="assign-heading">
                 <h2 class="cs-kicker" id="assign-heading">01 - Assignment</h2>
@@ -110,15 +101,17 @@
             <section class="cs-block" aria-labelledby="problem-heading">
                 <h2 class="cs-kicker" id="problem-heading">02 - Uncovering the Problem</h2>
                 <p>The stakeholder interview was less about features and more about alignment. We needed to understand <span class="cs-underline">what the admin already had to build from</span> and <span class="cs-underline">where the experience still needed structure</span>.</p>
-                <figure class="cs-figure">
-                    <img src="../uxImages/tutorD/stakeholder.png" alt="Zoom stakeholder call with Andrea, Ja'Prie Posey, Tyler Prathumthong, Brandon Bailey, Jerald, and Hamza Mohammed">
-                    <figcaption>Stakeholder interview on Zoom. The conversation set what we could inherit versus what still needed a structure.</figcaption>
-                </figure>
+                <div class="cs-pair">
+                    <figure class="cs-figure">
+                        <img src="../uxImages/tutorD/stakeholder.png?v=3" alt="Zoom stakeholder call with Andrea, Ja'Prie Posey, Tyler Prathumthong, Brandon Bailey, Jerald, and Hamza Mohammed">
+                        <figcaption>Stakeholder interview on Zoom. The conversation set what we could inherit versus what still needed a structure.</figcaption>
+                    </figure>
+                    <figure class="cs-figure">
+                        <img src="../uxImages/tutorD/preExisting.png" alt="Inherited TutorD admin dashboard labeled Before, with roster lists, a calendar, lesson chips, and a single progress ring">
+                        <figcaption>The file we started from. Rostering and a ring on a hub. No classroom list an admin could actually read.</figcaption>
+                    </figure>
+                </div>
                 <p>What we inherited was a starting point, not a destination. The dashboard could hold people. It could not tell an admin, at a glance, whether a classroom was moving.</p>
-                <figure class="cs-figure">
-                    <img src="../uxImages/tutorD/preExisting.png" alt="Inherited TutorD admin dashboard labeled Before, with roster lists, a calendar, lesson chips, and a single progress ring">
-                    <figcaption>The file we started from. Rostering and a ring on a hub. No classroom list an admin could actually read.</figcaption>
-                </figure>
             </section>
 
             <section class="cs-block" aria-labelledby="priority-heading">
@@ -342,6 +335,7 @@
         <script src="../../web.js" async defer></script>
         <script src="../../smooth-scroll.js" defer></script>
         <script src="cs-glance.js?v=2" defer></script>
+        <script src="cs-reveal.js?v=2" defer></script>
         <script>
             function toggleMenu() {
                 var nav = document.querySelector('.nav-links');

@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="../../eco-nav.css?v=22">
         <script src="../../eco-nav.js?v=19" defer></script>
         <link rel="stylesheet" href="uxdesigncss.css?v=3">
-        <link rel="stylesheet" href="amazon-case.css?v=41">
-        <link rel="stylesheet" href="eco-case.css?v=64">
+        <link rel="stylesheet" href="amazon-case.css?v=43">
+        <link rel="stylesheet" href="eco-case.css?v=80">
         <link rel="preload" href="../../navPages/fonts/AmazonEmberCdRC-Bold.ttf" as="font" type="font/ttf" crossorigin>
         <link rel="preload" href="../../navPages/fonts/AmazonEmberDisplay-Bold.ttf" as="font" type="font/ttf" crossorigin>
         <link rel="stylesheet" href="../../navPages/amazon-hover-anim.css?v=46">
@@ -26,7 +26,11 @@
         <script src="../../components/work-marquee.js"></script>
     </head>
     <body class="cs-amazon eco-case eco-case-stpaul">
-        
+        <script>
+            if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.body.classList.add('js-reveal');
+            }
+        </script>
         <div class="cs-hero-band">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
@@ -345,7 +349,7 @@
                 </div>
             </div>
         </div>
-                        <h3 class="cs-next__name">Tutor Scheduling Flow</h3>
+                        <h3 class="cs-next__name">TutorD Education Platform</h3>
                     </a>
                 </div>
             </section>
@@ -356,6 +360,7 @@
         <script src="../../smooth-scroll.js" defer></script>
         <script src="cs-glance.js?v=2" defer></script>
         <script src="cs-ia-board.js?v=2" defer></script>
+        <script src="cs-reveal.js?v=2" defer></script>
         <script>
             function toggleMenu() {
                 var nav = document.querySelector('.nav-links');

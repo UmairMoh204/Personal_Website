@@ -12,18 +12,22 @@
         <link rel="preload" href="../../logo-black.png" as="image" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../style.css">
         <link rel="stylesheet" href="../../eco-nav.css?v=22">
         <script src="../../eco-nav.js?v=19" defer></script>
         <link rel="stylesheet" href="uxdesigncss.css?v=3">
         <link rel="stylesheet" href="amazon-case.css?v=46">
-        <link rel="stylesheet" href="eco-case.css?v=66">
+        <link rel="stylesheet" href="eco-case.css?v=76">
         <link rel="stylesheet" href="../../components/work-marquee.css?v=2">
         <script src="../../components/work-marquee.js"></script>
     </head>
     <body class="cs-amazon eco-case">
-        
+        <script>
+            if (window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.body.classList.add('js-reveal');
+            }
+        </script>
         <div class="cs-hero-band">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
@@ -102,6 +106,44 @@
                     <dd class="cs-meta__value">Figma, FigJam, Slack, Chime</dd>
                 </div>
             </dl>
+
+            <section class="cs-block" aria-labelledby="process-heading">
+                <h2 class="cs-kicker" id="process-heading">00 - Design Process</h2>
+                <div class="cs-process-cards" aria-label="Design process">
+                    <article class="cs-process-card">
+                        <h3 class="cs-process-card__title">Research</h3>
+                        <ul class="cs-process-card__list">
+                            <li>Journey map and survey findings</li>
+                            <li>Inquiry data from Transfer</li>
+                            <li>Where uncertainty showed up</li>
+                        </ul>
+                    </article>
+                    <article class="cs-process-card">
+                        <h3 class="cs-process-card__title">Validation</h3>
+                        <ul class="cs-process-card__list">
+                            <li>What associates reported</li>
+                            <li>Barriers in the existing help path</li>
+                            <li>What had to be true for Self Help</li>
+                        </ul>
+                    </article>
+                    <article class="cs-process-card">
+                        <h3 class="cs-process-card__title">Concept</h3>
+                        <ul class="cs-process-card__list">
+                            <li>Help as a destination, not a dead end</li>
+                            <li>Flows that lead to Self Help</li>
+                            <li>Progressive disclosure for associates</li>
+                        </ul>
+                    </article>
+                    <article class="cs-process-card">
+                        <h3 class="cs-process-card__title">Iteration</h3>
+                        <ul class="cs-process-card__list">
+                            <li>Design system constraints</li>
+                            <li>Flows refined against Transfer tasks</li>
+                            <li>What scaled versus what stayed local</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
 
             <section class="cs-block" aria-labelledby="assign-heading">
                 <h2 class="cs-kicker" id="assign-heading">01 - Assignment</h2>
@@ -617,7 +659,8 @@
         <script src="../../web.js" async defer></script>
         <script src="../../smooth-scroll.js" defer></script>
         <script src="cs-glance.js?v=2" defer></script>
-        <script src="cs-tabs.js?v=1" defer></script>
+        <script src="cs-tabs.js?v=2" defer></script>
+        <script src="cs-reveal.js?v=2" defer></script>
         <script>
             function toggleMenu() {
                 var nav = document.querySelector('.nav-links');
