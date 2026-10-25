@@ -1,76 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="has-eco-contrast-cursor">
-    <head>
-        <meta charset="utf-8">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TS08EBP2S"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-3TS08EBP2S');
-        </script>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
-        <meta name="referrer" content="strict-origin-when-cross-origin">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sign in — Hamza Mohammed</title>
-        <meta name="description" content="Sign in to Hamza Mohammed’s portfolio.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="../logo-white.png">
-        <link rel="preload" href="../logo-black.png" as="image" type="image/png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400&family=Plus+Jakarta+Sans:wght@400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../eco-nav.css?v=22">
-        <script src="../eco-nav.js?v=19" defer></script>
-        <link rel="stylesheet" href="login.css?v=3">
-    </head>
-    <body class="eco-login">
-        <main class="eco-login__stage">
-            <section class="eco-login__card" aria-labelledby="login-title">
-                <header class="eco-login__header">
-                    <img class="eco-login__logo" src="../logo-black.png" alt="Hamza Mohammed">
-                    <p class="eco-login__eyebrow">Portfolio</p>
-                    <h1 class="eco-login__title" id="login-title">Welcome back</h1>
-                    <p class="eco-login__lede">Sign in to access the site.</p>
-                </header>
-
-                <form class="eco-login__form" id="loginForm" action="../index.html" method="get">
-                    <div class="eco-login__field">
-                        <label for="email">Email</label>
-                        <input
-                            id="email"
-                            type="email"
-                            autocomplete="username"
-                            placeholder="you@email.com"
-                        >
-                    </div>
-                    <div class="eco-login__field">
-                        <label for="password">Password</label>
-                        <input
-                            id="password"
-                            type="password"
-                            autocomplete="current-password"
-                            placeholder="Enter your password"
-                        >
-                    </div>
-                    <button type="submit" class="eco-login__submit">
-                        <span>Sign in</span>
-                    </button>
-                </form>
-
-                <p class="eco-login__note">
-                    Contact:
-                    <a href="mailto:hamzamohammedx23@gmail.com">hamzamohammedx23@gmail.com</a>
-                </p>
-            </section>
-        </main>
-        <script>
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-                location.replace('../index.html');
-            });
-        </script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sign in</title>
+    <meta http-equiv="refresh" content="0; url=/login">
+    <link rel="canonical" href="/login">
+    <script>location.replace('/login');</script>
+</head>
+<body>
+    <p><a href="/login">Sign in</a></p>
+</body>
 </html>

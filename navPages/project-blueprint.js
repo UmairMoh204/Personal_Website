@@ -25,7 +25,7 @@
             title: 'Enterprise Help Experience',
             subtitle: 'User Experience Assembly — Transfer Self Help',
             type: 'Mobile Design',
-            caseStudyUrl: '../subjects/uxdesignProjects/amazon.html',
+            caseStudyUrl: '/projects/amazon',
             start: {
                 id: 'am-start',
                 label: 'Help destination for a successful transfer',
@@ -156,7 +156,7 @@
             title: 'Talent & Equity Resources Navigation',
             subtitle: 'User Experience Assembly — Information Architecture',
             type: 'UX Research',
-            caseStudyUrl: '../subjects/uxdesignProjects/saintpaul.html',
+            caseStudyUrl: '/projects/saintpaul',
             start: {
                 id: 'sp-start',
                 label: 'Restructure a large set of HR resources',
@@ -295,7 +295,7 @@
             title: 'TutorD Education Platform',
             subtitle: 'User Experience Assembly — Admin Experience',
             type: 'Web Design',
-            caseStudyUrl: '../subjects/uxdesignProjects/tutord.html',
+            caseStudyUrl: '/projects/tutord',
             start: {
                 id: 'td-start',
                 label: 'Admins roster, read classrooms, and act on reports in place',
@@ -434,7 +434,7 @@
             title: 'Pet Wellness Companion',
             subtitle: 'User Experience Assembly — Eat · Exercise · Environment',
             type: 'Mobile Design',
-            caseStudyUrl: '../subjects/uxdesignProjects/3doge.html',
+            caseStudyUrl: '/projects/3doge',
             start: {
                 id: 'dg-start',
                 label: 'Make the 3 E’s usable, not a slogan beside a scanner',

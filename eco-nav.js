@@ -253,18 +253,7 @@
 })();
 
 (function () {
-    var path = location.pathname.replace(/\\/g, '/');
-    var pages;
-    if (/\/navPages\//.test(path)) {
-        pages = ['../index.html', './projects.html', './about.html'];
-    } else if (/\/subjects\/uxdesignProjects\//.test(path)) {
-        pages = ['../../index.html', '../../navPages/projects.html', '../../navPages/about.html'];
-    } else if (/\/subjects\//.test(path)) {
-        pages = ['../index.html', '../navPages/projects.html', '../navPages/about.html'];
-    } else {
-        pages = ['./index.html', './navPages/projects.html', './navPages/about.html'];
-    }
-
+    var pages = ['/home', '/projects', '/about'];
     function prefetchPages() {
         pages.forEach(function (href) {
             if (document.querySelector('link[rel="prefetch"][href="' + href + '"]')) return;

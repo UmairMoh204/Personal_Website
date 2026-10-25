@@ -1,0 +1,67 @@
+# Pretty URLs via real folders (same pattern as /home → home/index.html).
+# Old file paths 301 to the clean URLs.
+
+[[redirects]]
+  from = "/intro"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/intro.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/navPages/projects.html"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/navPages/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/navPages/resume.html"
+  to = "/resume"
+  status = 301
+
+[[redirects]]
+  from = "/navPages/login.html"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesignProjects/amazon.html"
+  to = "/projects/amazon"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesignProjects/saintpaul.html"
+  to = "/projects/saintpaul"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesignProjects/tutord.html"
+  to = "/projects/tutord"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesignProjects/3doge.html"
+  to = "/projects/3doge"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesignProjects/mscs.html"
+  to = "/projects/mscs"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesignProjects/flashpast.html"
+  to = "/projects/flashpast"
+  status = 301
+
+[[redirects]]
+  from = "/subjects/uxdesign.html"
+  to = "/uxdesign"
+  status = 301
