@@ -1,0 +1,45 @@
+# Mobile subdomain: m.hamzastudio.co
+#
+# After deploy:
+# 1. Netlify → Domain management → Add domain alias: m.hamzastudio.co
+# 2. DNS: CNAME `m` → your-site.netlify.app (or Netlify DNS)
+# 3. Confirm HTTPS covers m.hamzastudio.co
+#
+# Only mobile HTML/CSS/JS rewrite into /m/. Shared root assets
+# (eco CSS, logos, /subjects/, about images) stay on the same host.
+
+[[redirects]]
+  from = "https://m.hamzastudio.co/css/*"
+  to = "/m/css/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://m.hamzastudio.co/js/*"
+  to = "/m/js/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://m.hamzastudio.co/projects.html"
+  to = "/m/projects.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://m.hamzastudio.co/about.html"
+  to = "/m/about.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://m.hamzastudio.co/index.html"
+  to = "/m/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://m.hamzastudio.co/"
+  to = "/m/index.html"
+  status = 200
+  force = true
