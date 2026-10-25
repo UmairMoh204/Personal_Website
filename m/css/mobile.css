@@ -1,0 +1,253 @@
+/* Mobile shell overrides — sits on top of eco-home / about-li. Do not load on desktop. */
+
+html.m-site,
+html.m-site body {
+    cursor: auto !important;
+}
+
+html.m-site {
+    -webkit-text-size-adjust: 100%;
+}
+
+body.m-site {
+    --m-safe-top: env(safe-area-inset-top, 0px);
+    --m-safe-bottom: env(safe-area-inset-bottom, 0px);
+    padding-bottom: var(--m-safe-bottom);
+}
+
+/* --- Sticky mobile bar (eco-nav glass language) --- */
+
+.m-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: calc(56px + var(--m-safe-top));
+    padding: calc(8px + var(--m-safe-top)) 16px 8px;
+    background: rgba(246, 251, 255, 0.72);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border-bottom: 1px solid rgba(15, 17, 26, 0.06);
+    box-sizing: border-box;
+}
+
+.m-topbar__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #0f111a;
+}
+
+.m-topbar__brand img {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.m-topbar__name {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2a2a2a;
+}
+
+.m-menu-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(15, 17, 26, 0.16);
+    border-radius: 128px;
+    background: rgba(15, 17, 26, 0.42);
+    color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.m-menu-btn span {
+    display: block;
+    width: 16px;
+    height: 1.5px;
+    background: #fff;
+    border-radius: 1px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.m-menu-btn.is-open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
+.m-menu-btn.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.m-menu-btn.is-open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.m-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 280;
+    pointer-events: none;
+}
+
+.m-drawer.is-open {
+    pointer-events: auto;
+}
+
+.m-drawer__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 17, 26, 0.4);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.m-drawer.is-open .m-drawer__backdrop {
+    opacity: 1;
+}
+
+.m-drawer__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(100%, 320px);
+    height: 100%;
+    padding: calc(72px + var(--m-safe-top)) 20px calc(28px + var(--m-safe-bottom));
+    background: rgba(15, 17, 26, 0.92);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-sizing: border-box;
+}
+
+.m-drawer.is-open .m-drawer__panel {
+    transform: translateX(0);
+}
+
+.m-drawer__panel a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 12px 16px;
+    border-radius: 128px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.m-drawer__panel a.is-active,
+.m-drawer__panel a:active {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.m-drawer__panel a[target="_blank"]::after {
+    content: ' ↗';
+    opacity: 0.55;
+    font-size: 0.85em;
+}
+
+body.m-nav-open {
+    overflow: hidden;
+}
+
+/* --- Layout: stack eco cards, tighten hero --- */
+
+body.m-site.eco-home .eco-hero {
+    min-height: auto;
+    padding: 48px 20px 56px;
+    align-items: flex-start;
+}
+
+body.m-site.eco-home .eco-hero__copy {
+    width: 100%;
+    max-width: 100%;
+}
+
+body.m-site.eco-home .eco-hero__title {
+    white-space: normal;
+    font-size: clamp(36px, 10vw, 48px);
+}
+
+body.m-site.eco-home .eco-page-globe {
+    opacity: 0.55;
+    width: min(120vw, 640px);
+    height: min(120vw, 640px);
+    top: 40px;
+    right: -28%;
+    transform: none;
+    pointer-events: none;
+}
+
+body.m-site.eco-home .eco-work,
+body.m-site.eco-home .ux-showcase {
+    padding: 48px 20px 64px;
+}
+
+body.m-site.eco-home .eco-work__title {
+    margin-bottom: 28px;
+    font-size: clamp(32px, 9vw, 48px);
+}
+
+body.m-site.eco-home .ux-showcase-grid,
+body.m-site.eco-home .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+body.m-site.eco-home .ux-gif-card-link:hover,
+body.m-site.eco-home .ux-gif-card-link:focus-visible {
+    transform: none;
+}
+
+body.m-site.eco-home .eco-footer {
+    padding: 40px 20px 56px;
+}
+
+.m-desktop-escape {
+    margin: 0 20px 32px;
+    text-align: center;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+}
+
+.m-desktop-escape a {
+    color: #2a2a2a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* --- About (about-li) mobile shell --- */
+
+body.m-site.about-li .li-page {
+    width: min(100%, calc(100% - 32px));
+    margin: 16px auto 32px;
+}
+
+body.m-site.about-li .li-cover {
+    max-height: 140px;
+}
+
+body.m-site.about-li .eco-footer {
+    padding: 40px 20px 56px;
+}
