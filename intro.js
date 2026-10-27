@@ -5,9 +5,12 @@
   var frame = document.getElementById('intro-home');
   var homeUrl = '/home';
   var opening = false;
+  var homeReady = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function goHome() {
-    window.location.replace(homeUrl);
+  if (window.location.protocol === 'file:') {
+    homeUrl = 'home/index.html';
+    if (frame) frame.src = homeUrl;
   }
 
   requestAnimationFrame(function () {
@@ -16,20 +19,99 @@
     });
   });
 
-  if (window.location.protocol === 'file:') {
-    homeUrl = 'home/index.html';
-    if (frame) frame.src = homeUrl;
+  function frameHasHome() {
+    try {
+      var doc = frame && frame.contentDocument;
+      return !!(doc && doc.body && doc.body.classList.contains('eco-home'));
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function markReady() {
+    homeReady = frameHasHome() || homeReady;
+    if (frame) frame.classList.add('is-ready');
+    if (enter) enter.disabled = false;
+  }
+
+  function bindFrameNav() {
+    var doc;
+    try {
+      doc = frame && frame.contentDocument;
+    } catch (err) {
+      return;
+    }
+    if (!doc || doc.documentElement.getAttribute('data-intro-bound')) return;
+    doc.documentElement.setAttribute('data-intro-bound', '1');
+
+    doc.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a') : null;
+      if (!link) return;
+      if (event.defaultPrevented) return;
+      if (event.button && event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (link.target === '_blank' || link.hasAttribute('download')) return;
+
+      var href = link.getAttribute('href');
+      if (!href || href.charAt(0) === '#') return;
+
+      var url;
+      try {
+        url = new URL(link.href, window.location.href);
+      } catch (err) {
+        return;
+      }
+      if (url.origin !== window.location.origin) return;
+
+      var path = url.pathname.replace(/\/$/, '') || '/';
+      if (path === '/home' || path === homeUrl.replace(/\/$/, '')) {
+        if (url.hash) return;
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+      window.location.href = url.href;
+    }, true);
+  }
+
+  function stayOnPreloadedHome() {
+    if (frame) {
+      frame.style.pointerEvents = 'auto';
+      frame.removeAttribute('tabindex');
+      frame.classList.add('is-ready');
+    }
+    if (stage) {
+      stage.classList.add('is-gone');
+      stage.setAttribute('aria-hidden', 'true');
+      stage.setAttribute('hidden', '');
+    }
+    try {
+      if (window.location.protocol !== 'file:') {
+        window.history.replaceState(null, '', '/home');
+      }
+    } catch (err) {}
+    try {
+      var doc = frame && frame.contentDocument;
+      if (doc && doc.title) document.title = doc.title;
+    } catch (err) {}
+    bindFrameNav();
+    try {
+      frame.focus();
+      if (frame.contentWindow) frame.contentWindow.focus();
+    } catch (err) {}
+  }
+
+  function goHomeFresh() {
+    window.location.replace(homeUrl);
   }
 
   if (frame) {
     frame.addEventListener('load', function () {
-      frame.classList.add('is-ready');
-      if (enter) enter.disabled = false;
+      markReady();
+      if (opening) bindFrameNav();
     });
-    setTimeout(function () {
-      if (enter) enter.disabled = false;
-      if (frame) frame.classList.add('is-ready');
-    }, 1800);
+    setTimeout(markReady, 1800);
   } else if (enter) {
     enter.disabled = false;
   }
@@ -49,13 +131,17 @@
     function finish() {
       if (done) return;
       done = true;
-      goHome();
+      if (window.location.protocol === 'file:') {
+        goHomeFresh();
+        return;
+      }
+      stayOnPreloadedHome();
     }
 
     if (panel) {
       panel.addEventListener('animationend', finish, { once: true });
     }
-    setTimeout(finish, 1200);
+    setTimeout(finish, reduce ? 80 : 1200);
   }
 
   if (enter) {
@@ -63,6 +149,7 @@
   }
 
   document.addEventListener('keydown', function (e) {
+    if (opening) return;
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       openSite();
