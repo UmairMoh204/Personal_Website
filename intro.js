@@ -4,13 +4,15 @@
   var enter = document.getElementById('intro-enter');
   var frame = document.getElementById('intro-home');
   var homeUrl = '/home';
+  var frameUrl = '/intro-home';
   var opening = false;
   var homeReady = false;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (window.location.protocol === 'file:') {
     homeUrl = 'home/index.html';
-    if (frame) frame.src = homeUrl;
+    frameUrl = homeUrl;
+    if (frame) frame.src = frameUrl;
   }
 
   requestAnimationFrame(function () {
@@ -88,7 +90,7 @@
     }
     try {
       if (window.location.protocol !== 'file:') {
-        window.history.replaceState(null, '', '/home');
+        window.history.replaceState(null, '', homeUrl);
       }
     } catch (err) {}
     try {
