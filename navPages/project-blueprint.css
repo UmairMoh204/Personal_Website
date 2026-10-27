@@ -1572,9 +1572,12 @@ body.eco-home.projects-blueprint .ux-gif-wireframe--stpaul .ia-tree {
 }
 
 .projects-grid .ux-gif-wireframe--tutord .ux-gif-media-wrap {
-    inset: 9% 10%;
+    inset: 14% 15%;
     width: auto;
     height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projects-grid .ux-gif-media,
@@ -1596,7 +1599,7 @@ body.eco-home.projects-blueprint .projects-grid .ux-gif-wireframe--mscs.ux-gif-w
 }
 
 body.eco-home.projects-blueprint .projects-grid .ux-gif-wireframe--mscs .ux-gif-media-wrap {
-    inset: 9% 10%;
+    inset: 14% 15%;
     width: auto;
     height: auto;
     display: flex;
@@ -1674,18 +1677,32 @@ body.eco-home.projects-blueprint .projects-grid .ux-gif-featured {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 12px;
+    padding: 7px 14px;
     border: 1px solid #ffffff;
     border-radius: 999px;
     background: #000000;
     color: #ffffff;
     font-family: var(--font-fragmentmono, 'IBM Plex Mono', ui-monospace, monospace);
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     pointer-events: none;
+}
+
+.projects-grid .ux-gif-featured + .ux-gif-featured,
+body.eco-home.projects-blueprint .projects-grid .ux-gif-featured + .ux-gif-featured {
+    left: calc(18px + 28px + 8ch + 0.48em);
+    z-index: 10;
+}
+
+.projects-grid .ux-gif-featured svg,
+body.eco-home.projects-blueprint .projects-grid .ux-gif-featured svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    fill: #ffffff;
 }
 
 @media screen and (max-width: 768px) {

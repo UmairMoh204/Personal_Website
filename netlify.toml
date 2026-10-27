@@ -1,67 +1,45 @@
-# Pretty URLs via real folders (same pattern as /home → home/index.html).
-# Old file paths 301 to the clean URLs.
+[functions]
+  directory = "netlify/functions"
+  included_files = ["projects/amazon/index.html", "projects/saintpaul/index.html"]
 
 [[redirects]]
-  from = "/intro"
-  to = "/"
-  status = 301
+  from = "/api/case-unlock"
+  to = "/.netlify/functions/case-unlock"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/intro.html"
-  to = "/"
-  status = 301
+  from = "/projects/amazon"
+  to = "/.netlify/functions/case-gate?project=amazon"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/navPages/projects.html"
-  to = "/projects"
-  status = 301
+  from = "/projects/amazon/"
+  to = "/.netlify/functions/case-gate?project=amazon"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/navPages/about.html"
-  to = "/about"
-  status = 301
+  from = "/projects/amazon/index.html"
+  to = "/.netlify/functions/case-gate?project=amazon"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/navPages/resume.html"
-  to = "/resume"
-  status = 301
+  from = "/projects/saintpaul"
+  to = "/.netlify/functions/case-gate?project=saintpaul"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/navPages/login.html"
-  to = "/login"
-  status = 301
+  from = "/projects/saintpaul/"
+  to = "/.netlify/functions/case-gate?project=saintpaul"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/subjects/uxdesignProjects/amazon.html"
-  to = "/projects/amazon"
-  status = 301
-
-[[redirects]]
-  from = "/subjects/uxdesignProjects/saintpaul.html"
-  to = "/projects/saintpaul"
-  status = 301
-
-[[redirects]]
-  from = "/subjects/uxdesignProjects/tutord.html"
-  to = "/projects/tutord"
-  status = 301
-
-[[redirects]]
-  from = "/subjects/uxdesignProjects/3doge.html"
-  to = "/projects/3doge"
-  status = 301
-
-[[redirects]]
-  from = "/subjects/uxdesignProjects/mscs.html"
-  to = "/projects/mscs"
-  status = 301
-
-[[redirects]]
-  from = "/subjects/uxdesignProjects/flashpast.html"
-  to = "/projects/flashpast"
-  status = 301
-
-[[redirects]]
-  from = "/subjects/uxdesign.html"
-  to = "/uxdesign"
-  status = 301
+  from = "/projects/saintpaul/index.html"
+  to = "/.netlify/functions/case-gate?project=saintpaul"
+  status = 200
+  force = true

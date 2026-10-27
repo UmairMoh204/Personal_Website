@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="has-eco-contrast-cursor">
+    <head>
+        <meta charset="utf-8">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TS08EBP2S"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-3TS08EBP2S');
+        </script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Password required — Hamza Mohammed</title>
+        <meta name="description" content="Enter a password to view this confidential case study.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="/logo-white.png">
+        <link rel="preload" href="/logo-black.png" as="image" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400&family=Plus+Jakarta+Sans:wght@400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/eco-nav.css?v=22">
+        <script src="/eco-nav.js?v=19" defer></script>
+        <link rel="stylesheet" href="/navPages/login.css?v=8">
+        <script src="/case-lock.js?v=4"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var next = CaseLock.nextFromQuery();
+                var form = document.getElementById('unlockForm');
+                var field = document.getElementById('password');
+                var dest = document.getElementById('unlockNext');
+                var error = document.getElementById('unlockError');
+                if (dest && next) dest.value = next;
+                if (new URLSearchParams(location.search).get('error')) {
+                    error.hidden = false;
+                }
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    if (!field.value.trim()) return;
+                    var target = CaseLock.nextFromQuery() || (dest && dest.value) || next;
+                    if (dest && target) dest.value = target;
+                    error.hidden = true;
+                    fetch('/api/case-unlock', {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        redirect: 'follow',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ password: field.value, next: target })
+                    }).then(function (res) {
+                        var type = res.headers.get('content-type') || '';
+                        if (!type.includes('application/json')) {
+                            throw new Error('not-json');
+                        }
+                        return res.json();
+                    }).then(function (data) {
+                        if (data && data.ok && data.next) {
+                            location.assign(data.next);
+                            return;
+                        }
+                        error.hidden = false;
+                        field.focus();
+                        field.select();
+                    }).catch(function () {
+                        error.hidden = false;
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body class="eco-login eco-login--unlock">
+        <nav class="nav-container eco-nav">
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li class="nav-logo-item"><img src="/logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="https://drive.google.com/file/d/1WVHDow4cAYOU9ZwyPzGkaSUqUgdtLryS/view?usp=sharing" target="_blank" rel="noopener">Resume</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <main class="eco-login__stage">
+            <section class="eco-login__card" aria-labelledby="unlock-title">
+                <header class="eco-login__header">
+                    <p class="eco-login__eyebrow">Confidential</p>
+                    <p class="eco-login__lede">This case study is locked. Enter the password to continue.</p>
+                </header>
+
+                <form class="eco-login__form" id="unlockForm" method="post" action="/projects/unlock" autocomplete="on" novalidate>
+                    <input type="hidden" id="unlockNext" name="next" value="">
+                    <input
+                        class="eco-login__username"
+                        id="username"
+                        name="username"
+                        type="text"
+                        autocomplete="username"
+                        value="confidential"
+                        tabindex="-1"
+                        aria-hidden="true"
+                    >
+                    <div class="eco-login__field">
+                        <label for="password">Password</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            autocomplete="current-password"
+                            placeholder="Enter the password"
+                        >
+                    </div>
+                    <p class="eco-login__error" id="unlockError" hidden>That password is not correct.</p>
+                    <button type="submit" class="eco-login__submit">
+                        <span>Unlock</span>
+                    </button>
+                </form>
+
+                <p class="eco-login__note">
+                    Need access?
+                    <a href="mailto:hamzamohammedx23@gmail.com">Email me</a>
+                </p>
+            </section>
+        </main>
+    </body>
+</html>

@@ -59,6 +59,30 @@ body.eco-login *::after {
     background: var(--color-bone);
 }
 
+html:has(body.eco-login--unlock),
+body.eco-login--unlock {
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+body.eco-login--unlock {
+    display: flex;
+    flex-direction: column;
+}
+
+body.eco-login--unlock .eco-login__stage {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    overflow: hidden;
+}
+
+body.eco-login--unlock .eco-login__card {
+    border-color: transparent;
+    background: transparent;
+}
+
 .eco-login__header {
     text-align: center;
     margin-bottom: 32px;
@@ -76,10 +100,15 @@ body.eco-login *::after {
     margin: 0 0 16px;
     font-family: var(--font-fragmentmono);
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.018em;
     text-transform: uppercase;
     color: var(--color-charcoal);
+}
+
+body.eco-login .eco-login__eyebrow {
+    font-weight: 500;
 }
 
 .eco-login__title {
@@ -100,9 +129,22 @@ body.eco-login *::after {
 }
 
 .eco-login__form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.eco-login__username {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .eco-login__field {
@@ -168,6 +210,15 @@ body.eco-login *::after {
 .eco-login__submit:focus-visible {
     outline: 1px solid var(--color-vault-ink);
     outline-offset: 3px;
+}
+
+.eco-login__error {
+    margin: 0;
+    font-family: var(--font-fragmentmono);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    color: #8a1f11;
 }
 
 .eco-login__note {
