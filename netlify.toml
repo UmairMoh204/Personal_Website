@@ -3,12 +3,6 @@
   included_files = ["projects/amazon/index.html", "projects/saintpaul/index.html"]
 
 [[redirects]]
-  from = "/intro-home"
-  to = "/home/index.html"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/api/case-unlock"
   to = "/.netlify/functions/case-unlock"
   status = 200

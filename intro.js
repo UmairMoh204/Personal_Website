@@ -4,7 +4,7 @@
   var enter = document.getElementById('intro-enter');
   var frame = document.getElementById('intro-home');
   var homeUrl = '/home';
-  var frameUrl = '/intro-home';
+  var frameUrl = '/home/index.html';
   var opening = false;
   var homeReady = false;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -88,11 +88,6 @@
       stage.setAttribute('aria-hidden', 'true');
       stage.setAttribute('hidden', '');
     }
-    try {
-      if (window.location.protocol !== 'file:') {
-        window.history.replaceState(null, '', homeUrl);
-      }
-    } catch (err) {}
     try {
       var doc = frame && frame.contentDocument;
       if (doc && doc.title) document.title = doc.title;
