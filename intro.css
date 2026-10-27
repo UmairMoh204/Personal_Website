@@ -1,54 +1,26 @@
-/* Intro splash at / — lifts up into /home */
+/* Intro overlay on the home page */
 
-:root {
+.intro-stage,
+.intro-stage * {
+    box-sizing: border-box;
+}
+
+html.is-intro,
+html.is-intro body {
+    overflow: hidden;
+    height: 100%;
+}
+
+.intro-stage {
     --intro-ink: #0a0a0a;
     --intro-paper: #f6fbff;
     --intro-paper-image:
         radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
         linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
     --intro-muted: #8a8a8a;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-    background-color: var(--intro-paper);
-    background-image: var(--intro-paper-image);
-    background-attachment: fixed;
-    color: var(--intro-ink);
-    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-.intro-home {
     position: fixed;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    z-index: 0;
-    background: #f6fbff;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-}
-
-.intro-home.is-ready {
-    opacity: 1;
-}
-
-.intro-stage {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
+    z-index: 1000;
     perspective: 1400px;
     perspective-origin: 50% 40%;
 }
@@ -65,6 +37,9 @@ body {
     background-color: var(--intro-paper);
     background-image: var(--intro-paper-image);
     background-attachment: fixed;
+    color: var(--intro-ink);
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
     will-change: transform;
     transform: translate3d(0, 0, 0);
 }
@@ -104,7 +79,7 @@ body {
     border: 12px solid var(--intro-ink);
 }
 
-.intro-enter {
+.intro-stage .intro-enter {
     margin: 32px 0 0;
     appearance: none;
     border: 0;
@@ -126,17 +101,17 @@ body {
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.intro-enter:hover,
-.intro-enter:focus-visible {
+.intro-stage .intro-enter:hover,
+.intro-stage .intro-enter:focus-visible {
     transform: scale(1.04);
     outline: none;
 }
 
-.intro-enter:disabled {
+.intro-stage .intro-enter:disabled {
     opacity: 1;
     background: var(--intro-ink);
     color: #fff;
-    cursor: wait;
+    cursor: pointer;
     transform: none;
 }
 
@@ -150,6 +125,14 @@ body {
     line-height: 1.5;
     text-transform: uppercase;
     color: var(--intro-ink);
+}
+
+.intro-stage .intro-tagline {
+    font-weight: 600;
+}
+
+.intro-stage .intro-copy {
+    font-weight: 500;
 }
 
 .intro-copy {
@@ -168,7 +151,6 @@ body {
     padding: 0 16px;
 }
 
-/* Lift up into home — panel only; content stays fixed on the panel */
 .intro-stage.is-opening {
     pointer-events: none;
 }
