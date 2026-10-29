@@ -13,8 +13,9 @@ exports.handler = async function (event) {
     const project = projectFromEvent(event);
     const next = project ? '/projects/' + project : '';
     const token = lock.getCookie(event.headers || {}, lock.COOKIE);
+    const local = lock.isLocalHost(event);
 
-    if (!next || !lock.verifyToken(token, next)) {
+    if (!local && (!next || !lock.verifyToken(token, next))) {
         return {
             statusCode: 302,
             headers: {

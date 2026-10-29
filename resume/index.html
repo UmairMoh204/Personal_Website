@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html class="has-eco-contrast-cursor">
     <head>
         <meta charset="utf-8">
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TS08EBP2S"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'G-3TS08EBP2S');
         </script>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
         <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Resume — Hamza Mohammed</title>
+        <meta name="description" content="Resume of Hamza Mohammed — UX designer and researcher.">
         <link rel="icon" type="image/png" href="/logo-white.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preload" href="/logo-black.png" as="image" type="image/png">
+        <link rel="canonical" href="/resume">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="/eco-nav.css?v=22">
-        <script src="/eco-nav.js?v=18" defer></script>
+        <script src="/eco-nav.js?v=20" defer></script>
+        <link rel="stylesheet" href="/resume.css?v=5">
+        <link rel="stylesheet" href="/page-reveal.css?v=7">
+        <script src="/cursor.js?v=7" defer></script>
     </head>
-    <body>
-        
+    <body class="eco-resume page-reveal">
         <nav class="nav-container eco-nav">
             <ul class="nav-links">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li class="nav-logo-item"><img src="/logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></li>
                 <li><a href="/about">About</a></li>
-                <li><a class="is-active" href="https://drive.google.com/file/d/1WVHDow4cAYOU9ZwyPzGkaSUqUgdtLryS/view?usp=sharing" aria-current="page" target="_blank" rel="noopener">Resume</a></li>
+                <li><a class="is-active" href="/resume" aria-current="page">Resume</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -38,8 +43,88 @@
                 <span class="bar"></span>
             </div>
         </nav>
-        
-        <script src="/web.js" type="module"></script>
+
+        <main class="eco-resume__page">
+            <div class="eco-resume__actions">
+                <button type="button" class="eco-resume__btn" id="resumeCopy">Copy</button>
+                <a class="eco-resume__btn" id="resumeDownload" href="/resume/hamza-mohammed-resume.pdf" download="Hamza-Mohammed-Resume.pdf">Download</a>
+                <button type="button" class="eco-resume__btn" id="resumeShare">Share</button>
+            </div>
+            <img
+                class="eco-resume__sheet"
+                src="/resume/page-1.png?v=1"
+                alt="Hamza Mohammed resume"
+                width="1224"
+                height="1584"
+            >
+        </main>
+
+        <footer class="eco-footer">
+            <p class="eco-footer__label">Contact</p>
+            <nav class="eco-footer__social" aria-label="Contact links">
+                <a href="https://www.linkedin.com/in/hamza-mohammed23" aria-label="Copy LinkedIn link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/>
+                    </svg>
+                </a>
+                <a href="mailto:hamzamohammedx23@gmail.com" aria-label="Copy Gmail address">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/UmairMoh204" aria-label="Copy GitHub link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/>
+                    </svg>
+                </a>
+            </nav>
+        </footer>
+
+        <script src="/web.js" async defer></script>
         <script src="/smooth-scroll.js" defer></script>
+        <script>
+            (function () {
+                var pageUrl = window.location.origin + '/resume';
+                function copyUrl(event) {
+                    var value = pageUrl;
+                    var done = function () {
+                        if (typeof window.ecoCursorCopied === 'function') {
+                            window.ecoCursorCopied(event);
+                        }
+                    };
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(value).then(done).catch(done);
+                        return;
+                    }
+                    var field = document.createElement('textarea');
+                    field.value = value;
+                    field.setAttribute('readonly', '');
+                    field.style.position = 'fixed';
+                    field.style.left = '-9999px';
+                    document.body.appendChild(field);
+                    field.select();
+                    try { document.execCommand('copy'); } catch (err) {}
+                    document.body.removeChild(field);
+                    done();
+                }
+                var copyBtn = document.getElementById('resumeCopy');
+                var shareBtn = document.getElementById('resumeShare');
+                if (copyBtn) {
+                    copyBtn.addEventListener('click', copyUrl);
+                }
+                if (shareBtn) {
+                    shareBtn.addEventListener('click', function (event) {
+                        if (navigator.share) {
+                            navigator.share({
+                                title: 'Hamza Mohammed — Resume',
+                                url: pageUrl
+                            }).catch(function () {});
+                            return;
+                        }
+                        copyUrl(event);
+                    });
+                }
+            })();
+        </script>
     </body>
 </html>

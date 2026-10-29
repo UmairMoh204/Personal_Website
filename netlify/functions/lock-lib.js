@@ -94,6 +94,16 @@ function getCookie(headers, name) {
     return '';
 }
 
+function requestHost(event) {
+    const headers = (event && event.headers) || {};
+    return String(headers.host || headers.Host || '').split(',')[0].trim().toLowerCase();
+}
+
+function isLocalHost(event) {
+    const host = requestHost(event);
+    return host.indexOf('localhost') === 0 || host.indexOf('127.0.0.1') === 0 || host.indexOf('[::1]') === 0;
+}
+
 function cookieHeader(token, event) {
     const parts = [
         COOKIE + '=' + token,
@@ -102,8 +112,12 @@ function cookieHeader(token, event) {
         'Path=/',
         'Max-Age=' + Math.floor(MAX_AGE_MS / 1000)
     ];
-    const proto = (event.headers && (event.headers['x-forwarded-proto'] || event.headers['X-Forwarded-Proto'])) || 'https';
-    if (String(proto).split(',')[0].trim() !== 'http') parts.push('Secure');
+    const headers = (event && event.headers) || {};
+    const forwarded = headers['x-forwarded-proto'] || headers['X-Forwarded-Proto'];
+    const proto = forwarded
+        ? String(forwarded).split(',')[0].trim()
+        : (isLocalHost(event) ? 'http' : 'https');
+    if (proto !== 'http') parts.push('Secure');
     return parts.join('; ');
 }
 
@@ -131,5 +145,6 @@ module.exports = {
     verifyToken,
     getCookie,
     cookieHeader,
-    readCaseHtml
+    readCaseHtml,
+    isLocalHost
 };

@@ -1,0 +1,159 @@
+/* Eco resume page */
+
+body.eco-resume {
+    --color-ash-mist: #f6fbff;
+    --color-vault-ink: #0f111a;
+    --color-charcoal: #2a2a2a;
+    --color-silver-veil: #aeaeae;
+    --page-bg-image:
+        radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255, 255, 255, 0.7) 0%, transparent 70%),
+        linear-gradient(180deg, #fbfdff 0%, #eef7fd 100%);
+    --font-ui: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --radius: 8px;
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--color-ash-mist);
+    background-image: var(--page-bg-image);
+    background-attachment: fixed;
+    color: var(--color-vault-ink);
+    font-family: var(--font-ui);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+html:has(body.eco-resume) {
+    background-color: var(--color-ash-mist);
+    background-image: var(--page-bg-image);
+    background-attachment: fixed;
+}
+
+body.eco-resume *,
+body.eco-resume *::before,
+body.eco-resume *::after {
+    font-weight: 400;
+}
+
+.eco-resume__page {
+    width: min(720px, calc(100% - 48px));
+    margin: 64px auto 8px;
+}
+
+.eco-resume__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin: 0 0 20px;
+}
+
+.eco-resume__btn {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 16px;
+    border: 1px solid var(--color-vault-ink);
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-vault-ink);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.eco-resume__btn:hover,
+.eco-resume__btn:focus-visible {
+    background: #ffffff;
+    outline: none;
+}
+
+body.eco-resume .eco-resume__title {
+    margin: 0 0 16px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.018em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+}
+
+.eco-resume__sheet {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(15, 17, 26, 0.12);
+    border-radius: var(--radius);
+    background: #ffffff;
+}
+
+body.eco-resume .eco-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 56px 40px;
+    background: transparent;
+    color: var(--color-vault-ink);
+    text-align: center;
+}
+
+body.eco-resume .eco-footer__label {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.018em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+}
+
+body.eco-resume .eco-footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+body.eco-resume .eco-footer__social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: var(--color-vault-ink);
+    text-decoration: none;
+}
+
+body.eco-resume .eco-footer__social svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+body.eco-resume .eco-footer a:hover,
+body.eco-resume .eco-footer a:focus-visible {
+    border-color: var(--color-silver-veil);
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .eco-resume__page {
+        width: min(100%, calc(100% - 40px));
+        margin-top: 40px;
+    }
+
+    .eco-resume__sheet {
+        border-radius: var(--radius);
+    }
+}

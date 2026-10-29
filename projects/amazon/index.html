@@ -27,7 +27,7 @@
         <script src="/eco-nav.js?v=19" defer></script>
         <link rel="stylesheet" href="/subjects/uxdesignProjects/uxdesigncss.css?v=3">
         <link rel="stylesheet" href="/subjects/uxdesignProjects/amazon-case.css?v=46">
-        <link rel="stylesheet" href="/subjects/uxdesignProjects/eco-case.css?v=81">
+        <link rel="stylesheet" href="/subjects/uxdesignProjects/eco-case.css?v=90">
         <link rel="stylesheet" href="/components/work-marquee.css?v=2">
         <script src="/components/work-marquee.js"></script>
     </head>
@@ -44,7 +44,7 @@
                 <li><a class="is-active" href="/projects" aria-current="page">Projects</a></li>
                 <li class="nav-logo-item"><img src="/logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="https://drive.google.com/file/d/1WVHDow4cAYOU9ZwyPzGkaSUqUgdtLryS/view?usp=sharing" target="_blank" rel="noopener">Resume</a></li>
+                <li><a href="/resume">Resume</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -174,40 +174,39 @@
             <section class="cs-block" aria-labelledby="problem-heading">
                 <h2 class="cs-kicker" id="problem-heading">02 - Uncovering the Problem</h2>
                 <p>I analyzed the existing Journey Map alongside survey findings to understand <span class="cs-underline">where did uncertainty appear across the journey</span> and <span class="cs-underline">what were the associates reporting?</span></p>
-                <div class="cs-map" aria-label="Transfer journey map layers">
-                    <div class="cs-map__row cs-map__row--3">
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Pre-Application</div>
-                        </div>
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Application</div>
-                        </div>
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Post-Application</div>
-                        </div>
+                <div class="cs-phases" aria-label="Each application phase was mapped through its own actions, content needs, tools, pain points, and questions">
+                    <div class="cs-phases__phase">
+                        <p class="cs-phases__num">01</p>
+                        <h3 class="cs-phases__title">Pre-Application</h3>
                     </div>
-                    <div class="cs-map__row cs-map__row--5">
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Action / Tasks</div>
-                            <span class="cs-map__arrow" aria-hidden="true"></span>
-                        </div>
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Content Needs</div>
-                            <span class="cs-map__arrow" aria-hidden="true"></span>
-                        </div>
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Tools &amp; Touchpoints</div>
-                            <span class="cs-map__arrow" aria-hidden="true"></span>
-                        </div>
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Pain Points</div>
-                            <span class="cs-map__arrow" aria-hidden="true"></span>
-                        </div>
-                        <div class="cs-map__col">
-                            <div class="cs-map__node">Questions</div>
-                            <span class="cs-map__arrow" aria-hidden="true"></span>
-                        </div>
+                    <div class="cs-phases__phase">
+                        <p class="cs-phases__num">02</p>
+                        <h3 class="cs-phases__title">Application</h3>
                     </div>
+                    <div class="cs-phases__phase">
+                        <p class="cs-phases__num">03</p>
+                        <h3 class="cs-phases__title">Post-Application</h3>
+                    </div>
+
+                    <div class="cs-phases__cell">Action / Tasks</div>
+                    <div class="cs-phases__cell">Action / Tasks</div>
+                    <div class="cs-phases__cell">Action / Tasks</div>
+
+                    <div class="cs-phases__cell">Content Needs</div>
+                    <div class="cs-phases__cell">Content Needs</div>
+                    <div class="cs-phases__cell">Content Needs</div>
+
+                    <div class="cs-phases__cell">Tools &amp; Touchpoints</div>
+                    <div class="cs-phases__cell">Tools &amp; Touchpoints</div>
+                    <div class="cs-phases__cell">Tools &amp; Touchpoints</div>
+
+                    <div class="cs-phases__cell">Pain Points</div>
+                    <div class="cs-phases__cell">Pain Points</div>
+                    <div class="cs-phases__cell">Pain Points</div>
+
+                    <div class="cs-phases__cell">Questions</div>
+                    <div class="cs-phases__cell">Questions</div>
+                    <div class="cs-phases__cell">Questions</div>
                 </div>
             </section>
 
@@ -228,15 +227,11 @@
                         <p>Will my pay be changed if I accept the offer?</p>
                     </article>
                 </div>
-                <div class="cs-insight" role="note">
-                    <span class="cs-insight__icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 3a7 7 0 0 0-4 12.7V18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 3z"/>
-                            <path d="M9 21h6"/>
-                        </svg>
-                    </span>
-                    <p>How can I resolve unanswered questions and keep associates informed throughout the transfer?</p>
-                </div>
+                <aside class="cs-survey" aria-label="Problem found through associate surveys">
+                    <p class="cs-survey__kicker">Design Problem</p>
+                    <p class="cs-survey__question">How can I resolve unanswered questions and keep associates informed throughout the transfer?</p>
+                    <p class="cs-survey__note">Synthesized from associate survey response patterns and friction severity across the transfer journey.</p>
+                </aside>
             </section>
 
             <section class="cs-block" aria-labelledby="rtd-heading">

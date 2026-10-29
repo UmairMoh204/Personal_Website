@@ -253,7 +253,7 @@
 })();
 
 (function () {
-    var pages = ['/home', '/projects', '/about'];
+    var pages = ['/home', '/projects', '/about', '/resume'];
     function prefetchPages() {
         pages.forEach(function (href) {
             if (document.querySelector('link[rel="prefetch"][href="' + href + '"]')) return;

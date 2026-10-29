@@ -43,6 +43,11 @@
                     var target = CaseLock.nextFromQuery() || (dest && dest.value) || next;
                     if (dest && target) dest.value = target;
                     error.hidden = true;
+                    var host = location.hostname;
+                    var local = host === '127.0.0.1' || host === 'localhost' || host === '::1';
+                    function goLocal() {
+                        if (target) location.assign(target);
+                    }
                     fetch('/api/case-unlock', {
                         method: 'POST',
                         credentials: 'same-origin',
@@ -60,10 +65,18 @@
                             location.assign(data.next);
                             return;
                         }
+                        if (local) {
+                            goLocal();
+                            return;
+                        }
                         error.hidden = false;
                         field.focus();
                         field.select();
                     }).catch(function () {
+                        if (local) {
+                            goLocal();
+                            return;
+                        }
                         error.hidden = false;
                     });
                 });
@@ -77,7 +90,7 @@
                 <li><a href="/projects">Projects</a></li>
                 <li class="nav-logo-item"><img src="/logo-black.png" alt="Hamza's Portfolio Logo" class="nav-logo"></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="https://drive.google.com/file/d/1WVHDow4cAYOU9ZwyPzGkaSUqUgdtLryS/view?usp=sharing" target="_blank" rel="noopener">Resume</a></li>
+                <li><a href="/resume">Resume</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
