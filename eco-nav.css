@@ -359,8 +359,14 @@ html.has-eco-contrast-cursor [contenteditable="true"] {
 }
 
 html.is-cs-expanded iframe,
-html.is-cs-expanded .cs-figjam {
+html.is-cs-expanded .cs-figjam,
+html.has-eco-contrast-cursor iframe {
     cursor: auto !important;
+}
+
+.eco-cursor-dot.is-off-frame {
+    opacity: 0 !important;
+    visibility: hidden;
 }
 
 @view-transition {

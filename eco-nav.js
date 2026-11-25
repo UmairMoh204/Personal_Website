@@ -154,9 +154,23 @@
     dot.innerHTML = '<span class="eco-cursor-dot__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/><path d="M14 5h5v5"/><path d="M19 5l-9 9"/></svg></span><span class="eco-cursor-dot__label eco-cursor-dot__label--copy">COPIED</span><span class="eco-cursor-dot__label eco-cursor-dot__label--soon">Coming Soon</span>';
     document.documentElement.classList.add('has-eco-contrast-cursor');
 
+    function bindFrameCursor() {
+        document.querySelectorAll('iframe').forEach(function (frame) {
+            if (frame.getAttribute('data-eco-cursor-bound')) return;
+            frame.setAttribute('data-eco-cursor-bound', '1');
+            frame.addEventListener('mouseenter', function () {
+                dot.classList.add('is-off-frame');
+            });
+            frame.addEventListener('mouseleave', function () {
+                dot.classList.remove('is-off-frame');
+            });
+        });
+    }
+
     function mountCursor() {
         if (!document.body) return;
         document.body.appendChild(dot);
+        bindFrameCursor();
         if (typeof dot.showPopover === 'function') {
             try {
                 if (!dot.matches(':popover-open')) dot.showPopover();
