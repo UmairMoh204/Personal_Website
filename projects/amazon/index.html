@@ -27,7 +27,7 @@
         <script src="/eco-nav.js?v=21" defer></script>
         <link rel="stylesheet" href="/subjects/uxdesignProjects/uxdesigncss.css?v=3">
         <link rel="stylesheet" href="/subjects/uxdesignProjects/amazon-case.css?v=46">
-        <link rel="stylesheet" href="/subjects/uxdesignProjects/eco-case.css?v=140">
+        <link rel="stylesheet" href="/subjects/uxdesignProjects/eco-case.css?v=145">
         <link rel="stylesheet" href="/components/work-marquee.css?v=2">
         <script src="/components/work-marquee.js"></script>
     </head>
@@ -95,7 +95,7 @@
             </div>
 
             <h1 class="cs-title">Enterprise Help Experience — Workforce Solutions Transformative Tech</h1>
-            <p class="cs-lede">Utilized existing employee inquiry data to improve Transfer’s help destination and enable associates to complete a successful transfer.</p>
+            <p class="cs-lede">Utilized existing employee inquiry data to improve Transfer’s help destination enabling associates to complete a successful transfer.</p>
 
             <dl class="cs-meta">
                 <div>
@@ -170,6 +170,11 @@
                     </figure>
                 </div>
                 -->
+                <aside class="cs-survey" aria-label="Long story short">
+                    <p class="cs-survey__kicker">Long story short</p>
+                    <p class="cs-survey__question">I led the vision for a new way for associates to get assistance within a transfer application process without the need for HR or managorial intervention.</p>
+                    <p class="cs-survey__note">Assessing criticality based on hundreds of A to Z app inquiries. This project was handed as an intern concept and was not shipped to production.</p>
+                </aside>
             </section>
 
             <section class="cs-block" aria-labelledby="process-heading">
@@ -488,11 +493,16 @@
                         <h3 class="cs-proto__label" id="offline-cache-heading">Cached Data</h3>
                         <div class="cs-proto__shots">
                             <figure class="cs-proto__shot">
-                                <img src="/subjects/uxImages/Amazon/offline-proto-3.png" alt="Amazon A to Z home with cached This Week Summary cards while offline">
+                                <img src="/subjects/uxImages/Amazon/offline-proto-3.png?v=2" alt="Schedule calendar in offline mode with an offline banner, cached January punches, and punch times">
                             </figure>
                         </div>
                     </section>
                 </div>
+                <aside class="cs-survey" aria-label="Long story short">
+                    <p class="cs-survey__kicker">Long story short</p>
+                    <p class="cs-survey__question">I redesigned the Amazon A to Z home page for network disconnection. Ensuring that accurate information is displayed when the app is offline.</p>
+                    <p class="cs-survey__note">Instead of showing a cached schedule that might be wrong, I designed states based on available and unavailable data to reduce inaccurate information.</p>
+                </aside>
             </section>
 
             <section class="cs-block" aria-labelledby="offline-assign-heading">
@@ -619,7 +629,7 @@
                         </figure>
                     </div>
                 </div>
-                <p>I chose the both pattern based on use case. The app demands Wi-Fi before it presents the information. An internal enterprise tool is not a map you can keep in a download. Associates open A to Z for records that change in the moment. A time card, a shift, a pay figure, or a message is only useful if it is the current one from the server.</p>
+                <p>The app demands Wi-Fi before it presents the information. An internal enterprise tool is not a map you can keep in a download. Associates open A to Z for records that change in the moment. A time card, a shift, a pay figure, or a message is only useful if it is the current one from the server.</p>
                 <p>Enterprise tools lean on Wi-Fi because the source of truth is upstream. Caching yesterday’s schedule or last week’s pay would look like a working app and still be wrong. That is more dangerous than an empty screen. Workday and Google Maps already use a version of this restraint. They do not disclose the information that belongs to a live fetch until a connection can retrieve it for that moment. Maps will not invent live traffic without a network. Workday will not invent a workforce record the server has not returned.</p>
                 <p>That pattern belongs on Amazon’s A to Z app. The associate should know the app is disconnected. They should not be asked to act on rows that failed to fetch. Demanding Wi-Fi before presenting the information keeps the offline mode honest about what the enterprise tool can actually promise.</p>
             </section>
